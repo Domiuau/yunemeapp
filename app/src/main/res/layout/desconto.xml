@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/preto"
+    tools:context=".MainActivity2">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3.4"
+        android:orientation="vertical"
+        android:background="@drawable/fundoteclado">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:background="@drawable/fundo3"
+            android:layout_weight="1.1">
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:layout_weight="3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="20sp"
+                    android:textColor="@color/preto"
+                    android:text="Insira os valores"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="2">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/espaco1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textColor="@color/verdeouazulsla"
+                    android:background="@drawable/valoresbhaskara" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/branco"
+                    android:layout_weight="1"
+                    android:id="@+id/espaco2"
+                    android:text=""
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginRight="25dp"
+                    android:background="@drawable/valoresbhaskara"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                android:layout_weight="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/preto"
+                    android:gravity="center_horizontal"
+                    android:layout_weight="1"
+                    android:textSize="17sp"
+                    android:text="Valor inicial"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="17sp"
+                    android:textColor="@color/preto"
+                    android:gravity="center_horizontal"
+                    android:text="Quantidade de desconto"/>
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:background="@drawable/fundo2"
+            android:layout_weight="3">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginRight="80dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="80dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:text="Valor inicial"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="@color/branco"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textColor="@color/branco"
+                    android:gravity="center"
+                    android:id="@+id/inicial"
+                    android:background="@drawable/valoresbhaskara"/>
+
+            </LinearLayout>
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginRight="80dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="80dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:text="Novo valor"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:textColor="@color/branco"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textColor="@color/branco"
+                    android:gravity="center"
+                    android:id="@+id/aplicado"
+                    android:background="@drawable/valoresbhaskara"/>
+
+
+
+
+
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:layout_marginRight="80dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="80dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.8"
+                    android:text="Diferença"
+                    android:textSize="20sp"
+                    android:gravity="center"
+                    android:textColor="@color/branco"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textColor="@color/branco"
+                    android:gravity="center"
+                    android:id="@+id/diferenca"
+                    android:background="@drawable/valoresbhaskara"/>
+
+
+            </LinearLayout>
+
+
+
+
+
+
+
+
+        </LinearLayout>
+
+
+
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="0.1"
+        android:layout_height="0dp"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="7"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="8"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="9"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nc"
+                android:layout_width="match_parent"
+                android:textSize="30sp"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:backgroundTint="@color/cinzaclaro2"
+                android:text="C"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="4"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="5"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="6"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nbackspace"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/backspace"
+                style="@style/botaoteclado"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="3"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="2"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nmenos"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="-"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nvirgula"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text=","/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botao0"
+                android:layout_weight="0.70"
+                android:text="0"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nok"
+                style="@style/botaoteclado"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                android:backgroundTint="@color/verdeouazulsla2"
+                android:text="OK"
+                android:textSize="30sp" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+

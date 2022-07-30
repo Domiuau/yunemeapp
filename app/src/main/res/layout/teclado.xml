@@ -1,0 +1,207 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/preto"
+    tools:context=".MainActivity2">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@drawable/fundoteclado">
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="0.1"
+        android:layout_height="0dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n7"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="7"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n8"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="8"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n9"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="9"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nc"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:backgroundTint="@color/cinzaclaro2"
+                android:text="C"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="4"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="5"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n6"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="6"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nuu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/backspace"
+                style="@style/botaoteclado"
+                />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="3"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="2"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="1"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nu"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="-"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/ny"
+                android:layout_width="match_parent"
+                android:gravity="center_horizontal"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text=","/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n0"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botao0"
+                android:layout_weight="0.70"
+                android:text="0"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nok"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/borda"
+                style="@style/botaoteclado"
+                android:text="OK"
+                android:backgroundTint="@color/verdeouazulsla2"/>
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+</LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+

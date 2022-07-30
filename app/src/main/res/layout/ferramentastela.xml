@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/preto"
+    android:gravity="center"
+    android:orientation="vertical"
+    tools:context=".ferramentastela">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="10">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="YUNEME"
+            android:textColor="@color/cinzabranco"
+            android:textSize="25sp"
+            android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="360dp"
+                android:layout_height="900dp"
+                android:layout_marginTop="2dp"
+                android:layout_weight="35"
+                android:background="@drawable/fundobranco"
+                android:orientation="vertical">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp">
+
+                    <ImageView
+                        android:layout_width="150dp"
+                        android:layout_height="5dp"
+                        android:layout_marginStart="105dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/retacinza" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="230dp"
+                        android:layout_height="50dp"
+                        android:layout_marginLeft="35dp"
+                        android:text="Ferramentas"
+                        android:textColor="@color/preto"
+                        android:textSize="32sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center">
+
+
+                        <ImageView
+                            android:layout_width="25dp"
+                            android:layout_height="25dp"
+                            android:layout_marginRight="35dp"
+                            android:background="@drawable/lupa"
+                            android:scaleType="center" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="110dp"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+
+                    <ImageButton
+                        android:id="@+id/bhaskara"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="5dp"
+                        android:layout_marginRight="65dp"
+                        android:background="@drawable/bhaskaraicon"
+                        android:scaleType="center" />
+
+
+                    <ImageButton
+                        android:id="@+id/desconto"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_marginTop="5dp"
+                        android:background="@drawable/descontoicon"
+                        android:scaleType="center"
+                        android:textSize="60sp" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:layout_marginTop="3dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/bhaskara1"
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="47.5dp"
+                        android:gravity="center"
+                        android:text="Calculadora de"
+                        android:textColor="@color/preto" />
+
+                    <TextView
+                        android:id="@+id/desconto1"
+                        android:layout_width="100dp"
+                        android:layout_height="20dp"
+                        android:layout_marginLeft="65dp"
+                        android:gravity="center"
+                        android:text="Calculadora de"
+                        android:textColor="@color/preto" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/bhaskara2"
+                        android:layout_width="100dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="50dp"
+                        android:gravity="bottom"
+                        android:text="Bhaskara"
+                        android:textColor="@color/preto"
+                        android:textSize="23sp" />
+
+                    <TextView
+                        android:id="@+id/desconto2"
+                        android:layout_width="100dp"
+                        android:layout_height="25dp"
+                        android:layout_marginLeft="65dp"
+                        android:gravity="bottom"
+                        android:text="Desconto"
+                        android:textColor="@color/preto"
+                        android:textSize="23sp" />
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="horizontal"
+        android:background="@drawable/fundobarradebaixo"
+        android:layout_weight="1">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="0dp"
+            android:id="@+id/casinha"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:scaleType="center"
+            android:background="@drawable/botaopequenoverdeazulsla"
+            android:src="@drawable/casinha"
+            android:textColor="@color/branco"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="0dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:layout_marginBottom="10dp"
+            android:layout_weight="1"
+            android:id="@+id/quadradoestranho"
+            android:scaleType="center"
+            android:src="@drawable/quadradoestranho"
+            android:background="@drawable/botaopequenoazul"
+            android:layout_height="match_parent"/>
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:layout_width="0dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/calculadorinha"
+            android:id="@+id/calculadora"
+            android:layout_weight="1"
+            android:scaleType="center"
+            android:background="@drawable/botaopequenoamarelo"
+            android:layout_height="match_parent"/>
+
+        
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+

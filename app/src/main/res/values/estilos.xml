@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name = "basebotaoteclado">
+        <item name="android:textColor">@color/branco</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">7dp</item>
+        <item name="android:textSize">40sp</item>
+
+    </style>
+
+
+    <style name = "botaoteclado" parent="basebotaoteclado">
+
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+
+
+
+
+     </style>
+
+    <style name="botao0" parent="basebotaoteclado">
+
+
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+
+
+    </style>
+
+
+
+
+
+    <style name="botao">
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:layout_margin">1dp</item>
+
+
+
+
+
+    </style>
+
+    <style name="texto">
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">end</item>
+        <item name="android:layout_marginRight">10dp</item>
+
+
+    </style>
+
+    <style name="numeros" parent="@style/botao">
+        <item name="android:textColor">@color/branco</item>
+        <item name="backgroundTint">@color/cinzaescuro</item>
+    </style>
+
+    <style name="operadores" parent="@style/botao">
+        <item name="android:textColor">@color/branco</item>
+        <item name="android:backgroundTint">@color/cinzaclaro2</item>
+    </style>
+
+
+
+
+</resources>
