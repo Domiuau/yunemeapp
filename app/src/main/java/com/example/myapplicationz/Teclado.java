@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 
 public class Teclado extends AppCompatActivity {
+    //teclado universal para todas as ferramentas
 
     static byte espaco = 1;
 
