@@ -126,16 +126,18 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.porcentagem:
                 separarporoperador();
+                try{
+
                 ultimonumero = Double.parseDouble(q[q.length - 1]);
 
-                if (ultimonumero > 0.099999) {
+                    if (ultimonumero > 0.099999) {
 
-                    if (!expressao.getText().toString().endsWith("+") &&
-                            !expressao.getText().toString().endsWith("-") &&
-                            !expressao.getText().toString().endsWith("/") &&
-                            !expressao.getText().toString().endsWith("*")) {
+                        if (!expressao.getText().toString().endsWith("+") &&
+                                !expressao.getText().toString().endsWith("-") &&
+                                !expressao.getText().toString().endsWith("/") &&
+                                !expressao.getText().toString().endsWith("*")) {
 
-                        try {
+
 
                             if (expressao.getText().toString().contains("+") ||
                                     expressao.getText().toString().contains("-") ||
@@ -160,13 +162,14 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
                             adicionar(String.valueOf(ultimonumero / 100));
 
 
-                        } catch (Exception e) {
 
                         }
+
                     }
 
-                }
+                }catch (Exception e) {
 
+                }
 
                 break;
             case R.id.n0:
