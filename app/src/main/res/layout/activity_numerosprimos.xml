@@ -24,11 +24,7 @@
             android:background="@drawable/fundo3"
             android:layout_weight="1.1">
 
-            <ImageView
-                android:layout_width="180dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/fundo3bhaskara"
-                android:scaleType="center"/>
+
 
 
 
@@ -46,12 +42,31 @@
                 android:layout_weight="1">
 
                 <TextView
-                    android:layout_width="match_parent"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textSize="20sp"
                     android:textColor="@color/preto"
-                    android:text="Insira os valores"/>
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textSize="20sp"
+                    android:text="Menor"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/preto"
+                    android:gravity="center"
+                    android:layout_weight="2.7"
+                    android:textSize="20sp"
+                    android:text="Insira um número"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:textColor="@color/preto"
+                    android:gravity="center"
+                    android:layout_weight="1"
+                    android:textSize="15sp"
+                    android:text="Maior"/>
 
             </LinearLayout>
 
@@ -61,37 +76,50 @@
                 android:orientation="horizontal"
                 android:layout_weight="2">
 
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/valores2"
+                    android:layout_margin="10dp"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.3"
+                    android:text=""
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
+
+
+
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/espaco1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:text=""
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:textColor="@color/verdeouazulsla"
                     android:background="@drawable/valores" />
 
-                <androidx.appcompat.widget.AppCompatButton
+                <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:textColor="@color/branco"
-                    android:layout_weight="1"
-                    android:id="@+id/espaco2"
+                    android:layout_weight="0.3"
                     android:text=""
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:background="@drawable/valores"/>
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:gravity="center"/>
 
-                <androidx.appcompat.widget.AppCompatButton
+                <TextView
                     android:layout_width="0dp"
-                    android:id="@+id/espaco3"
-                    android:textColor="@color/branco"
-                    android:text=""
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginRight="10dp"
-                    android:background="@drawable/valores"/>
-
+                    android:layout_weight="0.5"
+                    android:background="@drawable/valores2"
+                    android:layout_margin="10dp"/>
 
 
             </LinearLayout>
@@ -108,26 +136,28 @@
                     android:textColor="@color/preto"
                     android:gravity="center_horizontal"
                     android:layout_weight="1"
-                    android:textSize="20sp"
-                    android:text="Valor A"/>
+                    android:layout_marginTop="-5dp"
+                    android:textSize="15sp"
+                    android:text="Primo mais proximo"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textSize="20sp"
                     android:textColor="@color/preto"
-                    android:gravity="center_horizontal"
-                    android:text="Valor B"/>
+                    android:gravity="center"
+                    android:layout_weight="2.7"
+                    android:textSize="20sp"
+                    android:text="a"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
                     android:textColor="@color/preto"
-                    android:textSize="20sp"
+                    android:gravity="center_horizontal"
                     android:layout_weight="1"
-                    android:text="Valor C"/>
+                    android:layout_marginTop="-5dp"
+                    android:textSize="15sp"
+                    android:text="Primo mais proximo"/>
 
 
             </LinearLayout>
@@ -147,36 +177,33 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="80dp"
+                android:layout_marginRight="60dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="60dp"
                 android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="-10dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/deltaicon"
-                    android:scaleType="center"/>
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:text="Delta"
-                    android:textSize="20sp"
+                    android:layout_weight="0.8"
+                    android:text="Número inserido"
+                    android:textSize="15sp"
                     android:gravity="center"
                     android:textColor="@color/branco"/>
 
                 <TextView
-                    android:id="@+id/espacodelta"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.85"
-                    android:background="@drawable/valores"
+                    android:layout_weight="1"
+                    android:textColor="@color/branco"
                     android:gravity="center"
-                    android:textColor="@color/branco" />
+                    android:background="@drawable/valores"/>
+
+
+
+
+
+
 
 
             </LinearLayout>
@@ -187,17 +214,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_marginRight="80dp"
+                android:layout_marginRight="60dp"
                 android:layout_marginTop="5dp"
-                android:layout_marginLeft="80dp"
+                android:layout_marginLeft="60dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.8"
-                    android:text="X1"
-                    android:textSize="20sp"
+                    android:text="Diferença menor primo mais proximo"
+                    android:textSize="13sp"
                     android:gravity="center"
                     android:textColor="@color/branco"/>
 
@@ -223,18 +250,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:layout_weight="1"
-                android:layout_marginRight="80dp"
+                android:layout_marginRight="60dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="10dp"
-                android:layout_marginLeft="80dp"
+                android:layout_marginLeft="60dp"
                 android:orientation="horizontal">
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.8"
-                    android:text="X2"
-                    android:textSize="20sp"
+                    android:text="Diferença maior primo mais proximo"
+                    android:textSize="13sp"
                     android:gravity="center"
                     android:textColor="@color/branco"/>
 
@@ -270,7 +297,7 @@
 
 
 
-   </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"

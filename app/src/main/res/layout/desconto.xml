@@ -63,7 +63,7 @@
                     android:layout_weight="1"
                     android:text=""
                     android:textColor="@color/verdeouazulsla"
-                    android:background="@drawable/valoresbhaskara" />
+                    android:background="@drawable/valores" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="0dp"
@@ -74,7 +74,7 @@
                     android:text=""
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="25dp"
-                    android:background="@drawable/valoresbhaskara"/>
+                    android:background="@drawable/valores"/>
 
             </LinearLayout>
 
@@ -140,7 +140,7 @@
                     android:textColor="@color/branco"
                     android:gravity="center"
                     android:id="@+id/inicial"
-                    android:background="@drawable/valoresbhaskara"/>
+                    android:background="@drawable/valores"/>
 
             </LinearLayout>
 
@@ -171,7 +171,7 @@
                     android:textColor="@color/branco"
                     android:gravity="center"
                     android:id="@+id/aplicado"
-                    android:background="@drawable/valoresbhaskara"/>
+                    android:background="@drawable/valores"/>
 
 
 
@@ -208,7 +208,7 @@
                     android:textColor="@color/branco"
                     android:gravity="center"
                     android:id="@+id/diferenca"
-                    android:background="@drawable/valoresbhaskara"/>
+                    android:background="@drawable/valores"/>
 
 
             </LinearLayout>

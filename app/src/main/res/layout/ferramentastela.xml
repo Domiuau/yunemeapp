@@ -30,58 +30,68 @@
                 android:textStyle="bold" />
 
             <LinearLayout
-                android:layout_width="350dp"
+                android:layout_width="match_parent"
                 android:layout_height="900dp"
-                android:layout_marginTop="2dp"
-                android:layout_weight="35"
-                android:background="@drawable/fundobranco"
-                android:orientation="vertical">
-
+                android:orientation="horizontal">
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="40dp">
-
-                    <ImageView
-                        android:layout_width="150dp"
-                        android:layout_height="5dp"
-                        android:layout_marginStart="105dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/retacinza" />
-
-                </LinearLayout>
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="50dp"
-                    android:orientation="horizontal">
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="2dp"
+                    android:layout_weight="20"
+                    android:background="@drawable/fundobranco"
+                    android:orientation="vertical">
 
-                    <TextView
-                        android:layout_width="230dp"
-                        android:layout_height="50dp"
-                        android:layout_marginLeft="35dp"
-                        android:text="Ferramentas"
-                        android:textColor="@color/preto"
-                        android:textSize="32sp" />
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:gravity="center">
-
+                        android:layout_height="40dp">
 
                         <ImageView
-                            android:layout_width="25dp"
-                            android:layout_height="25dp"
-                            android:layout_marginRight="35dp"
-                            android:background="@drawable/lupa"
-                            android:scaleType="center" />
+                            android:layout_width="150dp"
+                            android:layout_height="5dp"
+                            android:layout_marginStart="105dp"
+                            android:layout_marginTop="10dp"
+                            android:background="@drawable/retacinza" />
 
                     </LinearLayout>
 
-                </LinearLayout>
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:orientation="horizontal">
 
-                <LinearLayout
+                        <TextView
+                            android:layout_width="230dp"
+                            android:layout_height="50dp"
+                            android:layout_marginLeft="35dp"
+                            android:text="Ferramentas"
+                            android:textColor="@color/preto"
+                            android:textSize="32sp" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+
+                            <ImageView
+                                android:layout_width="25dp"
+                                android:layout_height="25dp"
+                                android:layout_marginRight="35dp"
+                                android:background="@drawable/lupa"
+                                android:scaleType="center" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                    <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="110dp"
                     android:layout_marginTop="10dp"
@@ -111,62 +121,165 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="20dp"
-                    android:layout_marginTop="3dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/bhaskara1"
-                        android:layout_width="100dp"
+                    <LinearLayout
+                        android:layout_width="match_parent"
                         android:layout_height="20dp"
-                        android:layout_marginLeft="42.5dp"
+                        android:layout_marginTop="3dp"
                         android:gravity="center"
-                        android:text="Calculadora de"
-                        android:textColor="@color/preto" />
+                        android:orientation="horizontal">
 
-                    <TextView
-                        android:id="@+id/desconto1"
-                        android:layout_width="100dp"
-                        android:layout_height="20dp"
-                        android:layout_marginLeft="65dp"
+                        <TextView
+                            android:id="@+id/bhaskara1"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="Calculadora de"
+                            android:textColor="@color/preto" />
+
+                        <TextView
+                            android:id="@+id/desconto1"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="65dp"
+                            android:gravity="center"
+                            android:text="Calculadora de"
+                            android:textColor="@color/preto" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
                         android:gravity="center"
-                        android:text="Calculadora de"
-                        android:textColor="@color/preto" />
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/bhaskara2"
+                            android:layout_width="100dp"
+                            android:layout_height="25dp"
+                            android:gravity="bottom"
+                            android:text="Bhaskara"
+                            android:textColor="@color/preto"
+                            android:textSize="23sp" />
+
+                        <TextView
+                            android:id="@+id/desconto2"
+                            android:layout_width="100dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="65dp"
+                            android:gravity="bottom"
+                            android:text="Desconto"
+                            android:textColor="@color/preto"
+                            android:textSize="23sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="110dp"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+
+                        <ImageButton
+                            android:id="@+id/numerosprimos1"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="5dp"
+                            android:layout_marginRight="65dp"
+                            android:background="@drawable/botaopequenoazul"
+                            android:scaleType="center" />
+
+
+                        <ImageButton
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_marginTop="5dp"
+                            android:background="@drawable/botaopequenoazul"
+                            android:scaleType="center"
+                            android:textSize="60sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="20dp"
+                        android:layout_marginTop="3dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/numeroprimo1"
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:gravity="center"
+                            android:text="Números"
+                            android:textSize="18sp"
+                            android:textColor="@color/preto" />
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="20dp"
+                            android:layout_marginLeft="65dp"
+                            android:gravity="center"
+                            android:textSize="18sp"
+                            android:text="Em breve"
+                            android:textColor="@color/preto" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="30dp"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/bhaskara2"
+                            android:layout_width="100dp"
+                            android:layout_height="25dp"
+                            android:gravity="bottom"
+                            android:layout_marginLeft="20dp"
+                            android:text="Primos"
+                            android:textColor="@color/preto"
+                            android:textSize="25sp" />
+
+                        <TextView
+                            android:layout_width="100dp"
+                            android:layout_height="25dp"
+                            android:layout_marginLeft="65dp"
+                            android:gravity="bottom"
+                            android:text=""
+                            android:textColor="@color/preto"
+                            android:textSize="23sp" />
+
+
+                    </LinearLayout>
+
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:orientation="horizontal">
-
-                    <TextView
-                        android:id="@+id/bhaskara2"
-                        android:layout_width="100dp"
-                        android:layout_height="25dp"
-                        android:layout_marginLeft="45dp"
-                        android:gravity="bottom"
-                        android:text="Bhaskara"
-                        android:textColor="@color/preto"
-                        android:textSize="23sp" />
-
-                    <TextView
-                        android:id="@+id/desconto2"
-                        android:layout_width="100dp"
-                        android:layout_height="25dp"
-                        android:layout_marginLeft="65dp"
-                        android:gravity="bottom"
-                        android:text="Desconto"
-                        android:textColor="@color/preto"
-                        android:textSize="23sp" />
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"/>
 
 
-                </LinearLayout>
+
+
+
+
 
 
             </LinearLayout>
+
+
+
+
+
 
         </LinearLayout>
 

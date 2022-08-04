@@ -71,13 +71,24 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Double[] a = {Double.parseDouble(espaco1.getText().toString()),
-                        Double.parseDouble(espaco2.getText().toString())
-                };
 
-                inicial.setText(a[0].toString());
-                novo.setText(String.valueOf(a[0] - (a[0] / 100) * a[1]));
-                diferenca.setText(String.valueOf(((a[0] / 100) * a[1])*-1));
+                try {
+
+                    Double[] a = {Double.parseDouble(espaco1.getText().toString()),
+                            Double.parseDouble(espaco2.getText().toString())
+                    };
+
+                    inicial.setText(a[0].toString());
+                    novo.setText(String.valueOf(a[0] - (a[0] / 100) * a[1]));
+                    diferenca.setText(String.valueOf(((a[0] / 100) * a[1]) * -1));
+                } catch (NumberFormatException exception){
+                    inicial.setText("Preencha todos os campos");
+                    novo.setText("Preencha todos os campos");
+                    diferenca.setText("Preencha todos os campos");
+                }
+                catch (Exception e){
+
+                }
             }
         });
 
@@ -85,6 +96,10 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View desconto) {
+
+        inicial.setText("");
+        novo.setText("");
+        diferenca.setText("");
 
         if (desconto.getId() == R.id.nc) {
             espaco1.setText("");

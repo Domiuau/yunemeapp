@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class ferramentastela extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton botaobhaskara, botaodesconto,casinha,quadradoestranho,calculadora;
+    ImageButton botaobhaskara, botaodesconto,casinha,quadradoestranho,calculadora,botaonumerosprimos;
     TextView bhaskara1,bhaskara2,desconto1,desconto2;
 
 
@@ -32,6 +32,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         casinha = findViewById(R.id.casinha);
         quadradoestranho = findViewById(R.id.quadradoestranho);
         calculadora = findViewById(R.id.calculadora);
+        botaonumerosprimos = findViewById(R.id.numerosprimos1);
 
 
 
@@ -44,6 +45,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         casinha.setOnClickListener(this);
         quadradoestranho.setOnClickListener(this);
         calculadora.setOnClickListener(this);
+        botaonumerosprimos.setOnClickListener(this);
 
 
  }
@@ -83,6 +85,11 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
                 Intent irparadesconto = new Intent(this, Desconto.class);
                 startActivity(irparadesconto);
                 Teclado.espaco = 1;
+                break;
+
+            case R.id.numerosprimos1:
+                Intent irparanumerosprimos = new Intent(this,Numerosprimos.class);
+                startActivity(irparanumerosprimos);
                 break;
 
             default: System.exit(0);

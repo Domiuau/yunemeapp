@@ -14,7 +14,7 @@
         android:theme="@style/Theme.MyApplicationz"
         tools:targetApi="31">
         <activity
-            android:name=".testegit"
+            android:name=".Numerosprimos"
             android:exported="false" />
         <activity
             android:name=".pacotes"
