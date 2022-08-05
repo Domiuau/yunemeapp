@@ -65,6 +65,7 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
                 menorque.setText("");
                 numeroinicial.setText("");
                 espaco1.setText("");
+                resultado.setText("");
 
             }
         });
@@ -80,21 +81,21 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
 
                 me = Integer.parseInt(espaco1.getText().toString());
 
-                while (!primo(me - 1)) {
-                    primo(me);
+                System.out.println(me +"aaa");
+
+                while (!primo(me -1)) {
                     me--;
                 }
                 menorque.setText(me - 1 + "");
                 diferencamenor.setText(((Integer.parseInt(espaco1.getText().toString()) - (me - 1)) * -1 + ""));
                 me = Integer.parseInt(espaco1.getText().toString());
 
-                while (!primo(me + 2)) {
-                    primo(me);
+                while (!primo(me + 1)) {
                     me++;
                 }
-                maiorque.setText(me + 2 + "");
+                maiorque.setText(me + 1 + "");
                 numeroinicial.setText(espaco1.getText().toString());
-                diferencamaior.setText((me + 2) - Integer.parseInt(espaco1.getText().toString())+"");
+                diferencamaior.setText((me + 1) - Integer.parseInt(espaco1.getText().toString())+"");
             }
         });
 
@@ -102,7 +103,7 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
 
     boolean primo(int a) {
         b = 0;
-        for (int i = a - 1; i > 1; --i) {
+        for (int i = a-1; i > 1; --i) {
             if (a % i == 0) {
                 b++;
             }

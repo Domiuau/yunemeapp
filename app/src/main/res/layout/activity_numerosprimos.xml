@@ -155,8 +155,7 @@
                     android:textColor="@color/preto"
                     android:gravity="center"
                     android:layout_weight="2.7"
-                    android:textSize="20sp"
-                    android:text="a"/>
+                    android:textSize="20sp"/>
 
                 <TextView
                     android:layout_width="0dp"
@@ -194,7 +193,7 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.9"
+                    android:layout_weight="1.2"
                     android:text="Número inserido"
                     android:textSize="15sp"
                     android:gravity="center"
@@ -202,7 +201,7 @@
 
                 <TextView
                     android:id="@+id/numeroinicial"
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textColor="@color/branco"
@@ -232,14 +231,14 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.9"
+                    android:layout_weight="1.2"
                     android:text="Diferença para menor primo mais proximo"
                     android:textSize="13sp"
                     android:gravity="center"
                     android:textColor="@color/branco"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textColor="@color/branco"
@@ -269,14 +268,14 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.9"
+                    android:layout_weight="1.2"
                     android:text="Diferença para maior primo mais proximo"
                     android:textSize="13sp"
                     android:gravity="center"
                     android:textColor="@color/branco"/>
 
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:id="@+id/diferencamaior"
                     android:gravity="center"
