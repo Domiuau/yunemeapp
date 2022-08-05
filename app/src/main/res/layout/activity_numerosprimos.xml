@@ -65,7 +65,7 @@
                     android:textColor="@color/preto"
                     android:gravity="center"
                     android:layout_weight="1"
-                    android:textSize="15sp"
+                    android:textSize="20sp"
                     android:text="Maior"/>
 
             </LinearLayout>
@@ -77,45 +77,53 @@
                 android:layout_weight="2">
 
                 <TextView
+                    android:id="@+id/menorque"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
+                    android:textSize="13sp"
+                    android:gravity="center"
                     android:background="@drawable/valores2"
                     android:layout_margin="10dp"/>
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatTextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.3"
-                    android:text=""
+                    android:text="◄"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     android:gravity="center"/>
 
 
 
-                <androidx.appcompat.widget.AppCompatButton
+                <TextView
                     android:id="@+id/espaco1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text=""
+                    android:gravity="center"
+                    android:textSize="20sp"
                     android:layout_marginLeft="10dp"
                     android:layout_marginRight="10dp"
-                    android:textColor="@color/verdeouazulsla"
+                    android:textColor="@color/branco"
                     android:background="@drawable/valores" />
 
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.3"
-                    android:text=""
+                    android:text="►"
                     android:textSize="25sp"
                     android:textStyle="bold"
                     android:gravity="center"/>
 
                 <TextView
                     android:layout_width="0dp"
+                    android:id="@+id/maiorque"
+                    android:gravity="center"
+                    android:textSize="13sp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:background="@drawable/valores2"
@@ -141,6 +149,7 @@
                     android:text="Primo mais proximo"/>
 
                 <TextView
+                    android:id="@+id/resultado"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:textColor="@color/preto"
@@ -185,14 +194,15 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.8"
+                    android:layout_weight="0.9"
                     android:text="Número inserido"
                     android:textSize="15sp"
                     android:gravity="center"
                     android:textColor="@color/branco"/>
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:id="@+id/numeroinicial"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textColor="@color/branco"
@@ -222,19 +232,19 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:text="Diferença menor primo mais proximo"
+                    android:layout_weight="0.9"
+                    android:text="Diferença para menor primo mais proximo"
                     android:textSize="13sp"
                     android:gravity="center"
                     android:textColor="@color/branco"/>
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:textColor="@color/branco"
                     android:gravity="center"
-                    android:id="@+id/espacox1"
+                    android:id="@+id/diferencamenor"
                     android:background="@drawable/valores"/>
 
 
@@ -259,16 +269,16 @@
                 <TextView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:text="Diferença maior primo mais proximo"
+                    android:layout_weight="0.9"
+                    android:text="Diferença para maior primo mais proximo"
                     android:textSize="13sp"
                     android:gravity="center"
                     android:textColor="@color/branco"/>
 
                 <TextView
-                    android:layout_width="0dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent"
-                    android:id="@+id/espacox2"
+                    android:id="@+id/diferencamaior"
                     android:gravity="center"
                     android:textColor="@color/branco"
                     android:layout_weight="1"
