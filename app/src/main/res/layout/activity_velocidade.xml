@@ -93,7 +93,7 @@
                         android:layout_margin="20dp"
                         android:background="@drawable/botaoinverter"
                         android:scaleType="centerCrop"
-                        android:src="@drawable/ic_setinha2"/>
+                      />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:layout_width="0dp"
