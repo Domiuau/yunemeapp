@@ -187,7 +187,7 @@
 
 
                         <ImageButton
-                            android:id="@+id/numerosprimos1"
+                            android:id="@+id/numerosprimos"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_marginTop="5dp"
@@ -199,6 +199,7 @@
 
                         <ImageButton
                             android:layout_width="100dp"
+                            android:id="@+id/velocidade"
                             android:layout_height="100dp"
                             android:layout_marginTop="5dp"
                             android:background="@drawable/botaopequenoazul"
@@ -216,7 +217,7 @@
                         android:orientation="horizontal">
 
                         <TextView
-                            android:id="@+id/numeroprimo1"
+                            android:id="@+id/numerosprimos1"
                             android:layout_width="100dp"
                             android:layout_height="20dp"
                             android:gravity="center"
@@ -247,6 +248,7 @@
                             android:layout_marginLeft="20dp"
                             android:gravity="bottom"
                             android:text="Primos"
+                            android:id="@+id/numerosprimos2"
                             android:textColor="@color/preto"
                             android:textSize="25sp" />
 

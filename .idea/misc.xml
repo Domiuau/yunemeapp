@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_down.xml" value="0.2005" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_setinha1.xml" value="0.2005" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.296" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/borda.xml" value="0.3205" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/bordabackspace.xml" value="0.204" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/botaoamarelo.xml" value="0.345" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/botaoazul.xml" value="0.204" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/botaoinverter.xml" value="0.255" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/botaopequenoamarelo.xml" value="0.1245" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/botaopequenoazul.xml" value="0.1" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/botaopequenoverdeazulsla.xml" value="0.1245" />
@@ -18,6 +21,7 @@
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/ic_launcher_background.xml" value="0.296" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/ic_launcher_foreground.xml" value="0.274" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/numerosprimos.xml" value="0.1745" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/spinner.xml" value="0.2545" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/valores.xml" value="0.2835" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/valores2.xml" value="0.2835" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/valoresbhaskara.xml" value="0.207" />
@@ -29,7 +33,8 @@
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/activity_pacotes.xml" value="0.33" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/activity_teste.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/activity_testegit.xml" value="0.36666666666666664" />
-        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/bhaskara.xml" value="0.2752808988764045" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/activity_velocidade.xml" value="0.33" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/bhaskara.xml" value="0.33" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/desconto.xml" value="0.33" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/este.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/ferramentastela.xml" value="0.33" />

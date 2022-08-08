@@ -10,8 +10,8 @@ import android.widget.TextView;
 
 public class ferramentastela extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton botaobhaskara, botaodesconto,casinha,quadradoestranho,calculadora,botaonumerosprimos;
-    TextView bhaskara1,bhaskara2,desconto1,desconto2;
+    ImageButton quadradoestranho,calculadora,botaobhaskara, botaodesconto,casinha,botaonumerosprimos,botaovelocidade;
+    TextView bhaskara1,bhaskara2,desconto1,desconto2,numerosprimos1,numerosprimos2;
 
 
 
@@ -32,7 +32,10 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         casinha = findViewById(R.id.casinha);
         quadradoestranho = findViewById(R.id.quadradoestranho);
         calculadora = findViewById(R.id.calculadora);
-        botaonumerosprimos = findViewById(R.id.numerosprimos1);
+        botaonumerosprimos = findViewById(R.id.numerosprimos);
+        numerosprimos1 = findViewById(R.id.numerosprimos1);
+        numerosprimos2 = findViewById(R.id.numerosprimos2);
+        botaovelocidade = findViewById(R.id.velocidade);
 
 
 
@@ -46,6 +49,9 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         quadradoestranho.setOnClickListener(this);
         calculadora.setOnClickListener(this);
         botaonumerosprimos.setOnClickListener(this);
+        numerosprimos1.setOnClickListener(this);
+        numerosprimos2.setOnClickListener(this);
+        botaovelocidade.setOnClickListener(this);
 
 
  }
@@ -87,9 +93,16 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
                 Teclado.espaco = 1;
                 break;
 
+            case R.id.numerosprimos:
             case R.id.numerosprimos1:
+            case R.id.numerosprimos2:
                 Intent irparanumerosprimos = new Intent(this,Numerosprimos.class);
                 startActivity(irparanumerosprimos);
+                break;
+
+            case R.id.velocidade:
+                Intent irparavelocidade = new Intent(this,Velocidade.class);
+                startActivity(irparavelocidade);
                 break;
 
             default: System.exit(0);

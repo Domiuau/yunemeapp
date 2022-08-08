@@ -24,6 +24,51 @@
             android:background="@drawable/fundo3"
             android:layout_weight="1.1">
 
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/setinha" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="-20dp"
+                android:src="@drawable/icondesconto"
+                android:layout_marginBottom="13dp"
+                android:layout_weight="1"/>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="25dp"
+                    android:textSize="13sp"
+                    android:layout_marginTop="5sp"
+                    android:text="Calculadora de"
+                    android:textColor="@color/branco"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="21sp"
+                    android:text="Desconto"
+                    android:gravity="bottom"
+                    android:layout_marginTop="-14dp"
+                    android:textColor="@color/branco"/>
+
+            </LinearLayout>
+
+
+
 
         </LinearLayout>
 
