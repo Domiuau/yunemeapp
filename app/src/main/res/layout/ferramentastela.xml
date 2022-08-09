@@ -203,7 +203,8 @@
                             android:layout_height="100dp"
                             android:layout_marginTop="5dp"
                             android:background="@drawable/botaopequenoazul"
-                            android:scaleType="center"
+                            android:src="@drawable/hominho"
+                            android:scaleType="centerInside"
                             android:textSize="60sp" />
 
 
@@ -230,7 +231,7 @@
                             android:layout_height="20dp"
                             android:layout_marginLeft="65dp"
                             android:gravity="center"
-                            android:text="Em breve"
+                            android:text="Hominho"
                             android:textColor="@color/preto"
                             android:textSize="18sp" />
 

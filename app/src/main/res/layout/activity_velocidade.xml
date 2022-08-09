@@ -58,13 +58,24 @@
                     <Spinner
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
+                        android:id="@+id/spinner1"
                         android:layout_marginLeft="10dp"
-                        android:layout_marginRight="80dp"
                         android:layout_weight="1"
                         android:entries="@array/velocidade" />
 
+                    <androidx.appcompat.widget.AppCompatImageButton
+                        android:layout_width="40dp"
+                        android:id="@+id/inverter"
+                        android:layout_height="40dp"
+                        android:layout_margin="20dp"
+                        android:scaleType="centerCrop"
+                        android:background="@drawable/trocar"/>
+
+
+
                     <Spinner
                         android:layout_width="0dp"
+                        android:id="@+id/spinner2"
                         android:layout_height="match_parent"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
@@ -81,21 +92,22 @@
                     android:orientation="horizontal">
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/espaco1"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
                         android:background="@drawable/valores" />
 
-                    <androidx.appcompat.widget.AppCompatImageButton
+                    <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
                         android:layout_margin="20dp"
-                        android:background="@drawable/botaoinverter"
-                        android:scaleType="centerCrop"
-                      />
+                        android:background="@drawable/ic_setinha2"
+                        android:scaleType="centerCrop" />
 
                     <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/espaco2"
                         android:layout_width="0dp"
                         android:layout_height="match_parent"
                         android:layout_marginRight="10dp"
@@ -125,7 +137,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="0dp"
                         android:layout_weight="5"
-                        android:text="3 X 45 = 5"
+                        android:id="@+id/formula"
                         android:textSize="40sp"
                         android:gravity="center"
                         android:textColor="@color/preto"

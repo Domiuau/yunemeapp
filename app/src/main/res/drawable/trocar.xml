@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+
+            <item>
+                <shape android:shape="rectangle">
+                    <size android:width="40dp" android:height="40dp" />
+                    <solid android:color="@color/cinza"/>
+                        <corners android:radius="20dp"/>
+
+
+                </shape>
+            </item>
+            <item>
+                <selector>
+
+                    <item android:drawable="@drawable/ic_inverter"/>
+
+                </selector>
+
+            </item>
+
+        </layer-list>
+
+
+    </item>
+
+</selector>
