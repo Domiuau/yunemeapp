@@ -3,6 +3,7 @@ package com.example.myapplicationz;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -21,6 +22,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ferramentastela);
         this.getSupportActionBar().hide();
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
         botaobhaskara = findViewById(R.id.bhaskara);
@@ -57,8 +59,12 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
  }
 
     @Override
-    public void onClick(View v) {
+    public void onBackPressed(){
 
+    }
+
+    @Override
+    public void onClick(View v) {
 
         switch (v.getId()){
 
