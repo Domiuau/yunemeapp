@@ -105,15 +105,15 @@
                     android:layout_marginLeft="10dp"
                     android:layout_weight="1"
                     android:text=""
-                    android:textColor="@color/verdeouazulsla"
+                    style="@style/botaovalores"
                     android:background="@drawable/valores" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:textColor="@color/branco"
                     android:layout_weight="1"
                     android:id="@+id/espaco2"
+                    style="@style/botaovalores"
                     android:text=""
                     android:layout_marginLeft="25dp"
                     android:layout_marginRight="25dp"
@@ -122,8 +122,8 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="0dp"
                     android:id="@+id/espaco3"
-                    android:textColor="@color/branco"
                     android:text=""
+                    style="@style/botaovalores"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:layout_marginRight="10dp"
@@ -213,7 +213,7 @@
                     android:layout_weight="0.85"
                     android:background="@drawable/valores"
                     android:gravity="center"
-                    android:textColor="@color/branco" />
+                    style="@style/resultado" />
 
 
             </LinearLayout>
@@ -242,7 +242,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textColor="@color/branco"
+                    style="@style/resultado"
                     android:gravity="center"
                     android:id="@+id/espacox1"
                     android:background="@drawable/valores"/>
@@ -280,7 +280,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/espacox2"
                     android:gravity="center"
-                    android:textColor="@color/branco"
+                    style="@style/resultado"
                     android:layout_weight="1"
                     android:background="@drawable/valores"/>
 

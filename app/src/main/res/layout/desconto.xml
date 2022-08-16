@@ -107,13 +107,13 @@
                     android:layout_marginRight="25dp"
                     android:layout_weight="1"
                     android:text=""
-                    android:textColor="@color/verdeouazulsla"
+                    style="@style/botaovalores"
                     android:background="@drawable/valores" />
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:textColor="@color/branco"
+                    style="@style/botaovalores"
                     android:layout_weight="1"
                     android:id="@+id/espaco2"
                     android:text=""
@@ -182,7 +182,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textColor="@color/branco"
+                    style="@style/resultado"
                     android:gravity="center"
                     android:id="@+id/inicial"
                     android:background="@drawable/valores"/>
@@ -213,7 +213,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textColor="@color/branco"
+                    style="@style/resultado"
                     android:gravity="center"
                     android:id="@+id/aplicado"
                     android:background="@drawable/valores"/>
@@ -250,7 +250,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textColor="@color/branco"
+                    style="@style/resultado"
                     android:gravity="center"
                     android:id="@+id/diferenca"
                     android:background="@drawable/valores"/>

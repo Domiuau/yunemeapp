@@ -96,12 +96,12 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
                         espacox2.setText("sem resultados reais");
                     } else if ((a[1] * a[1]) - 4 * a[0] * a[2] == 0) {
                         espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] + "");
-                        espacox1.setText((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
-                        espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
+                        espacox1.setText(String.valueOf((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0])));
+                        espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "%.2f");
                     } else {
-                        espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] + "");
-                        espacox1.setText((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
-                        espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
+                        espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2]%.2f + "");
+                        espacox1.setText(String.valueOf((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0])));
+                        espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0])+"");
 
                     }
 

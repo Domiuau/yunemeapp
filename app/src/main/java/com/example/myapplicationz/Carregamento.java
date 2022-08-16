@@ -15,14 +15,14 @@ public class Carregamento extends AppCompatActivity {
         getSupportActionBar().hide();
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
-        try{
-            Thread.sleep(3000);
-        } catch (Exception e){
+        try {
+            Thread.sleep(2000);
+        } catch (Exception e){}
 
-        }
-
-        Intent iniciar = new Intent(this,ferramentastela.class);
+        Intent iniciar = new Intent(Carregamento.this,ferramentastela.class);
         startActivity(iniciar);
+        finish();
+
 
     }
 

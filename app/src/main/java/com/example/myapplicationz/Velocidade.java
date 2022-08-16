@@ -7,6 +7,9 @@ import androidx.appcompat.widget.AppCompatToggleButton;
 import androidx.core.app.ActivityCompat;
 
 import android.content.pm.ActivityInfo;
+
+import java.math.BigDecimal;
+
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Spinner;
@@ -17,7 +20,7 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
     TextView formula;
     Spinner spinner1, spinner2;
     AppCompatImageButton inverter;
-    float vezes;
+    BigDecimal vezes;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +69,6 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         espaco2.setOnClickListener(this);
 
 
-
         inverter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,68 +97,65 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
                 selecionarformula();
 
 
-
-
             }
         });
 
 
     }
 
-    void adicionar(Double valorconvertido,float vezes) {
-        formula.setText(espaco1.getText().toString() + " x " + vezes + " = " + (valorconvertido*vezes));
+        void adicionar(BigDecimal vezes,Double numero) {
+        BigDecimal a = new BigDecimal(numero.toString());
+        formula.setText(espaco1.getText().toString() + " x " + vezes + " = " + a.multiply(vezes).toString());
 
-        espaco2.setText(valorconvertido*vezes+"");
+        espaco2.setText(a.multiply(vezes).toString());
 
 
     }
 
-    void selecionarformula (){
+    void selecionarformula() {
         switch (spinner1.getSelectedItemPosition()) {
             case 0:
                 if (spinner2.getSelectedItemPosition() == 0) {
-                    vezes = 1;
-                } else if (spinner2.getSelectedItemPosition() == 1){
-                    vezes = 0.621f;
+                    vezes = new BigDecimal("1");
+                } else if (spinner2.getSelectedItemPosition() == 1) {
+                    vezes = new BigDecimal("0.621");
                 } else {
-                    vezes = 0.277f;
+                    vezes = new BigDecimal("0.277");
                 }
 
                 break;
-            case 1:
-                if (spinner2.getSelectedItemPosition() == 0){
-                    vezes = 1.609f;
 
-                } else if (spinner2.getSelectedItemPosition() == 1){
-                    vezes = 1;
+            case 1:
+                if (spinner2.getSelectedItemPosition() == 0) {
+                    vezes = new BigDecimal("1.609");
+
+                } else if (spinner2.getSelectedItemPosition() == 1) {
+                    vezes = new BigDecimal("1");
                 } else {
-                    vezes = 0.447f;
+                    vezes = new BigDecimal("0.447");
                 }
                 break;
 
             case 2:
-                if (spinner2.getSelectedItemPosition() == 0){
-                    vezes = 3.6f;
+                if (spinner2.getSelectedItemPosition() == 0) {
+                    vezes = new BigDecimal("3.6");
 
-                } else if (spinner2.getSelectedItemPosition() == 1){
-                    vezes = 2.236f;
+                } else if (spinner2.getSelectedItemPosition() == 1) {
+                    vezes = new BigDecimal("2.236");
                 } else {
-                    vezes = 1;
+                    vezes = new BigDecimal("1");
                 }
 
 
         }
-        adicionar(Double.parseDouble(espaco1.getText().toString()),vezes);
+        adicionar(vezes,Double.parseDouble(espaco1.getText().toString()));
     }
 
     @Override
     public void onClick(View v) {
 
 
-            espaco1.setText(Teclado.teclado(v, espaco1.getText().toString()));
-
-
-
+        espaco1.setText(Teclado.teclado(v, espaco1.getText().toString()));
 
 
     }

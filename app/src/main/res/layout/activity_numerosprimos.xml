@@ -81,6 +81,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
+                    style="@style/resultado"
                     android:textSize="13sp"
                     android:gravity="center"
                     android:background="@drawable/valores2"
@@ -103,6 +104,7 @@
                     android:layout_height="match_parent"
                     android:layout_weight="1"
                     android:text=""
+                    style="@style/botaovalores"
                     android:gravity="center"
                     android:textSize="20sp"
                     android:layout_marginLeft="10dp"
@@ -124,6 +126,7 @@
                     android:id="@+id/maiorque"
                     android:gravity="center"
                     android:textSize="13sp"
+                    style="@style/resultado"
                     android:layout_height="match_parent"
                     android:layout_weight="0.5"
                     android:background="@drawable/valores2"
@@ -204,7 +207,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textColor="@color/branco"
+                    style="@style/resultado"
                     android:gravity="center"
                     android:background="@drawable/valores"/>
 
@@ -241,7 +244,7 @@
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_weight="1"
-                    android:textColor="@color/branco"
+                    style="@style/resultado"
                     android:gravity="center"
                     android:id="@+id/diferencamenor"
                     android:background="@drawable/valores"/>
@@ -279,7 +282,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/diferencamaior"
                     android:gravity="center"
-                    android:textColor="@color/branco"
+                    style="@style/resultado"
                     android:layout_weight="1"
                     android:background="@drawable/valores"/>
 

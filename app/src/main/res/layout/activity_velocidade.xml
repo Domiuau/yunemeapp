@@ -94,6 +94,7 @@
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/espaco1"
                         android:layout_width="0dp"
+                        style="@style/botaovalores"
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
@@ -112,6 +113,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
+                        style="@style/botaovalores"
                         android:background="@drawable/valores" />
 
 
