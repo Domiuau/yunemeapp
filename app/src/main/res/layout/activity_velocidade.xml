@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/preto"
+    android:background="@color/cinzafundo"
     android:orientation="vertical"
     tools:context=".MainActivity2">
 
@@ -20,7 +20,7 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1.1"
-            android:background="@drawable/fundo3"
+            android:background="@drawable/fundopreto1"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -157,180 +157,172 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="0.1" />
-
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:orientation="vertical">
+        android:layout_weight="2.8"
+        android:background="@drawable/fundotecladopreto"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n7"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
+                android:layout_weight="1"
                 android:text="7" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n8"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
+                android:layout_weight="1"
                 android:text="8" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n9"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
+                android:layout_weight="1"
                 android:text="9" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nc"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                android:backgroundTint="@color/cinzaclaro2"
-                android:text="C"
-                android:textSize="30sp" />
+                android:layout_weight="1"
+                android:text="c" />
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n4"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
+                android:layout_weight="1"
                 android:text="4" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n5"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
+                android:layout_weight="1"
                 android:text="5" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n6"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
+                android:layout_weight="1"
                 android:text="6" />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/nbackspace"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/backspace" />
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_backspace" />
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n3"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                android:text="3" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n2"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                android:text="2" />
-
-            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n1"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
+                android:layout_weight="1"
                 android:text="1" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/nmenos"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                android:id="@+id/n2"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
+                android:layout_weight="1"
+                android:text="2" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/n3"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="3" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/nmenos"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
                 android:text="-" />
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nvirgula"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                android:gravity="center_horizontal"
+                android:layout_weight="1"
+                android:gravity="center"
                 android:text="," />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n0"
-                style="@style/botao0"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="0.70"
-                android:background="@drawable/borda"
+                android:layout_weight="2"
                 android:text="0" />
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nok"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                android:backgroundTint="@color/verdeouazulsla2"
-                android:text="OK"
-                android:textSize="30sp" />
+                android:layout_weight="1"
+                android:text="ok"
+                android:textColor="@color/verdeouazulsla" />
 
 
         </LinearLayout>

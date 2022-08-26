@@ -16,7 +16,8 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 public class Velocidade extends AppCompatActivity implements View.OnClickListener {
-    AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nbackspace, nok, nmenos, espaco1, espaco2;
+    AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2;
+    AppCompatImageButton nbackspace;
     TextView formula;
     Spinner spinner1, spinner2;
     AppCompatImageButton inverter;
@@ -76,7 +77,12 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
                 int a = spinner1.getSelectedItemPosition();
                 spinner1.setSelection(spinner2.getSelectedItemPosition());
                 spinner2.setSelection(a);
-                selecionarformula();
+                try{
+                    selecionarformula();
+
+                }catch (Exception e){
+
+                }
 
 
             }

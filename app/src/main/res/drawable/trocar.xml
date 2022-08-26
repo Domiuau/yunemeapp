@@ -14,8 +14,10 @@
             </item>
             <item>
                 <selector>
+                    <item android:drawable="@drawable/ic_vaievem"/>
 
-                    <item android:drawable="@drawable/ic_inverter"/>
+
+
 
                 </selector>
 

@@ -74,4 +74,20 @@
     </style>
 
 
+    <style name="botoesnovos">
+        <item name="android:background">@color/semcor</item>
+        <item name="android:textSize">30sp</item>
+
+        <item name="android:textColor">@color/branco</item>
+     </style>
+
+    <style name="botaocalculadora">
+        <item name="android:textColor">@color/branco</item>
+        <item name="android:textSize">25sp</item>
+        <item name="android:layout_weight">1</item>
+
+
+    </style>
+
+
 </resources>

@@ -2,6 +2,7 @@ package com.example.myapplicationz;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -9,7 +10,8 @@ import android.view.View;
 import android.widget.TextView;
 
 public class Numerosprimos extends AppCompatActivity implements View.OnClickListener {
-    AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nbackspace, nok, nmenos;
+    AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos;
+    AppCompatImageButton nbackspace;
     TextView diferencamenor, diferencamaior, numeroinicial, menorque, maiorque, espaco1, resultado;
     int me, b;
 

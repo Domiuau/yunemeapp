@@ -32,7 +32,7 @@
                 android:layout_marginBottom="10dp"
                 android:layout_marginTop="10dp"
                 android:layout_height="match_parent"
-                android:src="@drawable/calculadora"
+                android:src="@drawable/ic_calculadora"
                 android:layout_weight="0.3"/>
 
             <TextView
@@ -93,162 +93,235 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="7"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_weight="6.5"
+        android:background="@drawable/fundotecladopreto">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginTop="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_weight="1">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/c"
-                style="@style/numeros"
-                android:text="C" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="c"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/backspace"
-                style="@style/numeros"
-                android:scaleType="center"
-                android:src="@drawable/backspacecalculadora" />
-
+                android:src="@drawable/ic_backspace"
+                android:scaleType="centerCrop"
+                android:padding="20dp"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/porcentagem"
-                style="@style/operadores"
-                android:text="%" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="%"
+                android:textColor="@color/cinza"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/divisao"
-                style="@style/operadores"
-                android:text="÷"
-                android:textSize="40sp" />
+                style="@style/botaocalculadora"
+                android:layout_width="0dp"
+                android:textColor="@color/cinza"
+                android:layout_height="match_parent"
+                android:background="@color/semcor"
+                android:text="÷" />
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_weight="1">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n7"
-                style="@style/numeros"
-                android:text="7" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="7"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n8"
-                style="@style/numeros"
-                android:text="8" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="8"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n9"
-                style="@style/numeros"
-                android:text="9" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="9"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/vezes"
-                style="@style/operadores"
-                android:text="x" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="x"
+                android:textSize="20sp"
+                android:textColor="@color/cinza"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
+
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_weight="1">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n4"
-                style="@style/numeros"
-                android:text="4" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="4"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n5"
-                style="@style/numeros"
-                android:text="5" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="5"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n6"
-                style="@style/numeros"
-                android:text="6" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="6"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/menos"
-                style="@style/operadores"
-                android:text="-" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="-"
+                android:textColor="@color/cinza"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
+
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
+            android:layout_weight="1">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n1"
-                style="@style/numeros"
-                android:text="1" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="1"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n2"
-                style="@style/numeros"
-                android:text="2" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="2"
+                android:layout_weight="1"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n3"
-                style="@style/numeros"
-                android:text="3" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="3"
+                android:layout_weight="1"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/mais"
-                style="@style/operadores"
-                android:text="+" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="+"
+                android:textColor="@color/cinza"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
+
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginLeft="3dp"
-            android:layout_marginRight="3dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
+            android:layout_weight="1">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n0"
-                style="@style/numeros"
-                android:layout_weight="2"
-                android:text="0" />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="!"
+                android:layout_weight="1"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/fatorial"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text="0"
+                android:layout_weight="1"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/virgula"
-                style="@style/numeros"
-                android:gravity="center"
-                android:text="," />
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:text=","
+                android:layout_weight="1"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/iguala"
-                style="@style/botao"
-                android:backgroundTint="@color/verdeouazulsla2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
                 android:text="="
-                android:textColor="@color/branco" />
+                android:textColor="@color/verdeouazulsla"
+                android:background="@color/semcor"
+                style="@style/botaocalculadora"/>
+
+
 
         </LinearLayout>
+
+
+
+
+
 
 
     </LinearLayout>

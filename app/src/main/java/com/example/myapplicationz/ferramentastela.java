@@ -11,10 +11,8 @@ import android.widget.TextView;
 
 public class ferramentastela extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton quadradoestranho,calculadora,botaobhaskara, botaodesconto,casinha,botaonumerosprimos,botaovelocidade;
-    TextView bhaskara1,bhaskara2,desconto1,desconto2,numerosprimos1,numerosprimos2;
-
-
+    ImageButton quadradoestranho, calculadora, botaobhaskara, botaodesconto, casinha, botaonumerosprimos, botaovelocidade;
+    TextView bhaskara1, desconto1, numerosprimos1, velocidade1;
 
 
     @Override
@@ -27,49 +25,44 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
         botaobhaskara = findViewById(R.id.bhaskara);
         botaodesconto = findViewById(R.id.desconto);
-        bhaskara1 = findViewById(R.id.bhaskara1);
-        bhaskara2 = findViewById(R.id.bhaskara2);
-        desconto1 = findViewById(R.id.desconto1);
-        desconto2 = findViewById(R.id.desconto2);
         casinha = findViewById(R.id.casinha);
         quadradoestranho = findViewById(R.id.quadradoestranho);
         calculadora = findViewById(R.id.calculadora);
         botaonumerosprimos = findViewById(R.id.numerosprimos);
-        numerosprimos1 = findViewById(R.id.numerosprimos1);
-        numerosprimos2 = findViewById(R.id.numerosprimos2);
         botaovelocidade = findViewById(R.id.velocidade);
-
+        bhaskara1 = findViewById(R.id.bhaskara1);
+        desconto1 = findViewById(R.id.desconto1);
+        numerosprimos1 = findViewById(R.id.numerosprimos1);
+        velocidade1 = findViewById(R.id.velocidade1);
 
 
         botaobhaskara.setOnClickListener(this);
         botaodesconto.setOnClickListener(this);
-        bhaskara1.setOnClickListener(this);
-        bhaskara2.setOnClickListener(this);
-        desconto1.setOnClickListener(this);
-        desconto2.setOnClickListener(this);
         casinha.setOnClickListener(this);
         quadradoestranho.setOnClickListener(this);
         calculadora.setOnClickListener(this);
         botaonumerosprimos.setOnClickListener(this);
-        numerosprimos1.setOnClickListener(this);
-        numerosprimos2.setOnClickListener(this);
         botaovelocidade.setOnClickListener(this);
+        bhaskara1.setOnClickListener(this);
+        desconto1.setOnClickListener(this);
+        numerosprimos1.setOnClickListener(this);
+        velocidade1.setOnClickListener(this);
 
 
- }
+    }
 
     @Override
-    public void onBackPressed(){
+    public void onBackPressed() {
 
     }
 
     @Override
     public void onClick(View v) {
 
-        switch (v.getId()){
+        switch (v.getId()) {
 
             case R.id.casinha:
-                Intent irparacasinha = new Intent(this,ferramentastela.class);
+                Intent irparacasinha = new Intent(this, ferramentastela.class);
                 startActivity(irparacasinha);
                 break;
 
@@ -85,7 +78,6 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
             case R.id.bhaskara:
             case R.id.bhaskara1:
-            case R.id.bhaskara2:
                 Intent irparabhaskara = new Intent(this, Bhaskara.class);
                 startActivity(irparabhaskara);
                 Teclado.espaco = 1;
@@ -93,7 +85,6 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
             case R.id.desconto:
             case R.id.desconto1:
-            case R.id.desconto2:
                 Intent irparadesconto = new Intent(this, Desconto.class);
                 startActivity(irparadesconto);
                 Teclado.espaco = 1;
@@ -101,29 +92,25 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
             case R.id.numerosprimos:
             case R.id.numerosprimos1:
-            case R.id.numerosprimos2:
-                Intent irparanumerosprimos = new Intent(this,Numerosprimos.class);
+                Intent irparanumerosprimos = new Intent(this, Numerosprimos.class);
                 startActivity(irparanumerosprimos);
+                Teclado.espaco = 1;
                 break;
 
             case R.id.velocidade:
-                Intent irparavelocidade = new Intent(this,Velocidade.class);
+            case R.id.velocidade1:
+                Intent irparavelocidade = new Intent(this, Velocidade.class);
                 startActivity(irparavelocidade);
                 break;
 
-            default: System.exit(0);
+            default:
+                break;
         }
-
-
-
-
-
-
-        }
-
-
 
 
     }
+
+
+}
 
 

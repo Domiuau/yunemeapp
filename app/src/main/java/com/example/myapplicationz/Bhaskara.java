@@ -2,6 +2,7 @@ package com.example.myapplicationz;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -14,7 +15,8 @@ import android.widget.Toast;
 
 public class Bhaskara extends AppCompatActivity implements View.OnClickListener {
 
-    AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nbackspace, nok, nmenos, espaco1, espaco2, espaco3;
+    AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2, espaco3;
+    AppCompatImageButton nbackspace;
     TextView espacox1, espacox2, espacodelta;
 
     @Override

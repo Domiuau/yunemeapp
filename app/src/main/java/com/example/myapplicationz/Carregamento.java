@@ -16,7 +16,7 @@ public class Carregamento extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         try {
-            Thread.sleep(2000);
+            Thread.sleep(200);
         } catch (Exception e){}
 
         Intent iniciar = new Intent(Carregamento.this,ferramentastela.class);
