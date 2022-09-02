@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/verdeouazulsla"
+    android:layout_height="match_parent"
+    tools:context=".inicial">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="30dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/yn_branc"
+            android:scaleType="centerCrop"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:paddingBottom="10dp"
+        android:orientation="vertical"
+        android:background="@drawable/fundobranco"
+        android:layout_weight="1.2">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/criarconta"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Criar conta"
+            android:layout_marginBottom="30dp"
+            android:textColor="@color/verdeouazulsla"
+            android:background="@drawable/botaosemcentro"/>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/login"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:text="Log in"
+            android:textColor="@color/branco"
+
+            android:background="@drawable/botaocomcentro"/>
+
+        <TextView
+            android:id="@+id/visitante"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:textSize="15sp"
+            android:layout_marginTop="25dp"
+            android:text="Entrar como visitante"
+            android:gravity="center"
+            android:textColor="@color/verdeouazulsla" />
+
+
+
+
+
+
+
+
+
+
+    </LinearLayout>
+
+
+
+
+
+
+
+
+</LinearLayout>

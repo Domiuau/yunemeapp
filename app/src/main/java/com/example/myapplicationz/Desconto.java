@@ -15,7 +15,6 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.desconto);
-        this.getSupportActionBar().hide();
 
         n1 = findViewById(R.id.n1);
         n2 = findViewById(R.id.n2);

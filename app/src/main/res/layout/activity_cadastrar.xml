@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:background="@color/verdeouazulsla"
+    android:layout_height="match_parent"
+    tools:context=".login">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:padding="30dp"
+        android:layout_weight="1">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@drawable/yn_branc"
+            android:scaleType="centerCrop"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:background="@drawable/fundobranco"
+        android:layout_weight="1.8">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="horizontal"
+            android:layout_weight="0.8"
+            android:layout_height="0dp">
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:layout_width="80dp"
+                android:layout_height="match_parent"
+                android:background="@drawable/ic_setinhaverdeazulsla"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="Criar conta"
+                android:textColor="@color/verdeouazulsla"
+                android:textSize="30sp"
+                android:layout_marginRight="80dp"
+                android:gravity="center"/>
+
+
+
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:orientation="vertical"
+            android:paddingRight="50dp"
+            android:paddingLeft="50dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:layout_weight="4.5"
+            android:layout_height="0dp">
+
+            <EditText
+                android:id="@+id/email"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Email"
+                android:layout_marginBottom="20dp"/>
+
+            <EditText
+                android:id="@+id/senha"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginBottom="20dp"
+                android:hint="Senha"/>
+
+            <EditText
+                android:id="@+id/confirmarsenha"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:hint="Confirmar Senha"
+                android:layout_marginBottom="35dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/cadastrar"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:background="@drawable/botaosemcentro"
+                android:text="Cadastrar"
+                android:textSize="18sp"
+                android:textColor="@color/verdeouazulsla"/>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </LinearLayout>
+
+</LinearLayout>

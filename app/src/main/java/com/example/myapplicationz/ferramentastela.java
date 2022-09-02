@@ -19,7 +19,6 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.ferramentastela);
-        this.getSupportActionBar().hide();
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
 
@@ -49,6 +48,9 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         velocidade1.setOnClickListener(this);
 
 
+
+
+
     }
 
     @Override
@@ -58,6 +60,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
     @Override
     public void onClick(View v) {
+        inicial trocar = new inicial();
 
         switch (v.getId()) {
 

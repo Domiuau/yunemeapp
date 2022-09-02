@@ -105,17 +105,17 @@
                             android:layout_height="100dp"
                             android:layout_marginTop="5dp"
                             android:layout_marginRight="65dp"
+                            android:scaleType="center"
                             android:background="@drawable/botaopequenoverdeazulsla"
-                            android:src="@drawable/bhaskaraicon" />
+                            android:src="@drawable/ic_bhaskara" />
 
                         <ImageButton
                             android:id="@+id/desconto"
                             android:layout_width="100dp"
                             android:layout_height="100dp"
                             android:layout_marginTop="5dp"
-                            android:src="@drawable/descontoicon"
+                            android:src="@drawable/ic_desconto"
                             android:background="@drawable/botaoamarelo"
-                            android:scaleType="center"
                             android:textSize="60sp" />
 
 
