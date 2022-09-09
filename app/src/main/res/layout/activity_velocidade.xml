@@ -20,9 +20,35 @@
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="1.1"
-            android:background="@drawable/fundopreto1"
+            android:background="@drawable/fundo3"
             android:gravity="center"
             android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/voltar"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/setinha" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Velocidade"
+                android:gravity="center"
+                android:textColor="@color/branco"
+                android:textSize="25dp"/>
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_interrogacao" />
 
 
         </LinearLayout>
@@ -98,7 +124,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:background="@drawable/valores" />
+                        android:background="@drawable/valorselecionado" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -114,7 +140,7 @@
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
                         style="@style/botaovalores"
-                        android:background="@drawable/valores" />
+                        android:background="@drawable/valoresnovo" />
 
 
                 </LinearLayout>

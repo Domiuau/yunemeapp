@@ -3,6 +3,8 @@ package com.example.myapplicationz;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.AppCompatImageView;
+import androidx.appcompat.widget.AppCompatTextView;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -18,6 +20,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2, espaco3;
     AppCompatImageButton nbackspace;
     TextView espacox1, espacox2, espacodelta;
+    AppCompatImageView voltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,6 +49,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espacox1 = findViewById(R.id.espacox1);
         espacox2 = findViewById(R.id.espacox2);
         espacodelta = findViewById(R.id.espacodelta);
+        voltar = findViewById(R.id.voltar);
 
         n1.setOnClickListener(this);
         n2.setOnClickListener(this);
@@ -63,6 +67,12 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
         espaco3.setOnClickListener(this);
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         nc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -146,6 +156,13 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
 
         });
 
+
+    }
+
+    void limpar (){
+        espaco1.setBackgroundResource(R.drawable.valoresnovo);
+        espaco2.setBackgroundResource(R.drawable.valoresnovo);
+        espaco3.setBackgroundResource(R.drawable.valoresnovo);
     }
 
     @Override
@@ -162,14 +179,21 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         if (Teclado.espaco(bhaskara) == 2) {
 
             espaco2.setText(Teclado.teclado(bhaskara, espaco2.getText().toString()));
+            limpar();
+            espaco2.setBackgroundResource(R.drawable.valorselecionado);
 
         } else if (Teclado.espaco(bhaskara) == 3) {
 
             espaco3.setText(Teclado.teclado(bhaskara, espaco3.getText().toString()));
+            limpar();
+            espaco3.setBackgroundResource(R.drawable.valorselecionado);
 
         } else {
 
+
             espaco1.setText(Teclado.teclado(bhaskara, espaco1.getText().toString()));
+            limpar();
+            espaco1.setBackgroundResource(R.drawable.valorselecionado);
 
         }
 

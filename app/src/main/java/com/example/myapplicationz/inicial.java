@@ -33,6 +33,7 @@ public class inicial extends AppCompatActivity implements View.OnClickListener {
         visitante.setOnClickListener(this);
 
 
+
     }
 
     @Override

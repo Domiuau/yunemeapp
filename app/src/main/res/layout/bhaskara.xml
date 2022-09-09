@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/cinzafundo"
+    android:orientation="vertical"
     tools:context=".MainActivity2">
 
 
@@ -13,18 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3.4"
-        android:orientation="vertical"
-        android:background="@drawable/fundoteclado">
+        android:background="@drawable/fundoteclado"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:gravity="center"
-            android:orientation="horizontal"
+            android:layout_weight="1.1"
             android:background="@drawable/fundo3"
-            android:layout_weight="1.1">
+            android:gravity="center"
+            android:orientation="horizontal">
 
-            <ImageView
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/voltar"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="13dp"
@@ -32,13 +33,22 @@
                 android:layout_weight="1"
                 android:src="@drawable/setinha" />
 
-            <LinearLayout
+            <TextView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="3"
+                android:layout_weight="2"
+                android:text="Bhaskara"
                 android:gravity="center"
-                android:orientation="vertical"/>
+                android:textColor="@color/branco"
+                android:textSize="25dp"/>
 
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_interrogacao" />
 
 
         </LinearLayout>
@@ -46,61 +56,57 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_weight="3">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textSize="20sp"
-                    android:textColor="@color/preto"
-                    android:text="Insira os valores"/>
-
-            </LinearLayout>
+            android:layout_weight="6"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
-                android:layout_weight="2">
+                android:layout_weight="1.23">
+
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/espaco1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
+                    android:layout_marginTop="25dp"
                     android:layout_marginLeft="10dp"
-                    android:layout_weight="1"
-                    android:text=""
-                    style="@style/botaovalores"
-                    android:background="@drawable/valores" />
+                    android:layout_marginRight="15dp"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="@color/branco"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeMaxTextSize="25dp"
+                    android:background="@drawable/valorselecionado"
+                    android:layout_weight="1"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
                     android:id="@+id/espaco2"
-                    style="@style/botaovalores"
-                    android:text=""
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:background="@drawable/valores"/>
+                    android:autoSizeTextType="uniform"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginRight="15dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:textColor="@color/branco"
+                    android:autoSizeMaxTextSize="25dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/valoresnovo"
+                    android:layout_weight="1"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="0dp"
                     android:id="@+id/espaco3"
-                    android:text=""
-                    style="@style/botaovalores"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="15dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeMaxTextSize="25dp"
+                    android:textColor="@color/branco"
                     android:layout_marginRight="10dp"
-                    android:background="@drawable/valores"/>
-
+                    android:layout_height="match_parent"
+                    android:background="@drawable/valoresnovo"
+                    android:layout_weight="1"/>
 
 
             </LinearLayout>
@@ -108,179 +114,150 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:orientation="vertical"
+                android:layout_weight="3">
 
-                <TextView
-                    android:layout_width="0dp"
+               <LinearLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="wrap_content">
+
+                   <TextView
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                       android:text="A"
+                       android:textColor="@color/preto"
+                       android:gravity="center"
+                       android:textSize="20sp"/>
+
+                   <TextView
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                       android:text="B"
+                       android:textColor="@color/preto"
+                       android:gravity="center"
+                       android:textSize="20sp"/>
+
+                   <TextView
+                       android:layout_width="0dp"
+                       android:layout_height="wrap_content"
+                       android:layout_weight="1"
+                       android:text="C"
+                       android:textColor="@color/preto"
+                       android:gravity="center"
+                       android:textSize="20sp"/>
+
+               </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:textColor="@color/preto"
-                    android:gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:textSize="20sp"
-                    android:text="Valor A"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textSize="20sp"
-                    android:textColor="@color/preto"
-                    android:gravity="center_horizontal"
-                    android:text="Valor B"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/preto"
-                    android:textSize="20sp"
-                    android:layout_weight="1"
-                    android:text="Valor C"/>
-
-
-            </LinearLayout>
-
-
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:padding="10dp"
-            android:background="@drawable/fundo2"
-            android:layout_weight="3">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_marginRight="80dp"
-                android:layout_marginLeft="80dp"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="40dp"
-                    android:layout_height="40dp"
-                    android:layout_marginRight="-10dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/deltaicon"
-                    android:scaleType="center"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.5"
-                    android:text="Delta"
-                    android:textSize="20sp"
                     android:gravity="center"
-                    android:textColor="@color/branco"/>
-
-                <TextView
-                    android:id="@+id/espacodelta"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.85"
-                    android:background="@drawable/valores"
-                    android:gravity="center"
-                    style="@style/resultado" />
+                    android:orientation="vertical">
 
 
-            </LinearLayout>
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/deltapequeno" />
 
+                    <TextView
+                        android:id="@+id/espacodelta"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:textColor="@color/branco"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="10dp"
+                        android:autoSizeMaxTextSize="35dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/valoresnovo"/>
 
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="80dp"
-                android:orientation="horizontal">
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="35dp"
+                            android:textColor="@color/preto"
+                            android:textSize="20sp"
+                            android:layout_marginRight="50dp"
+                            android:gravity="center"
+                            android:text="X1"/>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:text="X1"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:textColor="@color/branco"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    style="@style/resultado"
-                    android:gravity="center"
-                    android:id="@+id/espacox1"
-                    android:background="@drawable/valores"/>
-
-
-
+                        <TextView
+                            android:layout_width="90dp"
+                            android:layout_height="35dp"
+                            android:textColor="@color/preto"
+                            android:gravity="center"
+                            android:textSize="20sp"
+                            android:text="X2"/>
 
 
 
 
 
-            </LinearLayout>
+                    </LinearLayout>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="80dp"
-                android:orientation="horizontal">
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:text="X2"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:textColor="@color/branco"/>
+                        <TextView
+                            android:id="@+id/espacox1"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:layout_width="110dp"
+                            android:layout_marginRight="50dp"
+                            android:layout_height="35dp"
+                            android:gravity="center"
+                            android:autoSizeTextType="uniform"
+                            android:autoSizeMinTextSize="10dp"
+                            android:autoSizeMaxTextSize="30dp"
+                            android:textColor="@color/branco"
+                            android:background="@drawable/valoresnovo"/>
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:id="@+id/espacox2"
-                    android:gravity="center"
-                    style="@style/resultado"
-                    android:layout_weight="1"
-                    android:background="@drawable/valores"/>
+                        <TextView
+                            android:id="@+id/espacox2"
+                            android:layout_width="110dp"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:textColor="@color/branco"
+                            android:autoSizeTextType="uniform"
+                            android:autoSizeMinTextSize="10dp"
+                            android:autoSizeMaxTextSize="30dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/valoresnovo"/>
 
 
 
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
 
 
 
 
 
             </LinearLayout>
-
-
-
-
-
-
 
 
         </LinearLayout>
 
 
-
-
-
-
-   </LinearLayout>
-
-
+    </LinearLayout>
 
 
     <LinearLayout
@@ -453,11 +430,6 @@
         </LinearLayout>
 
     </LinearLayout>
-
-
-
-
-
 
 
 </LinearLayout>

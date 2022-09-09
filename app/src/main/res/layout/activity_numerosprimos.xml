@@ -12,7 +12,6 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:padding="0dp"
         android:layout_weight="3.4"
         android:background="@drawable/fundoteclado"
         android:orientation="vertical">
@@ -25,282 +24,193 @@
             android:gravity="center"
             android:orientation="horizontal">
 
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="0dp"
+                android:id="@+id/voltar"
+                android:layout_height="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/setinha" />
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center"
+                android:text="Números primos"
+                android:textColor="@color/branco"
+                android:textSize="23dp" />
+
+            <ImageView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginTop="13dp"
+                android:layout_marginBottom="13dp"
+                android:layout_weight="1"
+                android:src="@drawable/ic_interrogacao" />
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_weight="3"
-            android:paddingTop="15dp"
-            android:paddingLeft="20dp"
-            android:paddingRight="20dp"
+            android:layout_weight="6"
             android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Menor"
-                    android:textColor="@color/preto"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2.7"
-                    android:gravity="center"
-                    android:text="Insira um número"
-                    android:textColor="@color/preto"
-                    android:textSize="20sp" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="Maior"
-                    android:textColor="@color/preto"
-                    android:textSize="20sp" />
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="2"
+                android:layout_weight="1.3"
                 android:orientation="horizontal">
 
-                <TextView
+
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/menorque"
-                    style="@style/resultado"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/valores2"
-                    android:gravity="center"
-                    android:textSize="13sp" />
-
-                <ImageView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.3"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_menorque"
-                    android:scaleType="centerCrop"
-                    android:gravity="center" />
-
-
-                <TextView
-                    android:id="@+id/espaco1"
-                    style="@style/botaovalores"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="@drawable/valores"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/branco"
-                    android:textSize="20sp" />
+                    android:layout_marginTop="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="0.7"
+                    android:autoSizeMaxTextSize="25dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/valoresnovo"
+                    android:backgroundTint="@color/cinzaclaro2"
+                    android:textColor="@color/branco" />
 
                 <ImageView
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_weight="0.3"
-                    android:gravity="center"
-                    android:padding="8dp"
-                    android:scaleType="centerCrop"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="0.4"
+                    android:src="@drawable/ic_menorque" />
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/espaco1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="25dp"
+                    android:layout_weight="1"
+                    android:autoSizeMaxTextSize="25dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/valorselecionado"
+                    android:textColor="@color/branco" />
+
+                <ImageView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginTop="35dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="0.4"
                     android:src="@drawable/ic_maiorque" />
 
-                <TextView
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/maiorque"
-                    style="@style/resultado"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_margin="10dp"
-                    android:layout_weight="0.5"
-                    android:background="@drawable/valores2"
-                    android:gravity="center"
-                    android:textSize="13sp" />
+                    android:layout_marginTop="35dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_weight="0.7"
+                    android:autoSizeMaxTextSize="25dp"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeTextType="uniform"
+                    android:background="@drawable/valoresnovo"
+                    android:backgroundTint="@color/cinzaclaro2"
+                    android:textColor="@color/branco" />
 
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
+                android:gravity="center_horizontal"
                 android:layout_height="0dp"
-                android:layout_weight="1"
-                android:orientation="horizontal">
+                android:layout_weight="3"
+                android:orientation="vertical">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="-5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="Mais proximo"
-                    android:textColor="@color/preto"
-                    android:textSize="15sp" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:id="@+id/resultado"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="2.7"
-                    android:gravity="center"
-                    android:textColor="@color/preto"
-                    android:textSize="20sp" />
+                    <TextView
+                        android:id="@+id/resultado"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/preto"
+                        android:textSize="20sp" />
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="-5dp"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="Mais proximo"
-                    android:textColor="@color/preto"
-                    android:textSize="15sp" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/valoresnovo"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:text="Diferença para o maior primo mais proximo"
+                        android:textColor="@color/branco" />
+
+                    <TextView
+                        android:id="@+id/diferencamaior"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/valoresnovo"
+                        android:backgroundTint="@color/cinzaclaro2"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/branco" />
+
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/valoresnovo"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingLeft="3dp"
+                        android:paddingRight="3dp"
+                        android:text="Diferença para o maior primo mais proximo"
+                        android:textColor="@color/branco" />
+
+                    <TextView
+                        android:id="@+id/diferencamenor"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/valoresnovo"
+                        android:backgroundTint="@color/cinzaclaro2"
+                        android:gravity="center"
+                        android:text=""
+                        android:textColor="@color/branco" />
+
+
+                </LinearLayout>
 
 
             </LinearLayout>
 
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="3"
-            android:paddingTop="20dp"
-            android:paddingLeft="30dp"
-            android:paddingRight="30dp"
-            android:background="@drawable/fundo4"
-            android:gravity="center"
-            android:orientation="vertical">
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:orientation="horizontal"
-                android:layout_weight="3">
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="0dp"
-                    android:id="@+id/numeroinicial"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textColor="@color/branco"
-                    android:background="@drawable/valores2"/>
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="0dp"
-                    android:textColor="@color/branco"
-                    android:id="@+id/diferencamenor"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:background="@drawable/valores2"/>
-
-                <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="0dp"
-                    android:textColor="@color/branco"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:id="@+id/diferencamaior"
-                    android:background="@drawable/valores2"/>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:orientation="horizontal"
-                android:layout_weight="3">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
-                    android:text="Número inicial"
-                    android:textColor="@color/preto"
-                    android:layout_weight="1"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:gravity="center_horizontal"
-                    android:text="Diferença para menor"
-
-                    android:textColor="@color/preto" />
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:gravity="center_horizontal"
-                    android:text="Diferença para maior"
-                    android:textColor="@color/preto"
-                    android:layout_gravity="center_horizontal"
-                    android:layout_weight="1"/>
-
-
-
-
-
-
-
-
-
-
-
-
-            </LinearLayout>
-
-
-
-
-
-        </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     </LinearLayout>
@@ -475,18 +385,10 @@
 
         </LinearLayout>
 
-
     </LinearLayout>
 
+
 </LinearLayout>
-
-
-
-
-
-
-
-
 
 
 

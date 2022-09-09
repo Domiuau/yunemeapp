@@ -3,6 +3,7 @@ package com.example.myapplicationz;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatToggleButton;
 import androidx.core.app.ActivityCompat;
 
@@ -22,6 +23,7 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
     Spinner spinner1, spinner2;
     AppCompatImageButton inverter;
     BigDecimal vezes;
+    AppCompatImageView voltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,6 +52,7 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         spinner1 = findViewById(R.id.spinner1);
         spinner2 = findViewById(R.id.spinner2);
         inverter = findViewById(R.id.inverter);
+        voltar = findViewById(R.id.voltar);
 
 
         n1.setOnClickListener(this);
@@ -67,8 +70,12 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         nmenos.setOnClickListener(this);
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
-
-
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         inverter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

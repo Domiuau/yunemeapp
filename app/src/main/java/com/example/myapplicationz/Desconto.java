@@ -2,14 +2,18 @@ package com.example.myapplicationz;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.AppCompatImageView;
 
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
 public class Desconto extends AppCompatActivity implements View.OnClickListener {
-    AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nbackspace, nok, nmenos, espaco1, espaco2;
+    AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2;
+    AppCompatImageButton nbackspace;
     TextView inicial, novo, diferenca;
+    AppCompatImageView voltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,6 +40,7 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
         inicial = findViewById(R.id.inicial);
         novo = findViewById(R.id.aplicado);
         diferenca = findViewById(R.id.diferenca);
+        voltar = findViewById(R.id.voltar);
 
 
         n1.setOnClickListener(this);
@@ -55,6 +60,12 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
         espaco2.setOnClickListener(this);
         inicial.setOnClickListener(this);
         novo.setOnClickListener(this);
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         diferenca.setOnClickListener(this);
         nc.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,12 +85,12 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
                 try {
 
                     Double[] a = {Double.parseDouble(espaco1.getText().toString()),
-                            Double.parseDouble(espaco2.getText().toString())
+                            Double.parseDouble(espaco2.getText().toString().substring(0,espaco2.getText().length()-1))
                     };
 
                     inicial.setText(a[0].toString());
                     novo.setText(String.valueOf(a[0] - (a[0] / 100) * a[1]));
-                    diferenca.setText(String.valueOf(((a[0] / 100) * a[1]) * -1));
+                    diferenca.setText(String.valueOf((a[0] / 100) * a[1]));
                 } catch (NumberFormatException exception){
                     inicial.setText("Preencha todos os campos");
                     novo.setText("Preencha todos os campos");
@@ -90,6 +101,7 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
                 }
             }
         });
+
 
     }
 
@@ -107,11 +119,45 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
 
         if (Teclado.espaco(desconto) == 2) {
 
-            espaco2.setText(Teclado.teclado(desconto, espaco2.getText().toString()));
+           if(
+            desconto.getId() != R.id.espaco1 && desconto.getId() != R.id.espaco2){
+
+               if(!espaco2.getText().toString().contains("%")){
+                   espaco2.setText(Teclado.teclado(desconto, espaco2.getText().toString())+"%");
+               } else {
+                   String a = "";
+                   String[] z = espaco2.getText().toString().split("");
+                   for (int i = 0;i< z.length-1;++i){
+                       a += z[i];
+
+
+                   }
+                   espaco2.setText(Teclado.teclado(desconto, a)+"%");
+
+
+               }
+
+           }
+
+           if (espaco2.getText().toString().equals("%")){
+               espaco2.setText("");
+           }
+
+           espaco2.setBackgroundResource(R.drawable.valorselecionado);
+           espaco1.setBackgroundResource(R.drawable.valoresnovo);
+
+
+
+
+
+
 
         } else {
 
             espaco1.setText(Teclado.teclado(desconto, espaco1.getText().toString()));
+            espaco1.setBackgroundResource(R.drawable.valorselecionado);
+            espaco2.setBackgroundResource(R.drawable.valoresnovo);
+
 
         }
 

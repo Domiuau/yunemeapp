@@ -3,6 +3,7 @@ package com.example.myapplicationz;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.AppCompatImageView;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -13,7 +14,9 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos;
     AppCompatImageButton nbackspace;
     TextView diferencamenor, diferencamaior, numeroinicial, menorque, maiorque, espaco1, resultado;
+    AppCompatImageView voltar;
     int me, b;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,10 +42,10 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
         espaco1 = findViewById(R.id.espaco1);
         diferencamenor = findViewById(R.id.diferencamenor);
         diferencamaior = findViewById(R.id.diferencamaior);
-        numeroinicial = findViewById(R.id.numeroinicial);
         menorque = findViewById(R.id.menorque);
         maiorque = findViewById(R.id.maiorque);
         resultado = findViewById(R.id.resultado);
+        voltar = findViewById(R.id.voltar);
 
 
         n1.setOnClickListener(this);
@@ -59,6 +62,12 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
         nbackspace.setOnClickListener(this);
         nmenos.setOnClickListener(this);
         espaco1.setOnClickListener(this);
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
         nc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -90,15 +99,14 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
                     me--;
                 }
                 menorque.setText(me - 1 + "");
-                diferencamenor.setText(((Integer.parseInt(espaco1.getText().toString()) - (me - 1)) * -1 + ""));
+                diferencamenor.setText(" " + ((Integer.parseInt(espaco1.getText().toString()) - (me - 1)) * -1 + " "));
                 me = Integer.parseInt(espaco1.getText().toString());
 
                 while (!primo(me + 1)) {
                     me++;
                 }
                 maiorque.setText(me + 1 + "");
-                numeroinicial.setText(espaco1.getText().toString());
-                diferencamaior.setText((me + 1) - Integer.parseInt(espaco1.getText().toString())+"");
+                diferencamaior.setText(" " + ((me + 1) - Integer.parseInt(espaco1.getText().toString())) + " ");
             }
         });
 

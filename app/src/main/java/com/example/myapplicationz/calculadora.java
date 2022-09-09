@@ -3,21 +3,24 @@ package com.example.myapplicationz;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import java.math.BigDecimal;
 
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class calculadora extends AppCompatActivity implements View.OnClickListener {
 
-    AppCompatButton c, divisao, porcentagem, n1, n2, n3, n4, n5, n6, n7, n8, n9, vezes, menos, mais, iguala, virgula, n0;
+    AppCompatButton c, divisao, porcentagem, n1, n2, n3, n4, n5, n6, n7, n8, n9, vezes, menos, mais, iguala, virgula, n0,nfatorial;
     AppCompatImageButton backspace;
     AppCompatTextView expressao, resultado;
+    AppCompatImageView voltar;
     String[] z, q;
     Double ultimonumero;
 
@@ -48,6 +51,8 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
         backspace = findViewById(R.id.backspace);
         expressao = findViewById(R.id.expressao);
         resultado = findViewById(R.id.resultado);
+        nfatorial = findViewById(R.id.nfatorial);
+        voltar = findViewById(R.id.voltar);
 
         c.setOnClickListener(this);
         divisao.setOnClickListener(this);
@@ -68,6 +73,13 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
         iguala.setOnClickListener(this);
         virgula.setOnClickListener(this);
         backspace.setOnClickListener(this);
+        nfatorial.setOnClickListener(this);
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     public void adicionar(String valor) {
@@ -267,6 +279,52 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
                 } catch (Exception e) {
 
                 }
+
+                break;
+
+            case R.id.nfatorial:
+                separarporoperador();
+
+                try {
+                    BigDecimal ultimo;
+                    BigDecimal fatorialresultado = new BigDecimal((q[q.length - 1]));
+
+
+                    if (expressao.getText().toString().contains("+") ||
+                            expressao.getText().toString().contains("-") ||
+                            expressao.getText().toString().contains("/") ||
+                            expressao.getText().toString().contains("*")) {
+
+                        while (!expressao.getText().toString().endsWith("*") &&
+                                !expressao.getText().toString().endsWith("-") &&
+                                !expressao.getText().toString().endsWith("+") &&
+                                !expressao.getText().toString().endsWith("/")) {
+                            backspace();
+                        }
+
+
+                    } else {
+                        expressao.setText("");
+
+                    }
+
+                    for (int i = Integer.parseInt((q[q.length - 1]))-1;i>1;i--){
+                        ultimo = new BigDecimal(i);
+                        fatorialresultado = fatorialresultado.multiply(ultimo);
+
+
+                    }
+
+                    expressao.append(fatorialresultado+"");
+                    System.out.println(fatorialresultado+"");
+                } catch (Exception e) {}
+
+
+
+
+
+
+                break;
 
 
         }

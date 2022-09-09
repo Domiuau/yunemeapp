@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/cinzafundo"
     android:orientation="vertical"
-    android:background="@color/preto"
     tools:context=".MainActivity2">
 
 
@@ -13,18 +13,19 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3.4"
-        android:orientation="vertical"
-        android:background="@drawable/fundoteclado">
+        android:background="@drawable/fundoteclado"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:gravity="center"
-            android:orientation="horizontal"
+            android:layout_weight="1.1"
             android:background="@drawable/fundo3"
-            android:layout_weight="1.1">
+            android:gravity="center"
+            android:orientation="horizontal">
 
             <ImageView
+                android:id="@+id/voltar"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="13dp"
@@ -32,41 +33,22 @@
                 android:layout_weight="1"
                 android:src="@drawable/setinha" />
 
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:text="Desconto"
+                android:gravity="center"
+                android:textColor="@color/branco"
+                android:textSize="25dp"/>
+
             <ImageView
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_marginTop="13dp"
-                android:layout_marginRight="-20dp"
                 android:layout_marginBottom="13dp"
-                android:layout_weight="1"/>
-
-            <LinearLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:gravity="center"
-                android:orientation="vertical">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="25dp"
-                    android:textSize="13sp"
-                    android:layout_marginTop="5sp"
-                    android:text="Calculadora de"
-                    android:textColor="@color/branco"/>
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="30dp"
-                    android:textSize="21sp"
-                    android:text="Desconto"
-                    android:gravity="bottom"
-                    android:layout_marginTop="-14dp"
-                    android:textColor="@color/branco"/>
-
-            </LinearLayout>
-
-
+                android:layout_weight="1"
+                android:src="@drawable/ic_interrogacao" />
 
 
         </LinearLayout>
@@ -74,391 +56,362 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:orientation="vertical"
-            android:layout_weight="3">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1">
-
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:textSize="20sp"
-                    android:textColor="@color/preto"
-                    android:text="Insira os valores"/>
-
-            </LinearLayout>
+            android:layout_weight="6"
+            android:orientation="vertical">
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
                 android:orientation="horizontal"
-                android:layout_weight="2">
+                android:layout_weight="1.2">
+
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/espaco1"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:layout_weight="1"
-                    android:text=""
-                    style="@style/botaovalores"
-                    android:background="@drawable/valores" />
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginRight="15dp"
+                    android:autoSizeTextType="uniform"
+                    android:textColor="@color/branco"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeMaxTextSize="25dp"
+                    android:background="@drawable/valorselecionado"
+                    android:layout_weight="1"/>
+
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    style="@style/botaovalores"
-                    android:layout_weight="1"
                     android:id="@+id/espaco2"
-                    android:text=""
-                    android:layout_marginLeft="25dp"
-                    android:layout_marginRight="25dp"
-                    android:background="@drawable/valores"/>
+                    android:layout_marginTop="25dp"
+                    android:layout_marginLeft="55dp"
+                    android:autoSizeTextType="uniform"
+                    android:autoSizeMinTextSize="10dp"
+                    android:autoSizeMaxTextSize="25dp"
+                    android:textColor="@color/branco"
+                    android:layout_marginRight="40dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/valoresnovo"
+                    android:layout_weight="1"/>
+
 
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:orientation="vertical"
+                android:layout_weight="3">
 
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:textColor="@color/preto"
-                    android:gravity="center_horizontal"
-                    android:layout_weight="1"
-                    android:textSize="20sp"
-                    android:text="Valor inicial"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="5dp"
+                    android:layout_height="wrap_content">
 
-                <TextView
-                    android:layout_width="0dp"
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Valor"
+                        android:textColor="@color/preto"
+                        android:gravity="center"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="Desconto"
+                        android:textColor="@color/preto"
+                        android:gravity="center"
+                        android:textSize="20sp"/>
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:textSize="20sp"
-                    android:textColor="@color/preto"
-                    android:gravity="center_horizontal"
-                    android:text="Desconto"/>
+                    android:paddingBottom="10dp"
+                    android:gravity="center"
+                    android:orientation="vertical">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Valor inicial"
+                        android:textSize="18sp"
+                        android:textColor="@color/preto"/>
+
+                    <TextView
+                        android:id="@+id/inicial"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:textColor="@color/branco"
+                        android:autoSizeTextType="uniform"
+                        android:autoSizeMinTextSize="10dp"
+                        android:autoSizeMaxTextSize="35dp"
+                        android:layout_marginBottom="5dp"
+                        android:background="@drawable/valoresnovo"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:textColor="@color/preto"
+                            android:textSize="16sp"
+                            android:gravity="center"
+                            android:text="Desconto aplicado"/>
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:gravity="center"
+                            android:text="Valor economizado"
+                            android:textColor="@color/preto"
+                            android:textSize="16sp" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_marginTop="10dp"
+                        android:gravity="center"
+                        android:orientation="horizontal"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:id="@+id/aplicado"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:layout_width="110dp"
+                            android:layout_marginRight="90dp"
+                            android:layout_height="35dp"
+                            android:gravity="center"
+                            android:autoSizeTextType="uniform"
+                            android:autoSizeMinTextSize="10dp"
+                            android:autoSizeMaxTextSize="30dp"
+                            android:textColor="@color/branco"
+                            android:background="@drawable/valoresnovo"/>
+
+                        <TextView
+                            android:id="@+id/diferenca"
+                            android:layout_width="110dp"
+                            android:gravity="center"
+                            android:paddingLeft="2dp"
+                            android:paddingRight="2dp"
+                            android:textColor="@color/branco"
+                            android:autoSizeTextType="uniform"
+                            android:autoSizeMinTextSize="10dp"
+                            android:autoSizeMaxTextSize="30dp"
+                            android:layout_height="35dp"
+                            android:background="@drawable/valoresnovo"/>
+
+
+
+
+
+                    </LinearLayout>
+
+
+
+                </LinearLayout>
+
+
+
+
 
             </LinearLayout>
-
 
 
         </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:orientation="vertical"
-            android:background="@drawable/fundo2"
-            android:layout_weight="3">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="80dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:text="Valor inicial"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textColor="@color/branco"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    style="@style/resultado"
-                    android:gravity="center"
-                    android:id="@+id/inicial"
-                    android:background="@drawable/valores"/>
-
-            </LinearLayout>
-
-
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="80dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:text="Novo valor"
-                    android:textSize="18sp"
-                    android:gravity="center"
-                    android:textColor="@color/branco"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    style="@style/resultado"
-                    android:gravity="center"
-                    android:id="@+id/aplicado"
-                    android:background="@drawable/valores"/>
-
-
-
-
-
-
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:layout_weight="1"
-                android:layout_marginRight="80dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginLeft="80dp"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="0.8"
-                    android:text="Diferença"
-                    android:textSize="20sp"
-                    android:gravity="center"
-                    android:textColor="@color/branco"/>
-
-                <TextView
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    style="@style/resultado"
-                    android:gravity="center"
-                    android:id="@+id/diferenca"
-                    android:background="@drawable/valores"/>
-
-
-            </LinearLayout>
-
-
-
-
-
-
-
-
-        </LinearLayout>
-
-
-
-
 
 
     </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_weight="0.1"
-        android:layout_height="0dp"/>
-
 
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:orientation="vertical">
+        android:layout_weight="2.8"
+        android:background="@drawable/fundotecladopreto"
+        android:orientation="vertical"
+        android:padding="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n7"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:text="7"/>
+                android:layout_weight="1"
+                android:text="7" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n8"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:text="8"/>
+                android:layout_weight="1"
+                android:text="8" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n9"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:text="9"/>
+                android:layout_weight="1"
+                android:text="9" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nc"
-                android:layout_width="match_parent"
-                android:textSize="30sp"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:backgroundTint="@color/cinzaclaro2"
-                android:text="C"/>
+                android:layout_weight="1"
+                android:text="c" />
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n4"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:text="4"/>
+                android:layout_weight="1"
+                android:text="4" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n5"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:text="5"/>
+                android:layout_weight="1"
+                android:text="5" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n6"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:text="6"/>
+                android:layout_weight="1"
+                android:text="6" />
 
-            <androidx.appcompat.widget.AppCompatButton
+            <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/nbackspace"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/backspace"
-                style="@style/botaoteclado"
-                />
+                android:layout_weight="1"
+                android:padding="20dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ic_backspace" />
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n3"
-                android:layout_width="match_parent"
+                android:id="@+id/n1"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:text="3"/>
+                android:layout_weight="1"
+                android:text="1" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n2"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:text="2"/>
+                android:layout_weight="1"
+                android:text="2" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n1"
-                android:layout_width="match_parent"
+                android:id="@+id/n3"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:text="1"/>
+                android:layout_weight="1"
+                android:text="3" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nmenos"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:text="-"/>
+                android:layout_weight="1"
+                android:text="-" />
+
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="5dp"
             android:layout_height="0dp"
             android:layout_weight="1"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nvirgula"
-                android:layout_width="match_parent"
-                android:gravity="center_horizontal"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botaoteclado"
-                android:text=","/>
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="," />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n0"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                style="@style/botao0"
-                android:layout_weight="0.70"
-                android:text="0"/>
+                android:layout_weight="2"
+                android:text="0" />
+
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nok"
-                style="@style/botaoteclado"
-                android:layout_width="match_parent"
+                style="@style/botoesnovos"
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:background="@drawable/borda"
-                android:backgroundTint="@color/verdeouazulsla2"
-                android:text="OK"
-                android:textSize="30sp" />
+                android:layout_weight="1"
+                android:text="ok"
+                android:textColor="@color/verdeouazulsla" />
 
 
         </LinearLayout>
 
     </LinearLayout>
-
-
-
-
-
 
 
 </LinearLayout>
