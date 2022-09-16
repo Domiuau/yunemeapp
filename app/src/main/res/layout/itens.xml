@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="@layout/activity_historico"
+    android:background="@drawable/card_view_bg"
+    android:layout_height="wrap_content">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/hist_icone"
+            android:layout_width="52dp"
+            android:layout_height="52dp"
+            android:background="@drawable/icone_fundo"
+            android:gravity="center"
+            android:padding="3dp"
+            android:textColor="@color/white"/>
+
+        <TextView
+            android:id="@+id/hist_ferramenta"
+            android:layout_toStartOf="@id/hist_data"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/hist_ferramenta"
+            android:layout_marginStart="16sp"
+            android:layout_toEndOf="@id/hist_icone"
+            android:text="Bhaskara"
+            android:textColor="@color/black"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/hist_entrada"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hist_ferramenta"
+            android:layout_alignStart="@id/hist_ferramenta"
+            android:layout_toEndOf="@id/hist_icone"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="a = 4 b = 4 b = 6"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/hist_saida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hist_entrada"
+            android:layout_alignStart="@id/hist_ferramenta"
+            android:layout_toEndOf="@id/hist_icone"
+            android:singleLine="true"
+            android:text="delta = 554 x1 = 43455554545555555 x2 = 645456"
+            android:textColor="@color/black"
+            android:autoSizeTextType="uniform"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/hist_data"
+            android:layout_width="wrap_content"
+            android:textSize="13sp"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:ellipsize="marquee"
+            android:singleLine="true"
+            android:text="34/43/4343"
+            android:textColor="@color/black" />
+
+
+
+    </RelativeLayout>
+
+
+</androidx.cardview.widget.CardView>

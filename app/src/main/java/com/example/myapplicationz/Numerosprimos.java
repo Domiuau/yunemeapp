@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
 
 import android.content.pm.ActivityInfo;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
@@ -107,6 +108,15 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
                 }
                 maiorque.setText(me + 1 + "");
                 diferencamaior.setText(" " + ((me + 1) - Integer.parseInt(espaco1.getText().toString())) + " ");
+
+                SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+                DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
+                DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Primos'," +
+                        " '" + "O número " + resultado.getText().toString() + "'," +
+                        "'" + "Mais proximos: " + menorque.getText().toString() + " < " + espaco1.getText().toString() + " > " + maiorque.getText().toString() +  "'," +
+                        "'" + Data.dataatual() +"', "+ R.drawable.hist_primos +" )");
+
+
             }
         });
 

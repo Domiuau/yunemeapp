@@ -10,7 +10,11 @@ import androidx.core.app.ActivityCompat;
 import android.content.pm.ActivityInfo;
 
 import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Spinner;
@@ -53,6 +57,9 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         spinner2 = findViewById(R.id.spinner2);
         inverter = findViewById(R.id.inverter);
         voltar = findViewById(R.id.voltar);
+        DateFormat formatardata = new SimpleDateFormat("dd/MM/yyyy HH:mm");
+        Date data = new Date();
+
 
 
         n1.setOnClickListener(this);
@@ -113,6 +120,7 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         });
 
 
+
     }
 
         void adicionar(BigDecimal vezes,Double numero) {
@@ -121,8 +129,17 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
 
         espaco2.setText(a.multiply(vezes).toString());
 
+            SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+            DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
+            DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Velocidade'," +
+                    " '" + espaco1.getText().toString() + " " + spinner1.getSelectedItem().toString() +
+                    " = " + espaco2.getText().toString() + " " + spinner2.getSelectedItem().toString() + "'," +
+                    " '" + formula.getText().toString() + "'," +
+                    "'" + Data.dataatual() + "', '" + R.drawable.hist_velocidade + "' )");
+
 
     }
+
 
     void selecionarformula() {
         switch (spinner1.getSelectedItemPosition()) {

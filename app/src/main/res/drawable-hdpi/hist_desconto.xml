@@ -2,26 +2,22 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item>
         <layer-list>
+
             <item>
-                <shape android:shape="rectangle">
-                    <size android:width="40dp" android:height="40dp" />
-                    <solid android:color="@color/cinza" />
+                <shape android:shape="oval">
+                    <size android:width="48dp" android:height="48dp" />
+                    <solid android:color="@color/amarelo" />
                     <corners android:radius="20dp" />
-
-
+                    <padding android:bottom="15dp" android:left="15dp" android:right="15dp" android:top="15dp" />
                 </shape>
-
 
             </item>
             <item>
                 <selector>
-                    <item android:drawable="@drawable/ic_setinha2" android:state_checked="false" />
-                    <item android:drawable="@drawable/ic_setinha1" android:state_checked="true" />
+                    <item android:drawable="@drawable/ic_desconto"/>
 
 
                 </selector>
-
-
             </item>
 
 
@@ -29,6 +25,5 @@
 
 
     </item>
-
 
 </selector>

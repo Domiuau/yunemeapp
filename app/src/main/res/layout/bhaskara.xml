@@ -219,7 +219,7 @@
                             android:layout_height="35dp"
                             android:gravity="center"
                             android:autoSizeTextType="uniform"
-                            android:autoSizeMinTextSize="10dp"
+                            android:autoSizeMinTextSize="13dp"
                             android:autoSizeMaxTextSize="30dp"
                             android:textColor="@color/branco"
                             android:background="@drawable/valoresnovo"/>
@@ -232,7 +232,7 @@
                             android:paddingRight="2dp"
                             android:textColor="@color/branco"
                             android:autoSizeTextType="uniform"
-                            android:autoSizeMinTextSize="10dp"
+                            android:autoSizeMinTextSize="13dp"
                             android:autoSizeMaxTextSize="30dp"
                             android:layout_height="35dp"
                             android:background="@drawable/valoresnovo"/>

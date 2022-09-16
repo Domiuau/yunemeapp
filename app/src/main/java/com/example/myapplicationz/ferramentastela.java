@@ -1,6 +1,7 @@
 package com.example.myapplicationz;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
@@ -13,6 +14,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
     ImageButton quadradoestranho, calculadora, botaobhaskara, botaodesconto, casinha, botaonumerosprimos, botaovelocidade;
     TextView bhaskara1, desconto1, numerosprimos1, velocidade1;
+    AppCompatButton teste;
 
 
     @Override
@@ -33,6 +35,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         desconto1 = findViewById(R.id.desconto1);
         numerosprimos1 = findViewById(R.id.numerosprimos1);
         velocidade1 = findViewById(R.id.velocidade1);
+        teste = findViewById(R.id.teste);
 
 
         botaobhaskara.setOnClickListener(this);
@@ -46,6 +49,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         desconto1.setOnClickListener(this);
         numerosprimos1.setOnClickListener(this);
         velocidade1.setOnClickListener(this);
+        teste.setOnClickListener(this);
 
 
 
@@ -104,6 +108,11 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
             case R.id.velocidade1:
                 Intent irparavelocidade = new Intent(this, Velocidade.class);
                 startActivity(irparavelocidade);
+                break;
+
+            case R.id.teste:
+                Intent irparateste = new Intent(this, Historico.class);
+                startActivity(irparateste);
                 break;
 
             default:

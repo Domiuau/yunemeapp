@@ -5,15 +5,26 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.pm.ActivityInfo;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 
+import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import model.Coisas_hist;
+import model.Hist;
 
 public class Bhaskara extends AppCompatActivity implements View.OnClickListener {
 
@@ -21,6 +32,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
     AppCompatImageButton nbackspace;
     TextView espacox1, espacox2, espacodelta;
     AppCompatImageView voltar;
+    HistAdapter histAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +79,8 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
         espaco3.setOnClickListener(this);
+
+
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,34 +101,65 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
             }
         });
 
+
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 System.out.println("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
                 //delta = 0 -> "1 -10 25"
 
-                try {
 
-                    Float[] a = {
-                            Float.parseFloat(espaco1.getText().toString()),
-                            Float.parseFloat(espaco2.getText().toString()),
-                            Float.parseFloat(espaco3.getText().toString())
-                    };
+                Float[] a = {
+                        Float.parseFloat(espaco1.getText().toString()),
+                        Float.parseFloat(espaco2.getText().toString()),
+                        Float.parseFloat(espaco3.getText().toString())
+                };
 
-                    if ((a[1] * a[1]) - 4 * a[0] * a[2] < 0) {
-                        espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] + "");
-                        espacox1.setText("sem resultados reais");
-                        espacox2.setText("sem resultados reais");
-                    } else if ((a[1] * a[1]) - 4 * a[0] * a[2] == 0) {
-                        espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] + "");
-                        espacox1.setText(String.valueOf((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0])));
-                        espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "%.2f");
-                    } else {
-                        espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2]%.2f + "");
-                        espacox1.setText(String.valueOf((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0])));
-                        espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0])+"");
+                if ((a[1] * a[1]) - 4 * a[0] * a[2] < 0) {
+                    espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] + "");
+                    espacox1.setText("NaN");
+                    espacox2.setText("NaN");
+                } else if ((a[1] * a[1]) - 4 * a[0] * a[2] == 0) {
+                    espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] + "");
+                    espacox1.setText((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
+                    espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
+                } else {
+                    espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] % .2f + "");
+                    espacox1.setText((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
+                    espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
 
-                    }
+                }
+
+                SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+                DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
+                DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Bhaskara','" + "A = " + a[0] + " B = " + a[1] + " C = " + a[2] + "','" +
+                        "Delta = " + String.format("%.2f",Double.parseDouble(espacodelta.getText().toString())) +
+                        " / X1 = " + String.format("%.5f",Double.parseDouble(espacox1.getText().toString()))
+                        + " / X2 = " + String.format("%.5f",Double.parseDouble(espacox2.getText().toString())) + "'," +
+                        "'" + Data.dataatual() + "'," + R.drawable.hist_bhaskara + ")");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
                     /* Float[] a = {Float.parseFloat(espaco1.getText().toString()),
@@ -142,16 +187,6 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
                     } */
 
 
-                } catch (NumberFormatException exception) {
-                    espacodelta.setText("Preencha todos os campos");
-                    espacox1.setText("Preencha todos os campos");
-                    espacox2.setText("Preencha todos os campos");
-
-
-                } catch (Exception e) {
-
-                }
-
             }
 
         });
@@ -159,7 +194,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
 
     }
 
-    void limpar (){
+    void limpar() {
         espaco1.setBackgroundResource(R.drawable.valoresnovo);
         espaco2.setBackgroundResource(R.drawable.valoresnovo);
         espaco3.setBackgroundResource(R.drawable.valoresnovo);
@@ -196,6 +231,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
             espaco1.setBackgroundResource(R.drawable.valorselecionado);
 
         }
+
 
     }
 }

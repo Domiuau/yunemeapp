@@ -5,9 +5,15 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
+import java.math.BigDecimal;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 public class Desconto extends AppCompatActivity implements View.OnClickListener {
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2;
@@ -41,7 +47,6 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
         novo = findViewById(R.id.aplicado);
         diferenca = findViewById(R.id.diferenca);
         voltar = findViewById(R.id.voltar);
-
 
         n1.setOnClickListener(this);
         n2.setOnClickListener(this);
@@ -88,9 +93,22 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
                             Double.parseDouble(espaco2.getText().toString().substring(0,espaco2.getText().length()-1))
                     };
 
+
                     inicial.setText(a[0].toString());
-                    novo.setText(String.valueOf(a[0] - (a[0] / 100) * a[1]));
-                    diferenca.setText(String.valueOf((a[0] / 100) * a[1]));
+                    novo.setText(String.format("%.3f",a[0] - (a[0] / 100) * a[1]));
+                    if (a[1] < 101){
+                        diferenca.setText(String.format("%.3f", (a[0] / 100) * a[1] ));
+                    } else {
+                        diferenca.setText(String.format("%.3f", ((a[0] / 100) * a[1]) * -1 ));
+                    }
+
+                    SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+                    DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
+                    DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Desconto'," +
+                            " '" + "Valor = " + espaco1.getText().toString() + " / Desconto = " + espaco2.getText().toString() + "'," +
+                            "'"+ "Novo valor = " + novo.getText().toString() + " / Difereça = " + diferenca.getText().toString() +"'," +
+                            "'"+ Data.dataatual() +"', '"+ R.drawable.hist_desconto +"' )");
+
                 } catch (NumberFormatException exception){
                     inicial.setText("Preencha todos os campos");
                     novo.setText("Preencha todos os campos");
@@ -99,6 +117,10 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
                 catch (Exception e){
 
                 }
+
+
+
+
             }
         });
 
