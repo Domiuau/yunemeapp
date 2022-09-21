@@ -70,7 +70,7 @@
                             android:layout_width="230dp"
                             android:layout_height="50dp"
                             android:layout_marginLeft="35dp"
-                            android:text="Ferramentas"
+                            android:text="Pacotes"
                             android:textColor="@color/preto"
                             android:textSize="32sp" />
 

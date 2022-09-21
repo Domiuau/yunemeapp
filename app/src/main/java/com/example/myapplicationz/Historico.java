@@ -20,18 +20,15 @@ import model.Hist;
 
 public class Historico extends AppCompatActivity {
 
-    FloatingActionButton a;
 
     HistAdapter histAdapter;
     RecyclerView rv;
-
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historico);
-        a = findViewById(R.id.testar);
 
         histAdapter = new HistAdapter(new ArrayList<>(Coisas_hist.coisashist()));
         rv = findViewById(R.id.recycler);
@@ -42,10 +39,9 @@ public class Historico extends AppCompatActivity {
         SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
 
 
-
         try {
 
-            String consulta ="SELECT Ferramenta, Entrada, Saida, Data, Icone FROM TB_coisas";
+            String consulta = "SELECT Ferramenta, Entrada, Saida, Data, Icone FROM TB_coisas";
             Cursor cursor = DB_hist.rawQuery(consulta, null);
             cursor.moveToFirst();
 
@@ -79,47 +75,14 @@ public class Historico extends AppCompatActivity {
                 );
                 cursor.moveToNext();
             }
-        } catch (Exception e) {}
-
-
-
-        a.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                rv.scrollToPosition(0);
-                histAdapter.notifyItemInserted(0);
-
-                histAdapter.getHists().add(0, Hist.histBuilder.builder()
-                        .setFerramenta("Bhaskara")
-                        .setDadosentrada("a = ubghuyk 6")
-                        .setDadossaida("Delta = 45 x1 = 5454 x2 = 4355")
-                        .setData("34/43/4343")
-                        .setIcone(R.drawable.hist_bhaskara)
-
-                        .build()
-
-
-                );
-
-                System.out.println(Coisas_hist.coisashist().size());
-                System.out.println(Coisas_hist.coisashist());
-            }
-
-        });
-
-
-
+        } catch (Exception e) {
+        }
 
 
     }
 
 
-
-
-
-
-
-    }
+}
 
 
 

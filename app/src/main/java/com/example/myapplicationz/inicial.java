@@ -41,14 +41,11 @@ public class inicial extends AppCompatActivity implements View.OnClickListener {
 
 
         if (v.getId() == R.id.visitante) {
-            Intent iniciar = new Intent(this, ferramentastela.class);
-            startActivity(iniciar);
+            startActivity(Data.a(this,ferramentastela.class));
         } else if (v.getId() == R.id.login) {
-            Intent iniciar = new Intent(this, login.class);
-            startActivity(iniciar);
+            startActivity(Data.a(this,login.class));
         } else {
-            Intent iniciar = new Intent(this, cadastrar.class);
-            startActivity(iniciar);
+            startActivity(Data.a(this,cadastrar.class));
         }
 
 

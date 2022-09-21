@@ -9,223 +9,247 @@
     android:orientation="vertical"
     tools:context=".ferramentastela">
 
-    <ScrollView
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="YUNEME"
+        android:textColor="@color/cinzabranco"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:backgroundTint="@color/azul"
+            android:src="@drawable/ic_hist"
+            android:tintMode="@color/branco"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/teste"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:text="YUNEME"
-                android:textColor="@color/cinzabranco"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="900dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="2dp"
-                    android:layout_weight="20"
-                    android:background="@drawable/fundobranco"
-                    android:orientation="vertical">
-
+                    android:layout_width="match_parent"
+                    android:layout_height="900dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp">
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="20"
+                        android:background="@drawable/fundobranco"
+                        android:orientation="vertical">
+
+
 
                         <ImageView
                             android:layout_width="150dp"
                             android:layout_height="5dp"
-                            android:layout_marginStart="105dp"
+                            android:layout_gravity="center"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="15dp"
                             android:background="@drawable/retacinza" />
 
-                    </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="230dp"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="35dp"
-                            android:text="Ferramentas"
-                            android:textColor="@color/preto"
-                            android:textSize="32sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center">
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="230dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="35dp"
+                                android:text="Ferramentas"
+                                android:textColor="@color/preto"
+                                android:textSize="32sp" />
+
 
 
                             <ImageView
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
-                                android:layout_marginRight="35dp"
+                                android:layout_marginRight="70dp"
                                 android:background="@drawable/lupa"
                                 android:scaleType="center" />
 
+
+
                         </LinearLayout>
 
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/bhaskara"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginLeft="50dp"
+                                android:layout_marginTop="15dp"
+                                android:background="@drawable/botaopequenoverdeazulsla"
+                                android:paddingRight="5dp"
+                                android:paddingBottom="5dp"
+                                android:scaleType="center"
+                                android:src="@drawable/ic_bhaskara" />
+
+                            <ImageButton
+                                android:id="@+id/desconto"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginRight="50dp"
+                                android:background="@drawable/botaoamarelo"
+                                android:src="@drawable/ic_desconto"
+                                android:textSize="60sp" />
+
+
+                            <TextView
+                                android:id="@+id/bhaskara1"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/bhaskara"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center"
+                                android:text="Bhaskara"
+                                android:textColor="@color/preto"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:id="@+id/desconto1"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/desconto"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginRight="25dp"
+                                android:gravity="center"
+                                android:text="Desconto"
+                                android:textColor="@color/preto"
+                                android:textSize="22sp" />
+
+
+                            <ImageButton
+                                android:id="@+id/numerosprimos"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_below="@id/bhaskara1"
+                                android:layout_marginLeft="50dp"
+                                android:layout_marginTop="30dp"
+                                android:background="@drawable/botaoamarelo"
+                                android:scaleType="center"
+                                android:src="@drawable/ic_group_13" />
+
+                            <ImageButton
+                                android:id="@+id/velocidade"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_below="@id/desconto1"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="30dp"
+                                android:layout_marginRight="50dp"
+                                android:background="@drawable/botaopequenoverdeazulsla"
+                                android:src="@drawable/ic_speedometer"
+                                android:textSize="60sp" />
+
+
+                            <TextView
+                                android:id="@+id/numerosprimos1"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/numerosprimos"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center"
+                                android:text="Primos"
+                                android:textColor="@color/preto"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:id="@+id/velocidade1"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/velocidade"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginRight="25dp"
+                                android:gravity="center"
+                                android:text="Velocidade"
+                                android:textColor="@color/preto"
+                                android:textSize="22sp" />
+
+                            <ImageButton
+                                android:id="@+id/temperatura"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_below="@id/numerosprimos1"
+                                android:layout_marginLeft="50dp"
+                                android:layout_marginTop="30dp"
+                                android:background="@drawable/botaopequenoverdeazulsla"
+                                android:scaleType="centerCrop"
+                                android:src="@drawable/ic_foguinho" />
+
+                            <TextView
+                                android:id="@+id/temperatura1"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/temperatura"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center"
+                                android:text="Temperatura"
+                                android:textColor="@color/preto"
+                                android:textSize="22sp" />
+
+
+
+
+
+
+                        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
                     </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="110dp"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-
-                        <ImageButton
-                            android:id="@+id/bhaskara"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_marginRight="65dp"
-                            android:background="@drawable/botaopequenoverdeazulsla"
-                            android:scaleType="center"
-                            android:src="@drawable/ic_bhaskara" />
-
-                        <ImageButton
-                            android:id="@+id/desconto"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:background="@drawable/botaoamarelo"
-                            android:src="@drawable/ic_desconto"
-                            android:textSize="60sp" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/bhaskara1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Bhaskara"
-                            android:textColor="@color/preto"
-                            android:textSize="23sp" />
-
-                        <TextView
-                            android:id="@+id/desconto1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="65dp"
-                            android:gravity="center"
-                            android:text="Desconto"
-                            android:textColor="@color/preto"
-                            android:textSize="23sp" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="110dp"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-
-                        <ImageButton
-                            android:id="@+id/numerosprimos"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_marginRight="65dp"
-                            android:background="@drawable/botaoamarelo"
-                            android:scaleType="center"
-                            android:src="@drawable/ic_group_13" />
-
-                        <ImageButton
-                            android:id="@+id/velocidade"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:background="@drawable/botaopequenoverdeazulsla"
-                            android:src="@drawable/ic_speedometer"
-                            android:textSize="60sp" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/numerosprimos1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:gravity="center"
-                            android:text="Primos"
-                            android:layout_marginLeft="67dp"
-                            android:textColor="@color/preto"
-                            android:textSize="23sp" />
-
-                        <TextView
-                            android:id="@+id/velocidade1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginLeft="75dp"
-                            android:gravity="center"
-                            android:text="Velocidade"
-                            android:textColor="@color/preto"
-                            android:textSize="23sp" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="110dp"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-
-                        <androidx.appcompat.widget.AppCompatButton
-                            android:id="@+id/teste"
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:textColor="@color/white"
-                            android:text="Teste"
-                            android:background="@drawable/botaopequenoazul"
-                            android:scaleType="center" />
-
-
-
-                    </LinearLayout>
-
-
-
 
                     <LinearLayout
                         android:layout_width="0dp"
@@ -235,19 +259,24 @@
 
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
+
+
+
 
 
             </LinearLayout>
 
 
-        </LinearLayout>
+
+        </ScrollView>
 
 
-    </ScrollView>
+
+    </RelativeLayout>
+
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"

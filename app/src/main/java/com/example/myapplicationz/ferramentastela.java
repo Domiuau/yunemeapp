@@ -10,11 +10,13 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
 public class ferramentastela extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton quadradoestranho, calculadora, botaobhaskara, botaodesconto, casinha, botaonumerosprimos, botaovelocidade;
-    TextView bhaskara1, desconto1, numerosprimos1, velocidade1;
-    AppCompatButton teste;
+    ImageButton quadradoestranho, calculadora, botaobhaskara, botaodesconto, casinha, botaonumerosprimos, botaovelocidade,temperatura;
+    TextView bhaskara1, desconto1, numerosprimos1, velocidade1,temperatura1;
+    FloatingActionButton teste;
 
 
     @Override
@@ -36,6 +38,8 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         numerosprimos1 = findViewById(R.id.numerosprimos1);
         velocidade1 = findViewById(R.id.velocidade1);
         teste = findViewById(R.id.teste);
+        temperatura = findViewById(R.id.temperatura);
+        temperatura1 = findViewById(R.id.temperatura1);
 
 
         botaobhaskara.setOnClickListener(this);
@@ -50,6 +54,8 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         numerosprimos1.setOnClickListener(this);
         velocidade1.setOnClickListener(this);
         teste.setOnClickListener(this);
+        temperatura1.setOnClickListener(this);
+        temperatura.setOnClickListener(this);
 
 
 
@@ -69,50 +75,45 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
 
             case R.id.casinha:
-                Intent irparacasinha = new Intent(this, ferramentastela.class);
-                startActivity(irparacasinha);
+                startActivity(Data.a(this,ferramentastela.class));
                 break;
 
             case R.id.calculadora:
-                Intent irparacalculadora = new Intent(this, calculadora.class);
-                startActivity(irparacalculadora);
+                startActivity(Data.a(this,calculadora.class));
                 break;
 
             case R.id.quadradoestranho:
-                Intent irparaquadradoestranho = new Intent(this, pacotes.class);
-                startActivity(irparaquadradoestranho);
+                startActivity(Data.a(this,pacotes.class));
                 break;
 
             case R.id.bhaskara:
             case R.id.bhaskara1:
-                Intent irparabhaskara = new Intent(this, Bhaskara.class);
-                startActivity(irparabhaskara);
-                Teclado.espaco = 1;
+                startActivity(Data.a(this,Bhaskara.class));
                 break;
 
             case R.id.desconto:
             case R.id.desconto1:
-                Intent irparadesconto = new Intent(this, Desconto.class);
-                startActivity(irparadesconto);
-                Teclado.espaco = 1;
+                startActivity(Data.a(this,Desconto.class));
                 break;
 
             case R.id.numerosprimos:
             case R.id.numerosprimos1:
-                Intent irparanumerosprimos = new Intent(this, Numerosprimos.class);
-                startActivity(irparanumerosprimos);
-                Teclado.espaco = 1;
+                startActivity(Data.a(this,Numerosprimos.class));
                 break;
 
             case R.id.velocidade:
             case R.id.velocidade1:
-                Intent irparavelocidade = new Intent(this, Velocidade.class);
-                startActivity(irparavelocidade);
+                startActivity(Data.a(this,Velocidade.class));
                 break;
 
+            case  R.id.temperatura:
+            case  R.id.temperatura1:
+                startActivity(Data.a(this,Temperatura.class));
+                break;
+
+
             case R.id.teste:
-                Intent irparateste = new Intent(this, Historico.class);
-                startActivity(irparateste);
+                startActivity(Data.a(this,Historico.class));
                 break;
 
             default:

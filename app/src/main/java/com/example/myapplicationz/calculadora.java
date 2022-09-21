@@ -83,7 +83,7 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
     }
 
     public void adicionar(String valor) {
-        expressao.append(valor);
+        expressao.append(valor.replace("*","x"));
         resultado.setText("");
     }
 
@@ -108,8 +108,8 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
         q = expressao.getText().toString()
                 .replace("-", " ")
                 .replace("+", " ")
-                .replace("/", " ")
-                .replace("*", " ")
+                .replace("÷", " ")
+                .replace("x", " ")
                 .split(" ");
     }
 
@@ -117,8 +117,8 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
         if (!z[z.length - 1].equals("-") &&
                 !z[z.length - 1].equals("+") &&
-                !z[z.length - 1].equals("*") &&
-                !z[z.length - 1].equals("/") &&
+                !z[z.length - 1].equals("x") &&
+                !z[z.length - 1].equals("÷") &&
                 !z[z.length - 1].equals("-") &&
                 !z[z.length - 1].equals(".") &&
                 !expressao.getText().toString().isEmpty()) {
@@ -147,20 +147,20 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
                         if (!expressao.getText().toString().endsWith("+") &&
                                 !expressao.getText().toString().endsWith("-") &&
-                                !expressao.getText().toString().endsWith("/") &&
-                                !expressao.getText().toString().endsWith("*")) {
+                                !expressao.getText().toString().endsWith("÷") &&
+                                !expressao.getText().toString().endsWith("x")) {
 
 
 
                             if (expressao.getText().toString().contains("+") ||
                                     expressao.getText().toString().contains("-") ||
-                                    expressao.getText().toString().contains("/") ||
-                                    expressao.getText().toString().contains("*")) {
+                                    expressao.getText().toString().contains("÷") ||
+                                    expressao.getText().toString().contains("x")) {
 
-                                while (!expressao.getText().toString().endsWith("*") &&
+                                while (!expressao.getText().toString().endsWith("x") &&
                                         !expressao.getText().toString().endsWith("-") &&
                                         !expressao.getText().toString().endsWith("+") &&
-                                        !expressao.getText().toString().endsWith("/")) {
+                                        !expressao.getText().toString().endsWith("÷")) {
                                     backspace();
                                 }
 
@@ -218,7 +218,7 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.vezes:
                 adicionarvetor();
-                compararoperador("*");
+                compararoperador("x");
                 break;
             case R.id.menos:
                 adicionarvetor();
@@ -233,7 +233,7 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.divisao:
                 adicionarvetor();
-                compararoperador("/");
+                compararoperador("÷");
                 break;
             case R.id.virgula:
                 adicionarvetor();
@@ -244,8 +244,8 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
                             !expressao.getText().toString().isEmpty() &&
                             !expressao.getText().toString().endsWith("+") &&
                             !expressao.getText().toString().endsWith("-") &&
-                            !expressao.getText().toString().endsWith("/") &&
-                            !expressao.getText().toString().endsWith("*")
+                            !expressao.getText().toString().endsWith("÷") &&
+                            !expressao.getText().toString().endsWith("x")
                     ) {
                         adicionar(".");
                     }
@@ -261,22 +261,34 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
             case R.id.iguala:
 
-                try {
-                    Expression resolver = new ExpressionBuilder(expressao.getText().toString()).build();
-                    double resultadofinalreal = resolver.evaluate();
-                    long resultadofinal = (long) resultadofinalreal;
+                if (!expressao.getText().toString().contains("E")){
+
+                    try {
+                        Expression resolver = new ExpressionBuilder(expressao.getText().toString()
+                                .replace("x","*")
+                                .replace("÷","/")
+                                .replace(",","."))
+                                .build();
+                        double resultadofinalreal = resolver.evaluate();
+                        long resultadofinal = (long) resultadofinalreal;
 
 
-                    if (resultadofinalreal == (double) resultadofinal) {
-                        resultado.setText(String.valueOf(resultadofinal));
-                    } else {
-                        resultado.setText(String.valueOf(resultadofinalreal));
+                        if (resultadofinalreal == (double) resultadofinal) {
+                            resultado.setText(String.valueOf(resultadofinal));
+                        } else {
+                            resultado.setText(String.valueOf(resultadofinalreal));
+                        }
+
+
+                    } catch (ArithmeticException exception) {
+                        resultado.setText("Não é possível dividir por zero");
+                    } catch (Exception e) {
+
                     }
 
+                } else {
 
-                } catch (ArithmeticException exception) {
-                    resultado.setText("Não é possível dividir por zero");
-                } catch (Exception e) {
+                    resultado.setText("Infinity");
 
                 }
 
@@ -292,13 +304,13 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
                     if (expressao.getText().toString().contains("+") ||
                             expressao.getText().toString().contains("-") ||
-                            expressao.getText().toString().contains("/") ||
-                            expressao.getText().toString().contains("*")) {
+                            expressao.getText().toString().contains("÷") ||
+                            expressao.getText().toString().contains("x")) {
 
-                        while (!expressao.getText().toString().endsWith("*") &&
+                        while (!expressao.getText().toString().endsWith("x") &&
                                 !expressao.getText().toString().endsWith("-") &&
                                 !expressao.getText().toString().endsWith("+") &&
-                                !expressao.getText().toString().endsWith("/")) {
+                                !expressao.getText().toString().endsWith("÷")) {
                             backspace();
                         }
 
@@ -315,8 +327,23 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
                     }
 
-                    expressao.append(fatorialresultado+"");
-                    System.out.println(fatorialresultado+"");
+                   q = fatorialresultado.toString().split("");
+
+                    if (fatorialresultado.toString().length() > 9){
+
+                        expressao.append(fatorialresultado.toString().substring(0,1) + ","
+                                + fatorialresultado.toString().substring(1,7) + "E"
+                                + (fatorialresultado.toString().length() - 1));
+
+                    } else {
+
+                        expressao.append(fatorialresultado.toString());
+
+                    }
+
+
+
+
                 } catch (Exception e) {}
 
 

@@ -37,7 +37,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
-                android:text="Velocidade"
+                android:text="Temperatura"
                 android:gravity="center"
                 android:textColor="@color/branco"
                 android:textSize="25dp"/>
@@ -87,7 +87,7 @@
                         android:id="@+id/spinner1"
                         android:layout_marginLeft="10dp"
                         android:layout_weight="1"
-                        android:entries="@array/velocidade" />
+                        android:entries="@array/temperatura" />
 
                     <androidx.appcompat.widget.AppCompatImageButton
                         android:layout_width="40dp"
@@ -105,7 +105,7 @@
                         android:layout_height="match_parent"
                         android:layout_marginRight="10dp"
                         android:layout_weight="1"
-                        android:entries="@array/velocidade" />
+                        android:entries="@array/temperatura" />
 
 
                 </LinearLayout>

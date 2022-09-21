@@ -30,11 +30,5 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/itens" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:id="@+id/testar"/>
-    
-
 
 </RelativeLayout>

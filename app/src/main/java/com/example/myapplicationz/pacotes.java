@@ -34,18 +34,15 @@ public class pacotes extends AppCompatActivity implements View.OnClickListener {
         switch (v.getId()) {
 
             case R.id.casinha:
-                Intent irparacasinha = new Intent(this, ferramentastela.class);
-                startActivity(irparacasinha);
+                startActivity(Data.a(this,ferramentastela.class));
                 break;
 
             case R.id.calculadora:
-                Intent irparacalculadora = new Intent(this, calculadora.class);
-                startActivity(irparacalculadora);
+                startActivity(Data.a(this,calculadora.class));
                 break;
 
             case R.id.quadradoestranho:
-                Intent irparaquadradoestranho = new Intent(this, pacotes.class);
-                startActivity(irparaquadradoestranho);
+                startActivity(Data.a(this,pacotes.class));
                 break;
 
         }

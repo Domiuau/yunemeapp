@@ -70,8 +70,10 @@
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/expressao"
-                style="@style/texto"
-                android:textSize="15dp"
+                android:gravity="end"
+                android:textSize="25sp"
+                android:layout_marginRight="10dp"
+                android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/branco" />
@@ -82,13 +84,15 @@
 
         <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/resultado"
-            style="@style/texto"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_weight="2"
-            app:autoSizeTextType="uniform"
-            app:autoSizeMaxTextSize="40sp"
-            app:autoSizeMinTextSize="20sp"
+            android:autoSizeTextType="uniform"
+            android:autoSizeMinTextSize="10sp"
+            android:autoSizeMaxTextSize="30sp"
+            android:gravity="end"
+            android:layout_marginRight="10dp"
+            android:textStyle="bold"
             android:autoSizePresetSizes="@array/autosize"
             android:background="@color/branco" />
 

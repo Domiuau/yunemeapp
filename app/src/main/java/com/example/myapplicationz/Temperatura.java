@@ -4,23 +4,20 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
-import androidx.appcompat.widget.AppCompatToggleButton;
-import androidx.core.app.ActivityCompat;
 
-import android.content.pm.ActivityInfo;
+import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
+import android.support.v4.os.IResultReceiver;
+import android.view.View;
+import android.widget.Spinner;
+import android.widget.TextView;
 
 import java.math.BigDecimal;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-import android.database.sqlite.SQLiteDatabase;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Spinner;
-import android.widget.TextView;
-
-public class Velocidade extends AppCompatActivity implements View.OnClickListener {
+public class Temperatura extends AppCompatActivity implements View.OnClickListener {
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2;
     AppCompatImageButton nbackspace;
     TextView formula;
@@ -29,11 +26,11 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
     BigDecimal vezes;
     AppCompatImageView voltar;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_velocidade);
-        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        setContentView(R.layout.activity_temperatura);
 
         n1 = findViewById(R.id.n1);
         n2 = findViewById(R.id.n2);
@@ -89,7 +86,11 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
                 spinner1.setSelection(spinner2.getSelectedItemPosition());
                 spinner2.setSelection(a);
                 try{
-                    selecionarformula();
+                    espaco2.setText(selecionarformula(espaco1.getText().toString()));
+                    adicionarhist();
+
+
+
 
                 }catch (Exception e){
 
@@ -111,80 +112,109 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selecionarformula();
+                espaco2.setText(selecionarformula(espaco1.getText().toString()));
+                adicionarhist();
+
 
 
             }
         });
 
-
-
     }
 
-        void adicionar(BigDecimal vezes,Double numero) {
-        BigDecimal a = new BigDecimal(numero.toString());
-        formula.setText(espaco1.getText().toString() + " x " + vezes + " = " + a.multiply(vezes).toString());
+    void adicionarhist (){
+        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+        DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
+        DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Velocidade'," +
+                " '" + espaco1.getText().toString() + " " + spinner1.getSelectedItem().toString() +
+                " = " + espaco2.getText().toString() + " " + spinner2.getSelectedItem().toString() + "'," +
+                " '" + formula.getText().toString() + "'," +
+                "'" + Data.dataatual() + "', '" + R.drawable.hist_temperatura + "' )");
+    }
 
-        espaco2.setText(a.multiply(vezes).toString());
-
-            SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
-            DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
-            DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Velocidade'," +
-                    " '" + espaco1.getText().toString() + " " + spinner1.getSelectedItem().toString() +
-                    " = " + espaco2.getText().toString() + " " + spinner2.getSelectedItem().toString() + "'," +
-                    " '" + formula.getText().toString() + "'," +
-                    "'" + Data.dataatual() + "', '" + R.drawable.hist_velocidade + "' )");
-
+    void adicionarformula (String formulausada){
+        formula.setText(formulausada);
 
     }
 
 
-    void selecionarformula() {
+
+
+
+
+
+
+
+    String selecionarformula(String valor) {
         switch (spinner1.getSelectedItemPosition()) {
             case 0:
                 if (spinner2.getSelectedItemPosition() == 0) {
-                    vezes = new BigDecimal("1");
+                    vezes = new BigDecimal(valor).multiply(new BigDecimal("1"));
+                    adicionarformula(valor + " x " + "1 = " + vezes.toString());
                 } else if (spinner2.getSelectedItemPosition() == 1) {
-                    vezes = new BigDecimal("0.621");
+                    vezes = new BigDecimal(valor).add(new BigDecimal("273.15"));
+                    adicionarformula(valor + " + 273,15 = " + vezes.toString() );
                 } else {
-                    vezes = new BigDecimal("0.277");
+
+                    vezes = new BigDecimal(valor).multiply(new BigDecimal("9"))
+                            .divide(new BigDecimal("5"))
+                            .add(new BigDecimal("32"));
+                    adicionarformula(valor + " x 9 ÷ 5 + 32 = " + vezes.toString());
                 }
 
                 break;
 
             case 1:
                 if (spinner2.getSelectedItemPosition() == 0) {
-                    vezes = new BigDecimal("1.609");
+                    vezes = new BigDecimal(valor).subtract(new BigDecimal("273.15"));
+                    adicionarformula(valor + " - 273.15 = " + vezes.toString());
 
                 } else if (spinner2.getSelectedItemPosition() == 1) {
-                    vezes = new BigDecimal("1");
+                    vezes = new BigDecimal(valor).multiply(new BigDecimal("1"));
+                    adicionarformula(valor + " x 1 = " + vezes.toString());
                 } else {
-                    vezes = new BigDecimal("0.447");
+                    vezes = new BigDecimal(valor).subtract(new BigDecimal("273.15"))
+                            .multiply(new BigDecimal("9"))
+                            .divide(new BigDecimal("5"))
+                            .add(new BigDecimal("32"));
+                    adicionarformula(valor + " - 273,15 x 9 ÷ 5 + 32 = " + vezes.toString());
                 }
                 break;
 
             case 2:
                 if (spinner2.getSelectedItemPosition() == 0) {
-                    vezes = new BigDecimal("3.6");
+                    vezes = new BigDecimal(valor).subtract(new BigDecimal("32")).multiply(new BigDecimal("5"));
+                    adicionarformula(valor + " - 32 x 5 = " + vezes.toString());
+                    return String.format("%.1f",Double.parseDouble(vezes.toString())/9);
 
                 } else if (spinner2.getSelectedItemPosition() == 1) {
-                    vezes = new BigDecimal("2.237");
+                    vezes = new BigDecimal(valor).subtract(new BigDecimal("32"))
+                            .multiply(new BigDecimal("5"));
+                    adicionarformula(valor + " - 32 x 5 = " + vezes.toString());
+                    return String.format("%.1f",Double.parseDouble(vezes.toString())/9+273.15);
+
+
+
                 } else {
-                    vezes = new BigDecimal("1");
+                    vezes = new BigDecimal(valor).multiply(new BigDecimal("1"));
+                    adicionarformula(valor + " x 1 = " + vezes.toString());
                 }
 
 
         }
-        adicionar(vezes,Double.parseDouble(espaco1.getText().toString()));
+        //adicionar(vezes,Double.parseDouble(espaco1.getText().toString()));
+        return vezes.toString();
+
     }
 
     @Override
     public void onClick(View v) {
 
 
+
         espaco1.setText(Teclado.teclado(v, espaco1.getText().toString()));
 
 
-    }
 
+    }
 }
