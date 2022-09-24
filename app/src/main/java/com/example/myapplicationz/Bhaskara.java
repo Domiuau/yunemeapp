@@ -131,7 +131,6 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
                 }
 
                 SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
-                DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
                 DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Bhaskara','" + "A = " + a[0] + " B = " + a[1] + " C = " + a[2] + "','" +
                         "Delta = " + String.format("%.2f",Double.parseDouble(espacodelta.getText().toString())) +
                         " / X1 = " + String.format("%.5f",Double.parseDouble(espacox1.getText().toString()))

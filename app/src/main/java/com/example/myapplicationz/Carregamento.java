@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class Carregamento extends AppCompatActivity {
 
     @Override
@@ -18,9 +20,11 @@ public class Carregamento extends AppCompatActivity {
             Thread.sleep(200);
         } catch (Exception e){}
 
-        Intent iniciar = new Intent(Carregamento.this,ferramentastela.class);
-        startActivity(iniciar);
-        finish();
+        if(FirebaseAuth.getInstance().getCurrentUser() != null){
+            startActivity(Data.a(Carregamento.this,ferramentastela.class));
+        } else {
+            startActivity(Data.a(Carregamento.this,inicial.class));
+        }
 
 
     }

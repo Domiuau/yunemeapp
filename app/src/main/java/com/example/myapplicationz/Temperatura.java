@@ -124,13 +124,19 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
 
     void adicionarhist (){
         SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
-        DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
         DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Velocidade'," +
                 " '" + espaco1.getText().toString() + " " + spinner1.getSelectedItem().toString() +
                 " = " + espaco2.getText().toString() + " " + spinner2.getSelectedItem().toString() + "'," +
                 " '" + formula.getText().toString() + "'," +
                 "'" + Data.dataatual() + "', '" + R.drawable.hist_temperatura + "' )");
+
+
+
     }
+
+
+
+
 
     void adicionarformula (String formulausada){
         formula.setText(formulausada);

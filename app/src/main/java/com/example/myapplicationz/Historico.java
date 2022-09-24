@@ -21,6 +21,7 @@ import model.Hist;
 public class Historico extends AppCompatActivity {
 
 
+    public static SQLiteDatabase DB_hist;
     HistAdapter histAdapter;
     RecyclerView rv;
 

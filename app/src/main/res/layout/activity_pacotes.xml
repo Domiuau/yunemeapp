@@ -9,157 +9,174 @@
     android:orientation="vertical"
     tools:context=".ferramentastela">
 
-    <ScrollView
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="YUNEME"
+        android:textColor="@color/cinzabranco"
+        android:textSize="25sp"
+        android:textStyle="bold" />
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="10">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical">
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            app:backgroundTint="@color/azul"
+            android:src="@drawable/ic_hist"
+            android:tintMode="@color/branco"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:layout_marginRight="30dp"
+            android:id="@+id/teste"/>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:gravity="center"
-                android:text="YUNEME"
-                android:textColor="@color/cinzabranco"
-                android:textSize="25sp"
-                android:textStyle="bold" />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="900dp"
-                android:orientation="horizontal">
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
 
                 <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="2dp"
-                    android:layout_weight="20"
-                    android:background="@drawable/fundobranco"
-                    android:orientation="vertical">
-
+                    android:layout_width="match_parent"
+                    android:layout_height="900dp"
+                    android:orientation="horizontal">
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="40dp">
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
+
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="2dp"
+                        android:layout_weight="20"
+                        android:background="@drawable/fundobranco"
+                        android:orientation="vertical">
+
+
 
                         <ImageView
                             android:layout_width="150dp"
                             android:layout_height="5dp"
-                            android:layout_marginStart="105dp"
+                            android:layout_gravity="center"
                             android:layout_marginTop="10dp"
+                            android:layout_marginBottom="15dp"
                             android:background="@drawable/retacinza" />
 
-                    </LinearLayout>
 
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="230dp"
-                            android:layout_height="50dp"
-                            android:layout_marginLeft="35dp"
-                            android:text="Pacotes"
-                            android:textColor="@color/preto"
-                            android:textSize="32sp" />
 
                         <LinearLayout
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:gravity="center">
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:orientation="horizontal">
+
+                            <TextView
+                                android:layout_width="230dp"
+                                android:layout_height="50dp"
+                                android:layout_marginLeft="35dp"
+                                android:text="Ferramentas"
+                                android:textColor="@color/preto"
+                                android:textSize="32sp" />
+
 
 
                             <ImageView
                                 android:layout_width="25dp"
                                 android:layout_height="25dp"
-                                android:layout_marginRight="35dp"
+                                android:layout_marginRight="70dp"
                                 android:background="@drawable/lupa"
                                 android:scaleType="center" />
 
+
+
                         </LinearLayout>
 
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <ImageButton
+                                android:id="@+id/pacote"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_marginLeft="50dp"
+                                android:layout_marginTop="15dp"
+                                android:background="@drawable/botaopequenoazul"
+                                android:paddingRight="5dp"
+                                android:paddingBottom="5dp"
+                                android:scaleType="center" />
+
+                            <ImageButton
+                                android:id="@+id/desconto"
+                                android:layout_width="100dp"
+                                android:layout_height="100dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="15dp"
+                                android:layout_marginRight="50dp"
+                                android:background="@drawable/botaopequenoazul"
+                                android:textSize="60sp" />
+
+
+                            <TextView
+                                android:id="@+id/bhaskara1"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/pacote"
+                                android:layout_alignParentLeft="true"
+                                android:layout_marginLeft="25dp"
+                                android:layout_marginTop="4dp"
+                                android:gravity="center"
+                                android:text="teste"
+                                android:textColor="@color/preto"
+                                android:textSize="22sp" />
+
+                            <TextView
+                                android:id="@+id/desconto1"
+                                android:layout_width="150dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/desconto"
+                                android:layout_alignParentEnd="true"
+                                android:layout_marginTop="4dp"
+                                android:layout_marginRight="25dp"
+                                android:gravity="center"
+                                android:text="teste"
+                                android:textColor="@color/preto"
+                                android:textSize="22sp" />
+
+
+                        </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
+
                     </LinearLayout>
 
                     <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="110dp"
-                        android:layout_marginTop="10dp"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_marginTop="5dp"
-                            android:layout_marginRight="65dp"
-                            android:background="@drawable/botaopequenoazul"
-                            android:scaleType="center" />
-
-
-                        <ImageButton
-                            android:layout_width="100dp"
-                            android:layout_height="100dp"
-                            android:layout_marginTop="5dp"
-                            android:background="@drawable/botaopequenoazul"
-                            android:scaleType="center"
-                            android:textSize="60sp" />
-
-
-                    </LinearLayout>
-
-
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="30dp"
-                        android:gravity="center"
-                        android:layout_marginTop="5dp"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:id="@+id/bhaskara2"
-                            android:layout_width="100dp"
-                            android:layout_height="25dp"
-                            android:gravity="bottom"
-                            android:text="Em breve"
-                            android:textColor="@color/preto"
-                            android:textSize="23sp" />
-
-                        <TextView
-                            android:id="@+id/desconto2"
-                            android:layout_width="100dp"
-                            android:layout_height="25dp"
-                            android:layout_marginLeft="65dp"
-                            android:gravity="bottom"
-                            android:text="Em breve"
-                            android:textColor="@color/preto"
-                            android:textSize="23sp" />
-
-
-                    </LinearLayout>
-
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1" />
 
 
                 </LinearLayout>
-
-                <LinearLayout
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"/>
-
-
 
 
 
@@ -170,13 +187,15 @@
 
 
 
+        </ScrollView>
 
 
 
-        </LinearLayout>
+    </RelativeLayout>
 
 
-    </ScrollView>
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -186,56 +205,47 @@
         android:orientation="horizontal">
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:layout_width="0dp"
             android:id="@+id/casinha"
+            android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_marginLeft="25dp"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:scaleType="center"
             android:background="@drawable/botaopequenoverdeazulsla"
+            android:scaleType="center"
             android:src="@drawable/casinha"
             android:textColor="@color/branco"
             android:textSize="16sp" />
 
         <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/quadradoestranho"
             android:layout_width="0dp"
-            android:layout_marginTop="10dp"
+            android:layout_height="match_parent"
             android:layout_marginLeft="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:id="@+id/quadradoestranho"
-            android:scaleType="center"
-            android:src="@drawable/ic_pacotes"
             android:background="@drawable/botaopequenoazul"
-            android:layout_height="match_parent"/>
+            android:scaleType="center"
+            android:src="@drawable/ic_pacotes" />
 
         <androidx.appcompat.widget.AppCompatImageButton
-            android:layout_width="0dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_calculadora"
             android:id="@+id/calculadora"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginRight="25dp"
+            android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:scaleType="center"
             android:background="@drawable/botaopequenoamarelo"
-            android:layout_height="match_parent"/>
+            android:scaleType="center"
+            android:src="@drawable/ic_calculadora" />
 
 
     </LinearLayout>
-
-
-
-
-
-
-
-
 </LinearLayout>
-
 
 
 

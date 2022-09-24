@@ -2,6 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
+    android:backgroundTint="@color/branco"
     tools:showIn="@layout/activity_historico"
     android:background="@drawable/card_view_bg"
     android:layout_height="wrap_content">

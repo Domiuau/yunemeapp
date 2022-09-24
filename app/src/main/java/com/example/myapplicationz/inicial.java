@@ -12,6 +12,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class inicial extends AppCompatActivity implements View.OnClickListener {
 
     TextView visitante;
@@ -34,6 +36,7 @@ public class inicial extends AppCompatActivity implements View.OnClickListener {
 
 
 
+
     }
 
     @Override
@@ -50,4 +53,6 @@ public class inicial extends AppCompatActivity implements View.OnClickListener {
 
 
     }
+
+
 }

@@ -1,7 +1,11 @@
 package com.example.myapplicationz;
 
+import static android.content.Context.MODE_PRIVATE;
+import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
+
 import android.content.Context;
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 
 import androidx.activity.result.contract.ActivityResultContracts;
 
@@ -27,5 +31,6 @@ public class Data {
 
 
     }
+
 
 }

@@ -16,7 +16,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
+            android:background="@color/branco"
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:title="Histórico"/>
 
@@ -24,6 +24,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"
+        android:background="@color/branco"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/bar"

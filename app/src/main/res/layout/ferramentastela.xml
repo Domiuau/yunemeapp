@@ -35,6 +35,19 @@
             android:layout_marginRight="30dp"
             android:id="@+id/teste"/>
 
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_above="@id/teste"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="10dp"
+            android:src="@drawable/ic_hist"
+            android:tintMode="@color/branco"
+            android:id="@+id/userperfil"
+            app:backgroundTint="@color/purple_200" />
+
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -104,6 +117,7 @@
                         </LinearLayout>
 
                         <RelativeLayout
+                            android:id="@+id/perfil"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent">
 
@@ -231,10 +245,6 @@
                                 android:text="Temperatura"
                                 android:textColor="@color/preto"
                                 android:textSize="22sp" />
-
-
-
-
 
 
                         </RelativeLayout>
