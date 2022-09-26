@@ -36,6 +36,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_MyApplicationz);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bhaskara);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);

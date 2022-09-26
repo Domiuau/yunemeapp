@@ -21,6 +21,7 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_MyApplicationz);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numerosprimos);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
@@ -86,35 +87,43 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View v) {
 
-                if (primo(Integer.parseInt(espaco1.getText().toString()))) {
-                    resultado.setText(espaco1.getText().toString() + " é primo!");
-                } else {
-                    resultado.setText(espaco1.getText().toString() + " não é primo!");
+                try {
+
+                    if (primo(Integer.parseInt(espaco1.getText().toString()))) {
+                        resultado.setText(espaco1.getText().toString() + " é primo!");
+                    } else {
+                        resultado.setText(espaco1.getText().toString() + " não é primo!");
+                    }
+
+                    me = Integer.parseInt(espaco1.getText().toString());
+
+                    System.out.println(me +"aaa");
+
+                    while (!primo(me -1)) {
+                        me--;
+                    }
+                    menorque.setText(me - 1 + "");
+                    diferencamenor.setText(" " + ((Integer.parseInt(espaco1.getText().toString()) - (me - 1)) * -1 + " "));
+                    me = Integer.parseInt(espaco1.getText().toString());
+
+                    while (!primo(me + 1)) {
+                        me++;
+                    }
+                    maiorque.setText(me + 1 + "");
+                    diferencamaior.setText(" " + ((me + 1) - Integer.parseInt(espaco1.getText().toString())) + " ");
+
+                    SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+                    DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
+                    DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Primos'," +
+                            " '" + "O número " + resultado.getText().toString() + "'," +
+                            "'" + "Mais proximos: " + menorque.getText().toString() + " < " + espaco1.getText().toString() + " > " + maiorque.getText().toString() +  "'," +
+                            "'" + Data.dataatual() +"', "+ R.drawable.hist_primos +" )");
+
+                } catch (Exception e) {
+
                 }
 
-                me = Integer.parseInt(espaco1.getText().toString());
 
-                System.out.println(me +"aaa");
-
-                while (!primo(me -1)) {
-                    me--;
-                }
-                menorque.setText(me - 1 + "");
-                diferencamenor.setText(" " + ((Integer.parseInt(espaco1.getText().toString()) - (me - 1)) * -1 + " "));
-                me = Integer.parseInt(espaco1.getText().toString());
-
-                while (!primo(me + 1)) {
-                    me++;
-                }
-                maiorque.setText(me + 1 + "");
-                diferencamaior.setText(" " + ((me + 1) - Integer.parseInt(espaco1.getText().toString())) + " ");
-
-                SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
-                DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
-                DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Primos'," +
-                        " '" + "O número " + resultado.getText().toString() + "'," +
-                        "'" + "Mais proximos: " + menorque.getText().toString() + " < " + espaco1.getText().toString() + " > " + maiorque.getText().toString() +  "'," +
-                        "'" + Data.dataatual() +"', "+ R.drawable.hist_primos +" )");
 
 
             }

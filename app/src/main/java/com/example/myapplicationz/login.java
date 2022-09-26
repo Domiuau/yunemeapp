@@ -1,6 +1,7 @@
 package com.example.myapplicationz;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
@@ -14,8 +15,14 @@ import android.widget.Toast;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.Task;
+import com.google.firebase.FirebaseNetworkException;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
 
 public class login extends AppCompatActivity {
 
@@ -49,14 +56,22 @@ public class login extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
                             if (task.isSuccessful()){
+                                Data.at = true;
+                                Data.atualizardata();
                                 startActivity(Data.a(login.this,ferramentastela.class));
-                            }
+                            } else {
+                                try {
+                                    throw task.getException();
 
-                        }
-                    }).addOnFailureListener(new OnFailureListener() {
-                        @Override
-                        public void onFailure(@NonNull Exception e) {
-                            toask("Usuário não encontrado");
+                                }  catch (FirebaseNetworkException e){
+                                    toask("Sem acesso a internet");
+                                }
+
+                                catch (Exception e){
+                                    toask("Conta não encontrada");
+
+                                }
+                            }
 
                         }
                     });

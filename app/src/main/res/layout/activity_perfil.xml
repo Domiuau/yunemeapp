@@ -5,14 +5,74 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="50dp"
+    android:orientation="vertical"
+    android:background="@color/white"
     android:gravity="center"
     tools:context=".Perfil">
 
+
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imagem"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_marginBottom="50dp"
+            android:background="@drawable/bola" />
+
+        <ImageView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignEnd="@id/imagem"
+            android:layout_alignBottom="@id/imagem"
+            android:layout_marginBottom="50dp"
+            android:layout_marginRight="50dp"
+            android:src="@drawable/ic_escolherimagem"/>
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/usuario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/realizadas"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/ultimaentrada"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"/>
+
+
+
+
+
+
+
+
     <androidx.appcompat.widget.AppCompatButton
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="40dp"
         android:id="@+id/desligar"
         android:text="deslogar"
+        android:background="@drawable/botaoamarelo"
+        android:backgroundTint="@color/purple_200"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:id="@+id/testes"
+        android:text="aaar"
         android:background="@drawable/botaoamarelo"
         android:backgroundTint="@color/purple_200"/>
 

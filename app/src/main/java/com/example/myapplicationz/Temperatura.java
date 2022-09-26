@@ -29,6 +29,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_MyApplicationz);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temperatura);
 
@@ -112,8 +113,14 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                espaco2.setText(selecionarformula(espaco1.getText().toString()));
-                adicionarhist();
+                try {
+
+                    espaco2.setText(selecionarformula(espaco1.getText().toString()));
+                    adicionarhist();
+
+                } catch (Exception e){
+
+                }
 
 
 

@@ -5,6 +5,7 @@ import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
 
 public class Teclado extends AppCompatActivity {
     //teclado universal para todas as ferramentas
@@ -120,6 +121,8 @@ public class Teclado extends AppCompatActivity {
         return valor;
 
     }
+
+
 
 
 }

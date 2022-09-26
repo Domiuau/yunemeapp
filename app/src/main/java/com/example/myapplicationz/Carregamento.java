@@ -1,5 +1,6 @@
 package com.example.myapplicationz;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -7,6 +8,13 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+
+import java.util.concurrent.Executor;
 
 public class Carregamento extends AppCompatActivity {
 
@@ -17,14 +25,21 @@ public class Carregamento extends AppCompatActivity {
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         try {
-            Thread.sleep(200);
-        } catch (Exception e){}
+            Thread.sleep(50);
 
-        if(FirebaseAuth.getInstance().getCurrentUser() != null){
-            startActivity(Data.a(Carregamento.this,ferramentastela.class));
-        } else {
-            startActivity(Data.a(Carregamento.this,inicial.class));
+        } catch (Exception e) {
         }
+
+
+        if (FirebaseAuth.getInstance().getCurrentUser() != null) {
+            Data.at = true;
+            Data.atualizardata();
+            startActivity(Data.a(Carregamento.this, ferramentastela.class));
+        } else {
+            startActivity(Data.a(Carregamento.this, inicial.class));
+        }
+
+        finish();
 
 
     }
