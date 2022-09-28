@@ -26,7 +26,7 @@ public class Perfil extends AppCompatActivity {
 
     AppCompatButton deslogar, testes;
     ImageView imagem;
-    TextView usuario, email, realizadas,ultimaentrada;
+    TextView usuario, email, realizadas,ultimaentrada,dataregistro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +41,7 @@ public class Perfil extends AppCompatActivity {
         testes = findViewById(R.id.testes);
         realizadas = findViewById(R.id.realizadas);
         ultimaentrada = findViewById(R.id.ultimaentrada);
+        dataregistro = findViewById(R.id.dataregistro);
 
 
         deslogar.setOnClickListener(new View.OnClickListener() {
@@ -57,7 +58,9 @@ public class Perfil extends AppCompatActivity {
             public void onClick(View v) {
 
 
-                //realizadas.setText(Data.acoes()+"");
+                Data.atualizaradicionadas();
+
+
 
 
             }
@@ -69,7 +72,7 @@ public class Perfil extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-        ultimaentrada.setText(Data.entrada);
+        ultimaentrada.setText("Ultima entrada: " +  Data.entrada);
 
 
 
@@ -78,9 +81,10 @@ public class Perfil extends AppCompatActivity {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
                 if (value != null){
-                    usuario.setText(value.getString("nome"));
-                    email.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
-                    realizadas.setText(value.getString("dataderegistro"));
+                    usuario.setText("Nome de usuário: " + value.getString("nome"));
+                    email.setText("Email: " + FirebaseAuth.getInstance().getCurrentUser().getEmail());
+                    dataregistro.setText("Data de registro: " + value.getString("dataderegistro"));
+                    realizadas.setText("Conversões realizadas na conta: " + value.getLong("realizadas").toString());
 
 
                 }

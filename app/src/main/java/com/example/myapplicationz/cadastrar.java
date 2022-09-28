@@ -80,6 +80,9 @@ public class cadastrar extends AppCompatActivity {
                                 usuarios.put("nome", usuario.getText().toString());
                                 usuarios.put("dataderegistro", Data.dataatual());
                                 usuarios.put("ultimaentrada",Data.dataatual());
+                                usuarios.put("realizadas",0);
+                                Data.entrada = Data.dataatual();
+
 
                                 DocumentReference referencia = FirebaseFirestore.getInstance().collection("Usuarios").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
                                 referencia.set(usuarios).addOnSuccessListener(new OnSuccessListener<Void>() {

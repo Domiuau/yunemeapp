@@ -35,7 +35,6 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
         DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
 
-
         botaobhaskara = findViewById(R.id.bhaskara);
         botaodesconto = findViewById(R.id.desconto);
         casinha = findViewById(R.id.casinha);

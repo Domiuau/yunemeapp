@@ -11,6 +11,7 @@ import android.support.v4.os.IResultReceiver;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.math.BigDecimal;
 import java.text.DateFormat;
@@ -32,6 +33,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         setTheme(R.style.Theme_MyApplicationz);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temperatura);
+        Data.fluxo = "";
 
         n1 = findViewById(R.id.n1);
         n2 = findViewById(R.id.n2);
@@ -55,7 +57,6 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         spinner2 = findViewById(R.id.spinner2);
         inverter = findViewById(R.id.inverter);
         voltar = findViewById(R.id.voltar);
-
 
 
         n1.setOnClickListener(this);
@@ -86,16 +87,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
                 int a = spinner1.getSelectedItemPosition();
                 spinner1.setSelection(spinner2.getSelectedItemPosition());
                 spinner2.setSelection(a);
-                try{
-                    espaco2.setText(selecionarformula(espaco1.getText().toString()));
-                    adicionarhist();
-
-
-
-
-                }catch (Exception e){
-
-                }
+                tentar();
 
 
             }
@@ -106,6 +98,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
                 espaco1.setText("");
                 espaco2.setText("");
                 formula.setText("");
+                Data.fluxo = "";
             }
         });
 
@@ -113,49 +106,52 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
 
-                    espaco2.setText(selecionarformula(espaco1.getText().toString()));
-                    adicionarhist();
-
-                } catch (Exception e){
-
-                }
-
-
+                tentar();
 
             }
         });
 
     }
 
-    void adicionarhist (){
+    void tentar (){
+
+        try {
+            String consulta = espaco1.getText().toString() + spinner1.getSelectedItem().toString() + spinner2.getSelectedItem().toString();
+            if (!consulta.equals(Data.fluxo) && !espaco1.getText().toString().equals("")) {
+                espaco2.setText(selecionarformula(espaco1.getText().toString()));
+                adicionarhist();
+                Data.atualizaradicionadas();
+                Data.fluxo = consulta;
+                System.out.println(Data.fluxo + espaco1.getText().toString() + spinner1.getSelectedItem().toString().equals(Data.fluxo) + espaco1.getText().toString().equals("")+"fjnhnjdfhjnjdfghjnfjnfjnkjnkg");
+
+            } else if (espaco1.getText().toString().equals("")) {
+                Toast.makeText(Temperatura.this, "Insira um número", Toast.LENGTH_SHORT).show();
+            }
+
+
+        } catch (Exception e) {
+            Toast.makeText(Temperatura.this, "Não foi possivel calcular", Toast.LENGTH_SHORT).show();
+
+        }
+    }
+
+    void adicionarhist() {
         SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
-        DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Velocidade'," +
+        DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Temperatura'," +
                 " '" + espaco1.getText().toString() + " " + spinner1.getSelectedItem().toString() +
                 " = " + espaco2.getText().toString() + " " + spinner2.getSelectedItem().toString() + "'," +
                 " '" + formula.getText().toString() + "'," +
                 "'" + Data.dataatual() + "', '" + R.drawable.hist_temperatura + "' )");
 
 
-
     }
 
 
-
-
-
-    void adicionarformula (String formulausada){
+    void adicionarformula(String formulausada) {
         formula.setText(formulausada);
 
     }
-
-
-
-
-
-
-
 
 
     String selecionarformula(String valor) {
@@ -166,7 +162,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
                     adicionarformula(valor + " x " + "1 = " + vezes.toString());
                 } else if (spinner2.getSelectedItemPosition() == 1) {
                     vezes = new BigDecimal(valor).add(new BigDecimal("273.15"));
-                    adicionarformula(valor + " + 273,15 = " + vezes.toString() );
+                    adicionarformula(valor + " + 273,15 = " + vezes.toString());
                 } else {
 
                     vezes = new BigDecimal(valor).multiply(new BigDecimal("9"))
@@ -198,14 +194,13 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
                 if (spinner2.getSelectedItemPosition() == 0) {
                     vezes = new BigDecimal(valor).subtract(new BigDecimal("32")).multiply(new BigDecimal("5"));
                     adicionarformula(valor + " - 32 x 5 = " + vezes.toString());
-                    return String.format("%.1f",Double.parseDouble(vezes.toString())/9);
+                    return String.format("%.1f", Double.parseDouble(vezes.toString()) / 9);
 
                 } else if (spinner2.getSelectedItemPosition() == 1) {
                     vezes = new BigDecimal(valor).subtract(new BigDecimal("32"))
                             .multiply(new BigDecimal("5"));
                     adicionarformula(valor + " - 32 x 5 = " + vezes.toString());
-                    return String.format("%.1f",Double.parseDouble(vezes.toString())/9+273.15);
-
+                    return String.format("%.1f", Double.parseDouble(vezes.toString()) / 9 + 273.15);
 
 
                 } else {
@@ -224,9 +219,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
 
 
-
         espaco1.setText(Teclado.teclado(v, espaco1.getText().toString()));
-
 
 
     }

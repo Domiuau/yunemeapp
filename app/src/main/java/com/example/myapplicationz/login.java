@@ -24,10 +24,12 @@ import com.google.firebase.firestore.EventListener;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.FirebaseFirestoreException;
 
+import org.checkerframework.checker.units.qual.C;
+
 public class login extends AppCompatActivity {
 
     AppCompatImageButton voltar;
-    EditText email,senha;
+    EditText email, senha;
     AppCompatButton login;
     FirebaseAuth autenticar = FirebaseAuth.getInstance();
 
@@ -35,7 +37,7 @@ public class login extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getWindow().setStatusBarColor(ContextCompat.getColor(login.this,R.color.verdeouazulsla));
+        getWindow().setStatusBarColor(ContextCompat.getColor(login.this, R.color.verdeouazulsla));
 
         voltar = findViewById(R.id.voltar);
         email = findViewById(R.id.email);
@@ -47,27 +49,28 @@ public class login extends AppCompatActivity {
             public void onClick(View v) {
 
                 if (email.getText().toString().isEmpty() ||
-                senha.getText().toString().isEmpty()){
+                        senha.getText().toString().isEmpty()) {
                     toask("Preencha todos as campos");
 
 
                 } else {
-                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email.getText().toString(),senha.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    FirebaseAuth.getInstance().signInWithEmailAndPassword(email.getText().toString(), senha.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
                         public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()){
-                                Data.at = true;
+                            if (task.isSuccessful()) {
+
                                 Data.atualizardata();
-                                startActivity(Data.a(login.this,ferramentastela.class));
+                                startActivity(Data.a(login.this, ferramentastela.class));
+
+
+
                             } else {
                                 try {
                                     throw task.getException();
 
-                                }  catch (FirebaseNetworkException e){
+                                } catch (FirebaseNetworkException e) {
                                     toask("Sem acesso a internet");
-                                }
-
-                                catch (Exception e){
+                                } catch (Exception e) {
                                     toask("Conta não encontrada");
 
                                 }
@@ -77,17 +80,17 @@ public class login extends AppCompatActivity {
                     });
 
 
-
                 }
-
 
 
             }
         });
 
 
+    }
 
-
+    void w (){
+        startActivity(Data.a(login.this, ferramentastela.class));
     }
 
     void toask(String msg) {

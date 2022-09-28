@@ -150,16 +150,23 @@
 
                </LinearLayout>
 
-                <LinearLayout
+                <RelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="20dp"
                     android:gravity="center"
-                    android:orientation="vertical">
+                    android:paddingRight="20dp"
+                    android:layout_height="match_parent">
 
 
                     <ImageView
+                        android:id="@+id/delta"
                         android:layout_width="30dp"
                         android:layout_height="30dp"
+                        android:layout_alignParentTop="true"
+                        android:layout_centerHorizontal="true"
+
                         android:src="@drawable/deltapequeno" />
 
                     <TextView
@@ -168,56 +175,60 @@
                         android:layout_width="150dp"
                         android:layout_height="40dp"
                         android:gravity="center"
+                        android:layout_below="@id/delta"
+                        android:layout_centerHorizontal="true"
                         android:textColor="@color/branco"
                         android:autoSizeTextType="uniform"
                         android:autoSizeMinTextSize="10dp"
                         android:autoSizeMaxTextSize="35dp"
-                        android:layout_marginBottom="5dp"
                         android:background="@drawable/valoresnovo"/>
 
+
                     <LinearLayout
+                        android:id="@+id/l1"
+                        android:layout_marginTop="10dp"
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/espacodelta"
                         android:gravity="center"
-                        android:orientation="horizontal"
-                        android:layout_height="wrap_content">
+                        android:orientation="horizontal">
 
                         <TextView
-                            android:layout_width="90dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:textColor="@color/preto"
-                            android:textSize="20sp"
-                            android:layout_marginRight="50dp"
+                            android:layout_marginRight="120dp"
                             android:gravity="center"
-                            android:text="X1"/>
+                            android:text="X1"
+                            android:textColor="@color/preto"
+                            android:textSize="20sp" />
 
                         <TextView
-                            android:layout_width="90dp"
+                            android:layout_width="wrap_content"
                             android:layout_height="35dp"
-                            android:textColor="@color/preto"
                             android:gravity="center"
-                            android:textSize="20sp"
-                            android:text="X2"/>
-
-
-
+                            android:text="X2"
+                            android:textColor="@color/preto"
+                            android:textSize="20sp" />
 
 
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:gravity="center"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@id/l1"
                         android:orientation="horizontal"
-                        android:layout_height="wrap_content">
+                        android:gravity="center">
+
 
                         <TextView
                             android:id="@+id/espacox1"
                             android:paddingLeft="2dp"
                             android:paddingRight="2dp"
                             android:layout_width="110dp"
-                            android:layout_marginRight="50dp"
                             android:layout_height="35dp"
                             android:gravity="center"
+                            android:layout_marginRight="40dp"
                             android:autoSizeTextType="uniform"
                             android:autoSizeMinTextSize="13dp"
                             android:autoSizeMaxTextSize="30dp"
@@ -237,15 +248,25 @@
                             android:layout_height="35dp"
                             android:background="@drawable/valoresnovo"/>
 
-
-
-
-
                     </LinearLayout>
 
 
 
-                </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                </RelativeLayout>
 
 
 

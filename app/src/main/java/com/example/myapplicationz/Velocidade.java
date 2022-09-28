@@ -19,6 +19,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class Velocidade extends AppCompatActivity implements View.OnClickListener {
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2;
@@ -58,7 +59,7 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         spinner2 = findViewById(R.id.spinner2);
         inverter = findViewById(R.id.inverter);
         voltar = findViewById(R.id.voltar);
-
+        Data.fluxo = "";
 
 
         n1.setOnClickListener(this);
@@ -89,12 +90,7 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
                 int a = spinner1.getSelectedItemPosition();
                 spinner1.setSelection(spinner2.getSelectedItemPosition());
                 spinner2.setSelection(a);
-                try{
-                    selecionarformula();
-
-                }catch (Exception e){
-
-                }
+                tentar();
 
 
             }
@@ -105,37 +101,65 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
                 espaco1.setText("");
                 espaco2.setText("");
                 formula.setText("");
+                Data.fluxo = "";
             }
         });
+
+
 
 
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                selecionarformula();
+
+
+                tentar();
 
 
             }
         });
 
 
-
     }
 
-        void adicionar(BigDecimal vezes,Double numero) {
+    void adicionarhist(BigDecimal vezes, Double numero) {
         BigDecimal a = new BigDecimal(numero.toString());
         formula.setText(espaco1.getText().toString() + " x " + vezes + " = " + a.multiply(vezes).toString());
 
         espaco2.setText(a.multiply(vezes).toString());
 
-            SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
-            DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
-            DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Velocidade'," +
-                    " '" + espaco1.getText().toString() + " " + spinner1.getSelectedItem().toString() +
-                    " = " + espaco2.getText().toString() + " " + spinner2.getSelectedItem().toString() + "'," +
-                    " '" + formula.getText().toString() + "'," +
-                    "'" + Data.dataatual() + "', '" + R.drawable.hist_velocidade + "' )");
+        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+        DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
+        DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Velocidade'," +
+                " '" + espaco1.getText().toString() + " " + spinner1.getSelectedItem().toString() +
+                " = " + espaco2.getText().toString() + " " + spinner2.getSelectedItem().toString() + "'," +
+                " '" + formula.getText().toString() + "'," +
+                "'" + Data.dataatual() + "', '" + R.drawable.hist_velocidade + "' )");
 
+
+    }
+
+    void tentar (){
+
+        try {
+
+            String consulta = espaco1.getText().toString()+spinner1.getSelectedItem().toString()+spinner2.getSelectedItem().toString();
+
+            if (!consulta.equals(Data.fluxo) && !espaco1.getText().toString().equals("")) {
+
+                selecionarformula();
+                Data.atualizaradicionadas();
+                Data.fluxo = consulta;
+
+            } else if (espaco1.getText().toString().equals("")) {
+                Toast.makeText(Velocidade.this, "Insira um número", Toast.LENGTH_SHORT).show();
+
+            }
+
+        } catch (Exception e) {
+            Toast.makeText(Velocidade.this, "Não foi possivel calcular", Toast.LENGTH_SHORT).show();
+
+        }
 
     }
 
@@ -176,7 +200,7 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
 
 
         }
-        adicionar(vezes,Double.parseDouble(espaco1.getText().toString()));
+        adicionarhist(vezes, Double.parseDouble(espaco1.getText().toString()));
     }
 
     @Override

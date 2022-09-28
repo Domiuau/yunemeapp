@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -23,16 +24,17 @@ public class Carregamento extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_carregamento);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+        DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
 
         try {
-            Thread.sleep(50);
+            Thread.sleep(500);
 
         } catch (Exception e) {
         }
 
 
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
-            Data.at = true;
             Data.atualizardata();
             startActivity(Data.a(Carregamento.this, ferramentastela.class));
         } else {

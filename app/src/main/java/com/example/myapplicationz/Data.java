@@ -1,6 +1,8 @@
 package com.example.myapplicationz;
 
+import static android.content.Context.MODE_APPEND;
 import static android.content.Context.MODE_PRIVATE;
+import static android.database.sqlite.SQLiteDatabase.openDatabase;
 import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 
 import android.content.Context;
@@ -42,6 +44,8 @@ public class Data {
     static long i;
     static String entrada;
     static boolean at;
+    static String fluxo = "";
+
 
     public static String dataatual() {
         return formatardata.format(data);
@@ -62,14 +66,38 @@ public class Data {
 
     }
 
-    static void atualizardataa() {
-        DocumentReference referencia = FirebaseFirestore.getInstance().collection("Usuarios").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        referencia.update("ultimaentrada", Data.dataatual());
+
+    static void atualizaradicionadas(){
+        try {
+            at = true;
+            DocumentReference referencia = FirebaseFirestore.getInstance().collection("Usuarios").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+            referencia.addSnapshotListener(new EventListener<DocumentSnapshot>() {
+                @Override
+                public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
+                    if (value != null && at == true){
+                        DocumentReference referencia = FirebaseFirestore.getInstance().collection("Usuarios").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
+                        referencia.update("realizadas",value.getLong("realizadas")+1);
+                        at = false;
+
+                    }
+                }
+            });
+
+        } catch (Exception e){
+
+        }
+
     }
 
-    static void atualizardata() {
-        DocumentReference referencia = FirebaseFirestore.getInstance().collection("Usuarios").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
 
+
+
+
+
+
+    static void atualizardata() {
+        at = true;
+        DocumentReference referencia = FirebaseFirestore.getInstance().collection("Usuarios").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
         referencia.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
@@ -85,31 +113,9 @@ public class Data {
     }
 
 
-    public static long acoes() {
 
 
-        DocumentReference referencia = FirebaseFirestore.getInstance().collection("Usuarios").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
-        referencia.addSnapshotListener(new EventListener<DocumentSnapshot>() {
-            @Override
-            public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
 
-                i = value.getLong("convercoes") + 100;
-                System.out.println(i);
-
-
-            }
-
-
-        });
-
-
-        return i;
-    }
-
-
-    static void vai() {
-
-    }
 
 
 }

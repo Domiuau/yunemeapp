@@ -32,7 +32,6 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
     AppCompatImageButton nbackspace;
     TextView espacox1, espacox2, espacodelta;
     AppCompatImageView voltar;
-    HistAdapter histAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +62,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espacox2 = findViewById(R.id.espacox2);
         espacodelta = findViewById(R.id.espacodelta);
         voltar = findViewById(R.id.voltar);
+        Data.fluxo = "";
 
         n1.setOnClickListener(this);
         n2.setOnClickListener(this);
@@ -98,6 +98,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
                 espacodelta.setText("");
                 espacox1.setText("");
                 espacox2.setText("");
+                Data.fluxo = "";
 
             }
         });
@@ -106,60 +107,57 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                System.out.println("UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU");
+
+
                 //delta = 0 -> "1 -10 25"
 
+                String comp = espaco1.getText().toString() + espaco2.getText().toString() + espaco3.getText().toString();
 
-                Float[] a = {
-                        Float.parseFloat(espaco1.getText().toString()),
-                        Float.parseFloat(espaco2.getText().toString()),
-                        Float.parseFloat(espaco3.getText().toString())
-                };
+                if (!comp.equals(Data.fluxo) && !espaco1.getText().toString().isEmpty()
+                        && !espaco2.getText().toString().isEmpty()
+                        && !espaco3.getText().toString().isEmpty()) {
 
-                if ((a[1] * a[1]) - 4 * a[0] * a[2] < 0) {
-                    espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] + "");
-                    espacox1.setText("NaN");
-                    espacox2.setText("NaN");
-                } else if ((a[1] * a[1]) - 4 * a[0] * a[2] == 0) {
-                    espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] + "");
-                    espacox1.setText((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
-                    espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
-                } else {
-                    espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] % .2f + "");
-                    espacox1.setText((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
-                    espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
 
+                    try {
+
+                        Float[] a = {
+                                Float.parseFloat(espaco1.getText().toString()),
+                                Float.parseFloat(espaco2.getText().toString()),
+                                Float.parseFloat(espaco3.getText().toString())
+                        };
+
+                        if ((a[1] * a[1]) - 4 * a[0] * a[2] < 0) {
+                            espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] + "");
+                            espacox1.setText("NaN");
+                            espacox2.setText("NaN");
+                        } else if ((a[1] * a[1]) - 4 * a[0] * a[2] == 0) {
+                            espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] + "");
+                            espacox1.setText((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
+                            espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
+                        } else {
+                            espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] % .2f + "");
+                            espacox1.setText((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
+                            espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
+
+                        }
+
+                        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+                        DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Bhaskara','" + "A = " + a[0] + " B = " + a[1] + " C = " + a[2] + "','" +
+                                "Delta = " + String.format("%.2f", Double.parseDouble(espacodelta.getText().toString())) +
+                                " / X1 = " + String.format("%.5f", Double.parseDouble(espacox1.getText().toString()))
+                                + " / X2 = " + String.format("%.5f", Double.parseDouble(espacox2.getText().toString())) + "'," +
+                                "'" + Data.dataatual() + "'," + R.drawable.hist_bhaskara + ")");
+                        Data.atualizaradicionadas();
+                        Data.fluxo = comp;
+
+
+                    } catch (Exception e) {
+                        Toast.makeText(Bhaskara.this, "Não foi possivel calcular", Toast.LENGTH_SHORT).show();
+
+                    }
+                } else if (espaco1.getText().toString().isEmpty() || espaco2.getText().toString().isEmpty() || espaco3.getText().toString().isEmpty()) {
+                    Toast.makeText(Bhaskara.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
                 }
-
-                SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
-                DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Bhaskara','" + "A = " + a[0] + " B = " + a[1] + " C = " + a[2] + "','" +
-                        "Delta = " + String.format("%.2f",Double.parseDouble(espacodelta.getText().toString())) +
-                        " / X1 = " + String.format("%.5f",Double.parseDouble(espacox1.getText().toString()))
-                        + " / X2 = " + String.format("%.5f",Double.parseDouble(espacox2.getText().toString())) + "'," +
-                        "'" + Data.dataatual() + "'," + R.drawable.hist_bhaskara + ")");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
                     /* Float[] a = {Float.parseFloat(espaco1.getText().toString()),
@@ -194,18 +192,10 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
 
     }
 
-    void limpar() {
-        espaco1.setBackgroundResource(R.drawable.valoresnovo);
-        espaco2.setBackgroundResource(R.drawable.valoresnovo);
-        espaco3.setBackgroundResource(R.drawable.valoresnovo);
-    }
 
     @Override
     public void onClick(View bhaskara) {
 
-        espacodelta.setText("");
-        espacox1.setText("");
-        espacox2.setText("");
 
         //O código abaixo identifica o botão apertado e atrubui um valor, verifica se
         //o valor pode ser adicionado, backspace e identifica aonde o valor será atribuido
@@ -214,20 +204,17 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         if (Teclado.espaco(bhaskara) == 2) {
 
             espaco2.setText(Teclado.teclado(bhaskara, espaco2.getText().toString()));
-            limpar();
             espaco2.setBackgroundResource(R.drawable.valorselecionado);
 
         } else if (Teclado.espaco(bhaskara) == 3) {
 
             espaco3.setText(Teclado.teclado(bhaskara, espaco3.getText().toString()));
-            limpar();
             espaco3.setBackgroundResource(R.drawable.valorselecionado);
 
         } else {
 
 
             espaco1.setText(Teclado.teclado(bhaskara, espaco1.getText().toString()));
-            limpar();
             espaco1.setBackgroundResource(R.drawable.valorselecionado);
 
         }
