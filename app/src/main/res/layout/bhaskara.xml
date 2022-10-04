@@ -4,272 +4,328 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/cinzafundo"
+    android:background="#373737"
     android:orientation="vertical"
     tools:context=".MainActivity2">
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
-    <LinearLayout
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3.4"
-        android:background="@drawable/fundoteclado"
-        android:orientation="vertical">
+        android:layout_weight="3"
+        android:background="@drawable/fundoteclado">
 
-        <LinearLayout
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/voltar"
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:background="@color/semcor"
+            android:src="@drawable/ic_voltar"
+            android:tint="@color/preto" />
+
+        <TextView
+            android:id="@+id/text_bhaskara"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.1"
-            android:background="@drawable/fundo3"
+            android:layout_height="75dp"
             android:gravity="center"
-            android:orientation="horizontal">
+            android:text="Bhaskara"
+            android:textColor="@color/preto"
+            android:textSize="25sp" />
 
-            <androidx.appcompat.widget.AppCompatImageView
-                android:id="@+id/voltar"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="13dp"
-                android:layout_marginBottom="13dp"
-                android:layout_weight="1"
-                android:src="@drawable/setinha" />
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/curiosidade"
+            android:layout_width="100dp"
+            android:layout_height="75dp"
+            android:layout_alignParentRight="true"
+            android:background="@color/semcor"
+            android:padding="24dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/ic_interrogacao"
+            android:tint="@color/black" />
 
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:text="Bhaskara"
-                android:gravity="center"
-                android:textColor="@color/branco"
-                android:textSize="25dp"/>
-
-            <ImageView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_marginTop="13dp"
-                android:layout_marginBottom="13dp"
-                android:layout_weight="1"
-                android:src="@drawable/ic_interrogacao" />
-
-
-        </LinearLayout>
-
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_marginTop="5dp"
+            android:id="@+id/c1"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="6"
-            android:orientation="vertical">
+            android:layout_height="wrap_content"
+            android:layout_below="@id/voltar">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:orientation="horizontal"
-                android:layout_weight="1.23">
-
+            <RelativeLayout
+                android:id="@+id/relative1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/relative2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent">
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/espaco1"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="15dp"
-                    android:autoSizeTextType="uniform"
-                    android:textColor="@color/branco"
-                    android:autoSizeMinTextSize="10dp"
-                    android:autoSizeMaxTextSize="25dp"
-                    android:background="@drawable/valorselecionado"
-                    android:layout_weight="1"/>
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/semcor"
+                    android:gravity="center"
+                    android:hint="Insira aqui..."
+                    android:textColor="@color/preto"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/espaco1"
+                    android:layout_alignTop="@id/espaco1"
+                    android:layout_marginTop="-36dp"
+                    android:gravity="center"
+                    android:text="A"
+                    android:textAlignment="inherit"
+                    android:textColor="@color/preto"
+                    android:textSize="34dp" />
+
+                <View
+                    android:layout_width="110dp"
+                    android:layout_height="1dp"
+                    android:layout_alignBottom="@id/espaco1"
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/preto" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relative2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/relative3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/relative1">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="0dp"
                     android:id="@+id/espaco2"
-                    android:autoSizeTextType="uniform"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginLeft="15dp"
-                    android:layout_marginRight="15dp"
-                    android:autoSizeMinTextSize="10dp"
-                    android:textColor="@color/branco"
-                    android:autoSizeMaxTextSize="25dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/valoresnovo"
-                    android:layout_weight="1"/>
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/semcor"
+                    android:gravity="center"
+                    android:hint="Insira aqui..."
+                    android:textColor="@color/preto"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/espaco2"
+                    android:layout_alignTop="@id/espaco2"
+                    android:layout_marginTop="-36dp"
+                    android:gravity="center"
+                    android:text="B"
+                    android:textAlignment="inherit"
+                    android:textColor="@color/preto"
+                    android:textSize="34dp" />
+
+                <View
+                    android:layout_width="110dp"
+                    android:layout_height="1dp"
+                    android:layout_alignBottom="@id/espaco2"
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/preto" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/relative2">
 
                 <androidx.appcompat.widget.AppCompatButton
-                    android:layout_width="0dp"
                     android:id="@+id/espaco3"
-                    android:layout_marginTop="25dp"
-                    android:layout_marginLeft="15dp"
-                    android:autoSizeTextType="uniform"
-                    android:autoSizeMinTextSize="10dp"
-                    android:autoSizeMaxTextSize="25dp"
-                    android:textColor="@color/branco"
-                    android:layout_marginRight="10dp"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/valoresnovo"
-                    android:layout_weight="1"/>
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/semcor"
+                    android:gravity="center"
+                    android:hint="Insira aqui..."
+                    android:textColor="@color/preto"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/espaco3"
+                    android:layout_alignTop="@id/espaco3"
+                    android:layout_marginTop="-36dp"
+                    android:gravity="center"
+                    android:text="C"
+                    android:textAlignment="inherit"
+                    android:textColor="@color/preto"
+                    android:textSize="34dp" />
+
+                <View
+                    android:layout_width="110dp"
+                    android:layout_height="1dp"
+                    android:layout_alignBottom="@id/espaco3"
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/preto" />
 
 
-            </LinearLayout>
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/c1"
+            android:gravity="center"
+            android:orientation="vertical">
 
             <LinearLayout
+                android:id="@+id/la1"
                 android:layout_width="match_parent"
-                android:layout_height="0dp"
-                android:orientation="vertical"
-                android:layout_weight="3">
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-               <LinearLayout
-                   android:layout_width="match_parent"
-                   android:layout_height="wrap_content">
-
-                   <TextView
-                       android:layout_width="0dp"
-                       android:layout_height="wrap_content"
-                       android:layout_weight="1"
-                       android:text="A"
-                       android:textColor="@color/preto"
-                       android:gravity="center"
-                       android:textSize="20sp"/>
-
-                   <TextView
-                       android:layout_width="0dp"
-                       android:layout_height="wrap_content"
-                       android:layout_weight="1"
-                       android:text="B"
-                       android:textColor="@color/preto"
-                       android:gravity="center"
-                       android:textSize="20sp"/>
-
-                   <TextView
-                       android:layout_width="0dp"
-                       android:layout_height="wrap_content"
-                       android:layout_weight="1"
-                       android:text="C"
-                       android:textColor="@color/preto"
-                       android:gravity="center"
-                       android:textSize="20sp"/>
-
-               </LinearLayout>
+                <ImageView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="12dp"
+                    android:src="@drawable/ic_a" />
 
                 <RelativeLayout
-                    android:layout_width="match_parent"
-                    android:paddingTop="5dp"
-                    android:paddingBottom="10dp"
-                    android:paddingLeft="20dp"
-                    android:gravity="center"
-                    android:paddingRight="20dp"
+                    android:id="@+id/r1"
+                    android:layout_width="wrap_content"
                     android:layout_height="match_parent">
 
-
-                    <ImageView
-                        android:id="@+id/delta"
-                        android:layout_width="30dp"
-                        android:layout_height="30dp"
-                        android:layout_alignParentTop="true"
-                        android:layout_centerHorizontal="true"
-
-                        android:src="@drawable/deltapequeno" />
+                    <View
+                        android:id="@+id/v1"
+                        android:layout_width="190dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="22dp"
+                        android:background="@color/preto" />
 
                     <TextView
                         android:id="@+id/espacodelta"
-                        android:layout_marginTop="10dp"
-                        android:layout_width="150dp"
-                        android:layout_height="40dp"
-                        android:gravity="center"
-                        android:layout_below="@id/delta"
-                        android:layout_centerHorizontal="true"
-                        android:textColor="@color/branco"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@id/v1"
+                        android:layout_marginTop="-5dp"
+                        android:autoSizeMaxTextSize="20sp"
+                        android:autoSizeMinTextSize="16sp"
+                        android:autoSizePresetSizes="20sp"
                         android:autoSizeTextType="uniform"
-                        android:autoSizeMinTextSize="10dp"
-                        android:autoSizeMaxTextSize="35dp"
-                        android:background="@drawable/valoresnovo"/>
-
-
-                    <LinearLayout
-                        android:id="@+id/l1"
-                        android:layout_marginTop="10dp"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/espacodelta"
-                        android:gravity="center"
-                        android:orientation="horizontal">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:layout_marginRight="120dp"
-                            android:gravity="center"
-                            android:text="X1"
-                            android:textColor="@color/preto"
-                            android:textSize="20sp" />
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="35dp"
-                            android:gravity="center"
-                            android:text="X2"
-                            android:textColor="@color/preto"
-                            android:textSize="20sp" />
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_below="@id/l1"
-                        android:orientation="horizontal"
-                        android:gravity="center">
-
-
-                        <TextView
-                            android:id="@+id/espacox1"
-                            android:paddingLeft="2dp"
-                            android:paddingRight="2dp"
-                            android:layout_width="110dp"
-                            android:layout_height="35dp"
-                            android:gravity="center"
-                            android:layout_marginRight="40dp"
-                            android:autoSizeTextType="uniform"
-                            android:autoSizeMinTextSize="13dp"
-                            android:autoSizeMaxTextSize="30dp"
-                            android:textColor="@color/branco"
-                            android:background="@drawable/valoresnovo"/>
-
-                        <TextView
-                            android:id="@+id/espacox2"
-                            android:layout_width="110dp"
-                            android:gravity="center"
-                            android:paddingLeft="2dp"
-                            android:paddingRight="2dp"
-                            android:textColor="@color/branco"
-                            android:autoSizeTextType="uniform"
-                            android:autoSizeMinTextSize="13dp"
-                            android:autoSizeMaxTextSize="30dp"
-                            android:layout_height="35dp"
-                            android:background="@drawable/valoresnovo"/>
-
-                    </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+                        android:paddingLeft="4dp"
+                        android:textColor="@color/preto"
+                        android:textSize="20sp" />
 
 
                 </RelativeLayout>
 
 
+            </LinearLayout>
 
+            <LinearLayout
+                android:id="@+id/la2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/la1"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="12dp"
+                    android:gravity="center"
+                    android:text="X1"
+                    android:textColor="@color/preto"
+                    android:textSize="20sp" />
+
+                <RelativeLayout
+                    android:id="@+id/r2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/v2"
+                        android:layout_width="190dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="22dp"
+                        android:background="@color/preto" />
+
+                    <TextView
+                        android:id="@+id/espacox1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@id/v2"
+                        android:layout_marginTop="-5dp"
+                        android:autoSizeMaxTextSize="20sp"
+                        android:autoSizeMinTextSize="16sp"
+                        android:autoSizeTextType="uniform"
+                        android:paddingLeft="4dp"
+                        android:textColor="@color/preto" />
+
+
+                </RelativeLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/la2"
+                android:layout_marginTop="16dp"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginRight="12dp"
+                    android:gravity="center"
+                    android:text="X2"
+                    android:textColor="@color/preto"
+                    android:textSize="20sp" />
+
+                <RelativeLayout
+                    android:id="@+id/r3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <View
+                        android:id="@+id/v3"
+                        android:layout_width="190dp"
+                        android:layout_height="1dp"
+                        android:layout_marginTop="22dp"
+                        android:background="@color/preto" />
+
+                    <TextView
+                        android:id="@+id/espacox2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignStart="@id/v3"
+                        android:layout_marginTop="-5dp"
+                        android:autoSizeMaxTextSize="20sp"
+                        android:autoSizeMinTextSize="16sp"
+                        android:autoSizePresetSizes="20sp"
+                        android:autoSizeTextType="uniform"
+                        android:paddingLeft="4dp"
+                        android:textColor="@color/preto" />
+
+
+                </RelativeLayout>
 
 
             </LinearLayout>
@@ -278,7 +334,7 @@
         </LinearLayout>
 
 
-    </LinearLayout>
+    </RelativeLayout>
 
 
     <LinearLayout
@@ -449,6 +505,7 @@
 
 
         </LinearLayout>
+
 
     </LinearLayout>
 

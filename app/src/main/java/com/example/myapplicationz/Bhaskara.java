@@ -61,7 +61,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espacox1 = findViewById(R.id.espacox1);
         espacox2 = findViewById(R.id.espacox2);
         espacodelta = findViewById(R.id.espacodelta);
-        voltar = findViewById(R.id.voltar);
+        //voltar = findViewById(R.id.voltar);
         Data.fluxo = "";
 
         n1.setOnClickListener(this);
@@ -82,23 +82,12 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espaco3.setOnClickListener(this);
 
 
-        voltar.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+
         nc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                espaco1.setText("");
-                espaco2.setText("");
-                espaco3.setText("");
-                espacodelta.setText("");
-                espacox1.setText("");
-                espacox2.setText("");
-                Data.fluxo = "";
+                limpar();
 
             }
         });
@@ -135,8 +124,8 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
                             espacox1.setText((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
                             espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
                         } else {
-                            espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] % .2f + "");
-                            espacox1.setText((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
+                            espacodelta.setText((a[1] * a[1]) - 4 * a[0] * a[2] +"");
+                            espacox1.setText((-a[1] + Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0])+"");
                             espacox2.setText((-a[1] - Math.sqrt((a[1] * a[1]) - 4 * a[0] * a[2])) / (2 * a[0]) + "");
 
                         }
@@ -153,6 +142,11 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
 
                     } catch (Exception e) {
                         Toast.makeText(Bhaskara.this, "Não foi possivel calcular", Toast.LENGTH_SHORT).show();
+                        espacodelta.setText("");
+                        espacox1.setText("");
+                        espacox2.setText("");
+                        Data.fluxo = "";
+
 
                     }
                 } else if (espaco1.getText().toString().isEmpty() || espaco2.getText().toString().isEmpty() || espaco3.getText().toString().isEmpty()) {
@@ -190,6 +184,20 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         });
 
 
+
+    }
+
+    void limpar(){
+        espaco1.setText("");
+        espaco2.setText("");
+        espaco3.setText("");
+        espacodelta.setText("");
+        espacox1.setText("");
+        espacox2.setText("");
+        espaco3.setTextSize(16);
+        espaco2.setTextSize(16);
+        espaco3.setTextSize(16);
+        Data.fluxo = "";
     }
 
 
@@ -204,18 +212,18 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         if (Teclado.espaco(bhaskara) == 2) {
 
             espaco2.setText(Teclado.teclado(bhaskara, espaco2.getText().toString()));
-            espaco2.setBackgroundResource(R.drawable.valorselecionado);
+            espaco2.setTextSize(Teclado.tamanhofonte(espaco2.getText().toString().isEmpty()));
 
         } else if (Teclado.espaco(bhaskara) == 3) {
 
             espaco3.setText(Teclado.teclado(bhaskara, espaco3.getText().toString()));
-            espaco3.setBackgroundResource(R.drawable.valorselecionado);
+            espaco3.setTextSize(Teclado.tamanhofonte(espaco3.getText().toString().isEmpty()));
 
         } else {
 
 
             espaco1.setText(Teclado.teclado(bhaskara, espaco1.getText().toString()));
-            espaco1.setBackgroundResource(R.drawable.valorselecionado);
+            espaco1.setTextSize(Teclado.tamanhofonte(espaco1.getText().toString().isEmpty()));
 
         }
 

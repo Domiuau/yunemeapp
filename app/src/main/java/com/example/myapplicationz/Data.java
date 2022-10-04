@@ -12,11 +12,13 @@ import android.graphics.Canvas;
 import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
+import android.view.Window;
 import android.widget.ImageView;
 
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -88,6 +90,12 @@ public class Data {
         }
 
     }
+
+    static void mudarcorstatusbar(Window window,Context context, int cor){
+        window.setStatusBarColor(ContextCompat.getColor(context, cor));
+
+    }
+
 
 
 

@@ -103,60 +103,68 @@
 
                         </LinearLayout>
 
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent">
+                       <androidx.constraintlayout.widget.ConstraintLayout
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent">
 
-                            <ImageButton
-                                android:id="@+id/pacote"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_marginLeft="50dp"
-                                android:layout_marginTop="15dp"
-                                android:background="@drawable/botaopequenoazul"
-                                android:paddingRight="5dp"
-                                android:paddingBottom="5dp"
-                                android:scaleType="center" />
-
-                            <ImageButton
-                                android:id="@+id/desconto"
-                                android:layout_width="100dp"
-                                android:layout_height="100dp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginRight="50dp"
-                                android:background="@drawable/botaopequenoazul"
-                                android:textSize="60sp" />
+                           <ImageButton
+                               android:layout_marginTop="20dp"
+                               android:id="@+id/pacote"
+                               android:layout_width="100dp"
+                               android:layout_height="100dp"
+                               android:background="@drawable/botaopequenoazul"
+                               app:layout_constraintStart_toStartOf="parent"
+                               app:layout_constraintEnd_toStartOf="@id/desconto"
+                               app:layout_constraintTop_toTopOf="parent"
+                               android:scaleType="center" />
 
 
-                            <TextView
-                                android:id="@+id/bhaskara1"
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@id/pacote"
-                                android:layout_alignParentLeft="true"
-                                android:layout_marginLeft="25dp"
-                                android:layout_marginTop="4dp"
-                                android:gravity="center"
-                                android:text="teste"
-                                android:textColor="@color/preto"
-                                android:textSize="22sp" />
+                           <ImageButton
+                               android:id="@+id/desconto"
+                               android:layout_width="100dp"
+                               android:layout_height="100dp"
+                               android:background="@drawable/botaopequenoazul"
+                               android:textSize="60sp"
+                               android:layout_marginTop="20dp"
+                               app:layout_constraintStart_toEndOf="@id/pacote"
+                               app:layout_constraintTop_toTopOf="parent"
+                               app:layout_constraintEnd_toEndOf="parent"
+                               tools:layout_editor_absoluteX="195dp"
+                               tools:layout_editor_absoluteY="30dp" />
 
-                            <TextView
-                                android:id="@+id/desconto1"
-                                android:layout_width="150dp"
-                                android:layout_height="wrap_content"
-                                android:layout_below="@+id/desconto"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="4dp"
-                                android:layout_marginRight="25dp"
-                                android:gravity="center"
-                                android:text="teste"
-                                android:textColor="@color/preto"
-                                android:textSize="22sp" />
+                           <TextView
+                               android:id="@+id/bhaskara1"
+                               android:layout_width="150dp"
+                               android:layout_height="wrap_content"
+                               android:layout_marginStart="8dp"
+                               android:gravity="center"
+                               android:text="teste"
+                               android:textColor="@color/preto"
+                               android:textSize="22sp"
+                               android:layout_marginTop="4dp"
+                               app:layout_constraintStart_toStartOf="@id/pacote"
+                               app:layout_constraintEnd_toEndOf="@id/pacote"
+                               app:layout_constraintTop_toBottomOf="@id/pacote"/>
+
+                           <TextView
+                               android:id="@+id/desconto1"
+                               android:layout_width="wrap_content"
+                               android:layout_height="wrap_content"
+                               android:gravity="center"
+                               android:text="teste"
+                               android:textColor="@color/preto"
+                               android:textSize="22sp"
+                               android:layout_marginTop="4dp"
+                               app:layout_constraintStart_toStartOf="@id/desconto"
+                               app:layout_constraintEnd_toEndOf="@id/desconto"
+                               app:layout_constraintTop_toBottomOf="@id/desconto"/>
+
+                       </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-                        </RelativeLayout>
+
+
+
 
 
 

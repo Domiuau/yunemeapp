@@ -75,9 +75,9 @@
 
 
     <style name="botoesnovos">
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
         <item name="android:background">@color/semcor</item>
         <item name="android:textSize">30sp</item>
-
         <item name="android:textColor">@color/branco</item>
      </style>
 

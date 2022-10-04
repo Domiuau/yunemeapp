@@ -35,9 +35,10 @@ public class login extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_MyApplicationz);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-        getWindow().setStatusBarColor(ContextCompat.getColor(login.this, R.color.verdeouazulsla));
+        Data.mudarcorstatusbar(getWindow(),login.this,R.color.verdeouazulsla);
 
         voltar = findViewById(R.id.voltar);
         email = findViewById(R.id.email);

@@ -42,7 +42,7 @@
             android:layout_alignParentEnd="true"
             android:layout_marginRight="30dp"
             android:layout_marginBottom="10dp"
-            android:src="@drawable/ic_hist"
+            android:src="@drawable/ic_perfil"
             android:tintMode="@color/branco"
             android:id="@+id/userperfil"
             app:backgroundTint="@color/purple_200" />
@@ -116,147 +116,172 @@
 
                         </LinearLayout>
 
-                        <RelativeLayout
+                        <androidx.constraintlayout.widget.ConstraintLayout
                             android:id="@+id/perfil"
                             android:layout_width="match_parent"
+
                             android:layout_height="match_parent">
+
 
                             <ImageButton
                                 android:id="@+id/bhaskara"
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:layout_marginLeft="50dp"
-                                android:layout_marginTop="15dp"
+                                android:layout_marginTop="20dp"
                                 android:background="@drawable/botaopequenoverdeazulsla"
                                 android:paddingRight="5dp"
                                 android:paddingBottom="5dp"
                                 android:scaleType="center"
-                                android:src="@drawable/ic_bhaskara" />
+                                android:src="@drawable/ic_bhaskara"
+                                app:layout_constraintEnd_toStartOf="@+id/desconto"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
 
                             <ImageButton
                                 android:id="@+id/desconto"
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="15dp"
-                                android:layout_marginRight="50dp"
+                                android:layout_gravity="center_horizontal"
+                                android:layout_marginTop="20dp"
                                 android:background="@drawable/botaoamarelo"
                                 android:src="@drawable/ic_desconto"
-                                android:textSize="60sp" />
+                                android:textSize="60sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/bhaskara"
+                                app:layout_constraintTop_toTopOf="parent" />
 
 
                             <TextView
                                 android:id="@+id/bhaskara1"
-                                android:layout_width="150dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/bhaskara"
                                 android:layout_alignParentLeft="true"
-                                android:layout_marginLeft="25dp"
                                 android:layout_marginTop="4dp"
                                 android:gravity="center"
                                 android:text="Bhaskara"
                                 android:textColor="@color/preto"
-                                android:textSize="22sp" />
+                                android:textSize="22sp"
+                                app:layout_constraintEnd_toStartOf="@+id/desconto1"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@+id/bhaskara" />
 
                             <TextView
                                 android:id="@+id/desconto1"
-                                android:layout_width="150dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@+id/desconto"
                                 android:layout_alignParentEnd="true"
                                 android:layout_marginTop="4dp"
-                                android:layout_marginRight="25dp"
                                 android:gravity="center"
                                 android:text="Desconto"
                                 android:textColor="@color/preto"
-                                android:textSize="22sp" />
-
+                                android:textSize="22sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/bhaskara1"
+                                app:layout_constraintTop_toBottomOf="@+id/desconto" />
 
                             <ImageButton
                                 android:id="@+id/numerosprimos"
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:layout_below="@id/bhaskara1"
-                                android:layout_marginLeft="50dp"
-                                android:layout_marginTop="30dp"
+                                android:layout_gravity="center_horizontal"
                                 android:background="@drawable/botaoamarelo"
                                 android:scaleType="center"
-                                android:src="@drawable/ic_group_13" />
+                                android:src="@drawable/ic_group_13"
+                                android:layout_marginTop="30dp"
+                                app:layout_constraintEnd_toStartOf="@+id/velocidade"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toBottomOf="@id/bhaskara1"
+                                tools:layout_editor_absoluteY="179dp" />
 
                             <ImageButton
                                 android:id="@+id/velocidade"
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:layout_below="@id/desconto1"
-                                android:layout_alignParentEnd="true"
                                 android:layout_marginTop="30dp"
-                                android:layout_marginRight="50dp"
+                                android:layout_alignParentEnd="true"
+                                android:layout_gravity="center_horizontal"
                                 android:background="@drawable/botaopequenoverdeazulsla"
                                 android:src="@drawable/ic_speedometer"
-                                android:textSize="60sp" />
-
+                                android:textSize="60sp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toEndOf="@+id/numerosprimos"
+                                app:layout_constraintTop_toBottomOf="@id/desconto1"
+                                tools:layout_editor_absoluteY="178dp" />
 
                             <TextView
                                 android:id="@+id/numerosprimos1"
-                                android:layout_width="150dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@id/numerosprimos"
-                                android:layout_alignParentLeft="true"
-                                android:layout_marginLeft="25dp"
-                                android:layout_marginTop="4dp"
                                 android:gravity="center"
                                 android:text="Primos"
                                 android:textColor="@color/preto"
-                                android:textSize="22sp" />
+                                android:textSize="22sp"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                android:layout_marginTop="4dp"
+                                app:layout_constraintStart_toEndOf="@id/numerosprimos"
+                                app:layout_constraintEnd_toStartOf="@id/numerosprimos"
+                                app:layout_constraintTop_toBottomOf="@+id/numerosprimos" />
 
                             <TextView
                                 android:id="@+id/velocidade1"
-                                android:layout_width="150dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:layout_below="@+id/velocidade"
-                                android:layout_alignParentEnd="true"
-                                android:layout_marginTop="4dp"
-                                android:layout_marginRight="25dp"
                                 android:gravity="center"
                                 android:text="Velocidade"
                                 android:textColor="@color/preto"
-                                android:textSize="22sp" />
+                                android:textSize="22sp"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                android:layout_marginTop="4dp"
+                                app:layout_constraintStart_toEndOf="@+id/velocidade"
+                                app:layout_constraintEnd_toStartOf="@+id/velocidade"
+                                app:layout_constraintTop_toBottomOf="@+id/velocidade" />
 
                             <ImageButton
                                 android:id="@+id/temperatura"
                                 android:layout_width="100dp"
                                 android:layout_height="100dp"
                                 android:layout_below="@id/numerosprimos1"
-                                android:layout_marginLeft="50dp"
-                                android:layout_marginTop="30dp"
                                 android:background="@drawable/botaopequenoverdeazulsla"
                                 android:scaleType="centerCrop"
-                                android:src="@drawable/ic_foguinho" />
+                                android:src="@drawable/ic_foguinho"
+                                android:layout_marginTop="30dp"
+                                app:layout_constraintStart_toStartOf="@id/numerosprimos"
+                                app:layout_constraintEnd_toEndOf="@id/numerosprimos"
+                                app:layout_constraintTop_toBottomOf="@id/numerosprimos1"
+                                 />
 
                             <TextView
                                 android:id="@+id/temperatura1"
-                                android:layout_width="150dp"
+                                android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_below="@id/temperatura"
                                 android:layout_alignParentLeft="true"
-                                android:layout_marginLeft="25dp"
-                                android:layout_marginTop="4dp"
                                 android:gravity="center"
                                 android:text="Temperatura"
                                 android:textColor="@color/preto"
-                                android:textSize="22sp" />
+                                android:textSize="22sp"
+                                tools:layout_editor_absoluteX="0dp"
+                                tools:layout_editor_absoluteY="444dp"
+                                app:layout_constraintTop_toBottomOf="@id/temperatura"
+                                android:layout_marginTop="4dp"
+                                app:layout_constraintStart_toEndOf="@id/temperatura"
+                                app:layout_constraintEnd_toStartOf="@id/temperatura"
 
 
-                        </RelativeLayout>
+                                />
 
 
-
-
-
-
-
-
-
+                        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
                     </LinearLayout>

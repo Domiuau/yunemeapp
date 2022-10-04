@@ -1,6 +1,7 @@
 package com.example.myapplicationz;
 
 import android.view.View;
+import android.webkit.WebSettings;
 import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -120,6 +121,14 @@ public class Teclado extends AppCompatActivity {
 
         return valor;
 
+    }
+
+    static int tamanhofonte (boolean vazio){
+        if (vazio == true){
+            return 16;
+        } else {
+            return 18;
+        }
     }
 
 

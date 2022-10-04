@@ -38,9 +38,10 @@ public class cadastrar extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        setTheme(R.style.Theme_MyApplicationz);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastrar);
-        getWindow().setStatusBarColor(ContextCompat.getColor(cadastrar.this, R.color.verdeouazulsla));
+        Data.mudarcorstatusbar(getWindow(),cadastrar.this,R.color.verdeouazulsla);
 
         voltar = findViewById(R.id.voltar);
         usuario = findViewById(R.id.usuario);
