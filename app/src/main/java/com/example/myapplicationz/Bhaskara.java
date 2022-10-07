@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.core.widget.TextViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.pm.ActivityInfo;
@@ -35,9 +36,9 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        setTheme(R.style.Theme_MyApplicationz);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.bhaskara);
+        Data.mudarcorstatusbar(getWindow(), Bhaskara.this,R.color.preto);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
 
         n1 = findViewById(R.id.n1);
@@ -88,6 +89,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
             public void onClick(View v) {
 
                 limpar();
+                TextViewCompat.setAutoSizeTextTypeWithDefaults(espaco2,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
 
             }
         });
@@ -185,6 +187,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
 
 
 
+
     }
 
     void limpar(){
@@ -194,10 +197,11 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espacodelta.setText("");
         espacox1.setText("");
         espacox2.setText("");
-        espaco3.setTextSize(16);
+        espaco1.setTextSize(16);
         espaco2.setTextSize(16);
         espaco3.setTextSize(16);
         Data.fluxo = "";
+        espaco1.setHint("aaaa");
     }
 
 

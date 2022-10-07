@@ -108,8 +108,8 @@ public class Teclado extends AppCompatActivity {
 
                 }
 
-
                 valor = z;
+
                 break;
 
 

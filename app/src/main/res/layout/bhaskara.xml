@@ -8,14 +8,8 @@
     android:orientation="vertical"
     tools:context=".MainActivity2">
 
+
     <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
-
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
@@ -23,7 +17,7 @@
 
         <LinearLayout
             android:id="@+id/linear1"
-            android:background="@drawable/fundopreto1"
+            android:background="@color/preto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal">
@@ -65,8 +59,16 @@
         </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/c1"
+            app:layout_constraintTop_toBottomOf="@id/linear1"
+            app:layout_constraintBottom_toTopOf="@id/linear2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/linear1">
@@ -81,12 +83,14 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/espaco1"
+                    style="@style/numerosentrada"
                     android:layout_width="110dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="50dp"
                     android:background="@color/semcor"
                     android:gravity="center"
                     android:hint="Insira aqui..."
+                    android:maxLines="1"
                     android:textColor="@color/preto"
                     android:textSize="16sp" />
 
@@ -122,6 +126,7 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/espaco2"
+                    style="@style/numerosentrada"
                     android:layout_width="110dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="50dp"
@@ -162,12 +167,12 @@
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/espaco3"
+                    style="@style/numerosentrada"
                     android:layout_width="110dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="50dp"
                     android:background="@color/semcor"
                     android:gravity="center"
-                    android:hint="Insira aqui..."
                     android:textColor="@color/preto"
                     android:textSize="16sp" />
 
@@ -198,8 +203,11 @@
 
 
         <LinearLayout
+            android:id="@+id/linear2"
+            app:layout_constraintTop_toBottomOf="@id/c1"
+            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/c1"
             android:gravity="center"
             android:orientation="vertical">
@@ -349,7 +357,7 @@
         </LinearLayout>
 
 
-    </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <LinearLayout
