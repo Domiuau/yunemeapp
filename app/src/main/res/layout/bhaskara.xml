@@ -21,40 +21,55 @@
         android:layout_weight="3"
         android:background="@drawable/fundoteclado">
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/voltar"
-            android:layout_width="100dp"
-            android:layout_height="75dp"
-            android:background="@color/semcor"
-            android:src="@drawable/ic_voltar"
-            android:tint="@color/preto" />
-
-        <TextView
-            android:id="@+id/text_bhaskara"
+        <LinearLayout
+            android:id="@+id/linear1"
+            android:background="@drawable/fundopreto1"
             android:layout_width="match_parent"
-            android:layout_height="75dp"
-            android:gravity="center"
-            android:text="Bhaskara"
-            android:textColor="@color/preto"
-            android:textSize="25sp" />
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/curiosidade"
-            android:layout_width="100dp"
-            android:layout_height="75dp"
-            android:layout_alignParentRight="true"
-            android:background="@color/semcor"
-            android:padding="24dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_interrogacao"
-            android:tint="@color/black" />
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/voltar"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:padding="40dp"
+                android:scaleType="centerCrop"
+                android:background="@color/semcor"
+                android:src="@drawable/ic_voltar"
+                android:tint="@color/branco" />
+
+            <TextView
+                android:id="@+id/text_bhaskara"
+                android:layout_width="0dp"
+                android:layout_height="60dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Bhaskara"
+                android:textColor="@color/branco"
+                android:textSize="22sp" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/curiosidade"
+                android:layout_width="100dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/semcor"
+                android:scaleType="fitCenter"
+                android:padding="16dp"
+                android:src="@drawable/ic_interrogacao"
+                android:tint="@color/cinzaclaro2" />
+
+
+
+
+        </LinearLayout>
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_marginTop="5dp"
             android:id="@+id/c1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/voltar">
+            android:layout_below="@id/linear1">
 
             <RelativeLayout
                 android:id="@+id/relative1"
