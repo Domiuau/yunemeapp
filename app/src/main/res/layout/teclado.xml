@@ -2,453 +2,53 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.MyApplicationz"
+    android:background="@color/branco"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#373737"
     tools:context=".MainActivity2">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:background="@drawable/fundoteclado">
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/voltar"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:background="@color/semcor"
-            android:src="@drawable/ic_voltar"
-            android:tint="@color/preto" />
-
-        <TextView
-            android:id="@+id/text_bhaskara"
-            android:layout_width="match_parent"
-            android:layout_height="70dp"
-            android:gravity="center"
-            android:text="Bhaskara"
-            android:textColor="@color/preto"
-            android:textSize="25sp" />
-
-        <androidx.appcompat.widget.AppCompatImageButton
-            android:id="@+id/curiosidade"
-            android:layout_width="100dp"
-            android:layout_height="70dp"
-            android:layout_alignParentRight="true"
-            android:background="@color/semcor"
-            android:padding="22dp"
-            android:scaleType="fitCenter"
-            android:src="@drawable/ic_interrogacao"
-            android:tint="@color/black" />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/e1"
-            android:layout_width="110dp"
-            android:layout_height="40dp"
-            android:layout_below="@id/voltar"
-            android:layout_marginLeft="20dp"
-            android:layout_marginTop="50dp"
-            android:background="@color/semcor"
-            android:hint="Insira aqui..." />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/e2"
-            android:layout_width="110dp"
-            android:layout_height="40dp"
-            android:background="@color/semcor"
-            android:layout_marginTop="50dp"
-            android:layout_below="@id/voltar"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="20dp"
-
-            android:layout_toRightOf="@id/e1"
-            android:hint="Insira aqui..." />
-
-        <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/e3"
-            android:layout_width="110dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="50dp"
-            android:layout_below="@id/voltar"
-            android:layout_marginRight="20dp"
-            android:layout_toRightOf="@id/e2"
-            android:background="@color/semcor"
-            android:hint="Insira aqui..." />
-
-        <View
-            android:layout_width="100dp"
-            android:layout_height="1dp"
-            android:layout_alignBottom="@id/e1"
-            android:layout_marginLeft="25dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/preto" />
-
-        <View
-            android:layout_width="100dp"
-            android:layout_height="1dp"
-            android:layout_alignLeft="@id/e2"
-            android:layout_alignBottom="@id/e2"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/preto" />
-
-        <View
-            android:layout_width="100dp"
-            android:layout_toRightOf="@id/e2"
-            android:layout_height="1dp"
-            android:layout_alignBottom="@id/e3"
-            android:layout_marginLeft="5dp"
-            android:layout_marginBottom="5dp"
-            android:background="@color/preto" />
-
-        <TextView
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/e1"
-            android:layout_alignTop="@id/e1"
-            android:layout_marginTop="-36dp"
-            android:gravity="center"
-            android:text="A"
-            android:textAlignment="inherit"
-            android:textSize="34dp" />
-
-        <TextView
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/e2"
-            android:layout_alignTop="@id/e2"
-            android:layout_marginTop="-36dp"
-            android:gravity="center"
-            android:text="B"
-            android:textSize="34dp" />
-
-        <TextView
-            android:layout_width="110dp"
-            android:layout_height="wrap_content"
-            android:layout_alignStart="@id/e3"
-            android:layout_alignTop="@id/e3"
-            android:layout_marginTop="-36dp"
-            android:gravity="center"
-            android:text="C"
-            android:textSize="34dp" />
-
-
-        <LinearLayout
-            android:gravity="center"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/e1"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:id="@+id/la1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/e1"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="12dp"
-                    android:src="@drawable/ic_a" />
-
-                <View
-                    android:layout_width="190dp"
-                    android:layout_height="1dp"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/preto" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:id="@+id/la2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/la1"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="12dp"
-                    android:gravity="center"
-                    android:text="X1"
-                    android:textColor="@color/preto"
-                    android:textSize="20sp" />
-
-                <View
-                    android:layout_width="190dp"
-                    android:layout_height="1dp"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/preto" />
-
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/la2"
-                android:layout_marginTop="16dp"
-                android:gravity="center"
-                android:orientation="horizontal">
-
-                <TextView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
-                    android:layout_marginRight="12dp"
-                    android:gravity="center"
-                    android:text="X2"
-                    android:textColor="@color/preto"
-                    android:textSize="20sp" />
-
-                <View
-                    android:layout_width="190dp"
-                    android:layout_height="1dp"
-                    android:layout_gravity="bottom"
-                    android:layout_marginBottom="8dp"
-                    android:background="@color/preto" />
-
-
-            </LinearLayout>
-
-
-        </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        android:background="@color/preto"
+        android:layout_weight="1.3">
 
 
 
     </RelativeLayout>
 
-
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="3"
-        android:background="@drawable/fundotecladopreto"
-        android:orientation="vertical"
-        android:padding="10dp">
+        android:layout_weight="9">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n7"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="7" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n8"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="8" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n9"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="9" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/nc"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="c" />
+            android:layout_height="match_parent">
 
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n4"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="4" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n5"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="5" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n6"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="6" />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/nbackspace"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:padding="20dp"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_backspace" />
 
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n1"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="1" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n2"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="2" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n3"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="3" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/nmenos"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="-" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
 
-        </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/nvirgula"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text="," />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/n0"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="2"
-                android:text="0" />
+    </ScrollView>
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/nok"
-                style="@style/botoesnovos"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="ok"
-                android:textColor="@color/verdeouazulsla" />
 
 
-        </LinearLayout>
 
 
-    </LinearLayout>
+
+
+
+
+
+
 
 
 </LinearLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
