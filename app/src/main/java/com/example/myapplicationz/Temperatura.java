@@ -4,11 +4,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.widget.TextViewCompat;
 
+import android.content.pm.ActivityInfo;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v4.os.IResultReceiver;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,12 +24,13 @@ import java.util.Date;
 
 public class Temperatura extends AppCompatActivity implements View.OnClickListener {
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2;
-    AppCompatImageButton nbackspace;
     TextView formula;
     Spinner spinner1, spinner2;
-    AppCompatImageButton inverter;
     BigDecimal vezes;
-    AppCompatImageView voltar;
+    LinearLayout linear;
+    String formulausada;
+    AppCompatImageButton voltar,nbackspace,inverter;
+
 
 
     @Override
@@ -34,6 +39,8 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_temperatura);
         Data.fluxo = "";
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
 
         n1 = findViewById(R.id.n1);
         n2 = findViewById(R.id.n2);
@@ -57,6 +64,9 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         spinner2 = findViewById(R.id.spinner2);
         inverter = findViewById(R.id.inverter);
         voltar = findViewById(R.id.voltar);
+        linear = findViewById(R.id.mostrarformula);
+        spinner2.setSelection(1);
+        Data.fluxo = "";
 
 
         n1.setOnClickListener(this);
@@ -74,6 +84,18 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         nmenos.setOnClickListener(this);
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
+
+        linear.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(!espaco1.getText().toString().isEmpty()){
+
+                    tentar(DB_hist);
+                    formula.setText(formulausada);
+                }
+
+            }
+        });
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +109,16 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
                 int a = spinner1.getSelectedItemPosition();
                 spinner1.setSelection(spinner2.getSelectedItemPosition());
                 spinner2.setSelection(a);
-                tentar();
+
+                if (espaco1.getText().toString().isEmpty()){
+                    limpar();
+                } else {
+                    tentar(DB_hist);
+                }
+                if (!formula.getText().toString().isEmpty()){
+
+                    formula.setText(formulausada);
+                }
 
 
             }
@@ -99,6 +130,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
                 espaco2.setText("");
                 formula.setText("");
                 Data.fluxo = "";
+                formulausada = "";
             }
         });
 
@@ -107,24 +139,27 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
             @Override
             public void onClick(View v) {
 
-                tentar();
+                formula.setText("");
+                espaco2.setText("");
+                tentar(DB_hist);
 
             }
         });
 
     }
 
-    void tentar (){
+    void tentar (SQLiteDatabase banco){
 
         try {
-            String consulta = espaco1.getText().toString() + spinner1.getSelectedItem().toString() + spinner2.getSelectedItem().toString();
-            if (!consulta.equals(Data.fluxo) && !espaco1.getText().toString().equals("")) {
+            String comp = espaco1.getText().toString() + spinner1.getSelectedItem().toString() + spinner2.getSelectedItem().toString();
+            if (!comp.equals(Data.fluxo) && !espaco1.getText().toString().equals("")) {
                 espaco2.setText(selecionarformula(espaco1.getText().toString()));
-                adicionarhist();
+                Teclado.adicionarhist(banco,"Temperatura", espaco1.getText().toString() + " " + spinner1.getSelectedItem().toString()
+                        + " = " + espaco2.getText().toString() + " " + spinner2.getSelectedItem().toString(), formulausada, R.drawable.hist_temperatura,comp);
                 Data.atualizaradicionadas();
-                Data.fluxo = consulta;
-                System.out.println(Data.fluxo + espaco1.getText().toString() + spinner1.getSelectedItem().toString().equals(Data.fluxo) + espaco1.getText().toString().equals("")+"fjnhnjdfhjnjdfghjnfjnfjnkjnkg");
+                Data.fluxo = comp;
 
+                System.out.println(Data.fluxo + espaco1.getText().toString() + spinner1.getSelectedItem().toString().equals(Data.fluxo) + espaco1.getText().toString().equals("")+"fjnhnjdfhjnjdfghjnfjnfjnkjnkg");
             } else if (espaco1.getText().toString().equals("")) {
                 Toast.makeText(Temperatura.this, "Insira um número", Toast.LENGTH_SHORT).show();
             }
@@ -136,21 +171,22 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         }
     }
 
-    void adicionarhist() {
-        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
-        DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Temperatura'," +
-                " '" + espaco1.getText().toString() + " " + spinner1.getSelectedItem().toString() +
-                " = " + espaco2.getText().toString() + " " + spinner2.getSelectedItem().toString() + "'," +
-                " '" + formula.getText().toString() + "'," +
-                "'" + Data.dataatual() + "', '" + R.drawable.hist_temperatura + "' )");
+    void adicionarformula(String formulausada1) {
 
-
+        formulausada = formulausada1;
     }
 
-
-    void adicionarformula(String formulausada) {
-        formula.setText(formulausada);
-
+    void limpar(){
+        espaco1.setText("");
+        espaco2.setText("");
+        formula.setText("");
+        espaco2.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        espaco1.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(espaco1,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(espaco2,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
+        espaco1.setTextSize(16);
+        espaco2.setTextSize(16);
+        Data.fluxo = "";
     }
 
 
@@ -199,7 +235,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
                 } else if (spinner2.getSelectedItemPosition() == 1) {
                     vezes = new BigDecimal(valor).subtract(new BigDecimal("32"))
                             .multiply(new BigDecimal("5"));
-                    adicionarformula(valor + " - 32 x 5 = " + vezes.toString());
+                    adicionarformula(valor + " - 32 x 5 ÷ 9 + 273,15 = " + vezes.toString());
                     return String.format("%.1f", Double.parseDouble(vezes.toString()) / 9 + 273.15);
 
 
@@ -210,7 +246,6 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
 
 
         }
-        //adicionar(vezes,Double.parseDouble(espaco1.getText().toString()));
         return vezes.toString();
 
     }
@@ -219,7 +254,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
     public void onClick(View v) {
 
 
-        espaco1.setText(Teclado.teclado(v, espaco1.getText().toString()));
+        Teclado.adicionarnatela(espaco1,v);
 
 
     }

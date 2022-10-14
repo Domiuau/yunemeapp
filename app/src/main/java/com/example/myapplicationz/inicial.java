@@ -7,6 +7,7 @@ import androidx.core.content.ContextCompat;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.View;
@@ -23,6 +24,7 @@ public class inicial extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicial);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         getWindow().setStatusBarColor(ContextCompat.getColor(inicial.this, R.color.verdeouazulsla));
         visitante = findViewById(R.id.visitante);
         visitante.setPaintFlags(visitante.getPaintFlags() | Paint.UNDERLINE_TEXT_FLAG);

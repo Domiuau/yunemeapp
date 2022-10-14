@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <layer-list>
+
+            <item>
+                <shape android:shape="oval">
+                    <size android:width="48dp" android:height="48dp" />
+                    <solid android:color="@color/amarelo"/>
+                    <corners android:radius="20dp" />
+                    <padding android:top="6dp" android:bottom="6dp" android:left="6dp" android:right="6dp"/>
+                </shape>
+            </item>
+            <item>
+                <selector>
+                    <item android:drawable="@drawable/ic_gota" />
+
+
+
+                </selector>
+            </item>
+
+
+        </layer-list>
+
+
+    </item>
+
+</selector>

@@ -17,5 +17,29 @@
 
     </string-array>
 
+    <string-array name="tamanho">
+        <item>mm</item>
+        <item>cm</item>
+        <item>dm</item>
+        <item>m</item>
+        <item>dam</item>
+        <item>hm</item>
+        <item>km</item>
+
+
+    </string-array>
+
+    <string-array name="liquidos">
+        <item>ml</item>
+        <item>cl</item>
+        <item>dl</item>
+        <item>l</item>
+        <item>dal</item>
+        <item>hl</item>
+        <item>kl</item>
+
+
+    </string-array>
+
 
 </resources>

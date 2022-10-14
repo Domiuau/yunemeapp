@@ -10,6 +10,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+
 import java.math.BigDecimal;
 
 import net.objecthunter.exp4j.Expression;
@@ -17,7 +18,7 @@ import net.objecthunter.exp4j.ExpressionBuilder;
 
 public class calculadora extends AppCompatActivity implements View.OnClickListener {
 
-    AppCompatButton c, divisao, porcentagem, n1, n2, n3, n4, n5, n6, n7, n8, n9, vezes, menos, mais, iguala, virgula, n0,nfatorial;
+    AppCompatButton c, divisao, porcentagem, n1, n2, n3, n4, n5, n6, n7, n8, n9, vezes, menos, mais, iguala, virgula, n0, nfatorial;
     AppCompatImageButton backspace;
     AppCompatTextView expressao, resultado;
     AppCompatImageView voltar;
@@ -84,7 +85,7 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
     }
 
     public void adicionar(String valor) {
-        expressao.append(valor.replace("*","x"));
+        expressao.append(valor.replace("*", "x"));
         resultado.setText("");
     }
 
@@ -140,9 +141,9 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
                 break;
             case R.id.porcentagem:
                 separarporoperador();
-                try{
+                try {
 
-                ultimonumero = Double.parseDouble(q[q.length - 1]);
+                    ultimonumero = Double.parseDouble(q[q.length - 1]);
 
                     if (ultimonumero > 0.099999) {
 
@@ -150,7 +151,6 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
                                 !expressao.getText().toString().endsWith("-") &&
                                 !expressao.getText().toString().endsWith("÷") &&
                                 !expressao.getText().toString().endsWith("x")) {
-
 
 
                             if (expressao.getText().toString().contains("+") ||
@@ -176,12 +176,11 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
                             adicionar(String.valueOf(ultimonumero / 100));
 
 
-
                         }
 
                     }
 
-                }catch (Exception e) {
+                } catch (Exception e) {
 
                 }
 
@@ -262,13 +261,13 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
             case R.id.iguala:
 
-                if (!expressao.getText().toString().contains("E")){
+                if (!expressao.getText().toString().contains("E")) {
 
                     try {
                         Expression resolver = new ExpressionBuilder(expressao.getText().toString()
-                                .replace("x","*")
-                                .replace("÷","/")
-                                .replace(",","."))
+                                .replace("x", "*")
+                                .replace("÷", "/")
+                                .replace(",", "."))
                                 .build();
                         double resultadofinalreal = resolver.evaluate();
                         long resultadofinal = (long) resultadofinalreal;
@@ -321,35 +320,20 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
                     }
 
-                    for (int i = Integer.parseInt((q[q.length - 1]))-1;i>1;i--){
+                    for (int i = Integer.parseInt((q[q.length - 1])) - 1; i > 1; i--) {
                         ultimo = new BigDecimal(i);
                         fatorialresultado = fatorialresultado.multiply(ultimo);
 
 
                     }
 
-                   q = fatorialresultado.toString().split("");
+                    expressao.append(fatorialresultado.toString());
 
-                    if (fatorialresultado.toString().length() > 9){
-
-                        expressao.append(fatorialresultado.toString().substring(0,1) + ","
-                                + fatorialresultado.toString().substring(1,7) + "E"
-                                + (fatorialresultado.toString().length() - 1));
-
-                    } else {
-
-                        expressao.append(fatorialresultado.toString());
-
-                    }
+                    q = fatorialresultado.toString().split("");
 
 
-
-
-                } catch (Exception e) {}
-
-
-
-
+                } catch (Exception e) {
+                }
 
 
                 break;

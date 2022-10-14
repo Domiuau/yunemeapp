@@ -18,7 +18,7 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@drawable/fundo3"
+            android:background="@color/preto"
             android:gravity="center"
             android:orientation="horizontal">
 
@@ -58,7 +58,7 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="5"
-        android:background="@color/branco"
+        android:background="@drawable/fundoteclado"
         android:orientation="vertical">
 
 
@@ -73,6 +73,7 @@
                 android:gravity="end"
                 android:textSize="25sp"
                 android:layout_marginRight="10dp"
+                android:layout_marginLeft="10dp"
                 android:textStyle="bold"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -92,6 +93,7 @@
             android:autoSizeMaxTextSize="30sp"
             android:gravity="end"
             android:layout_marginRight="10dp"
+            android:layout_marginLeft="10dp"
             android:textStyle="bold"
             android:autoSizePresetSizes="@array/autosize"
             android:background="@color/branco" />
@@ -104,7 +106,7 @@
         android:layout_height="0dp"
         android:orientation="vertical"
         android:layout_weight="6.5"
-        android:background="@drawable/fundotecladopreto">
+        android:background="@color/preto">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -115,19 +117,19 @@
                 android:id="@+id/c"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:background="@color/preto"
                 android:text="c"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/backspace"
                 android:src="@drawable/ic_backspace"
-                android:scaleType="centerCrop"
+                android:scaleType="center"
                 android:padding="20dp"
+                android:background="@color/preto"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="1"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -135,8 +137,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="%"
+                android:background="@color/preto"
                 android:textColor="@color/cinza"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -144,8 +146,8 @@
                 style="@style/botaocalculadora"
                 android:layout_width="0dp"
                 android:textColor="@color/cinza"
+                android:background="@color/preto"
                 android:layout_height="match_parent"
-                android:background="@color/semcor"
                 android:text="÷" />
 
 
@@ -159,9 +161,9 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n7"
                 android:layout_width="0dp"
+                android:background="@color/preto"
                 android:layout_height="match_parent"
                 android:text="7"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -169,15 +171,15 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="8"
-                android:background="@color/semcor"
+                android:background="@color/preto"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n9"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:background="@color/preto"
                 android:text="9"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -186,8 +188,8 @@
                 android:layout_height="match_parent"
                 android:text="x"
                 android:textSize="20sp"
+                android:background="@color/preto"
                 android:textColor="@color/cinza"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
 
@@ -203,33 +205,33 @@
                 android:id="@+id/n4"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:background="@color/preto"
                 android:text="4"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n5"
                 android:layout_width="0dp"
+                android:background="@color/preto"
                 android:layout_height="match_parent"
                 android:text="5"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n6"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:background="@color/preto"
                 android:text="6"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/menos"
                 android:layout_width="0dp"
+                android:background="@color/preto"
                 android:layout_height="match_parent"
                 android:text="-"
                 android:textColor="@color/cinza"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
 
@@ -244,18 +246,18 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n1"
                 android:layout_width="0dp"
+                android:background="@color/preto"
                 android:layout_height="match_parent"
                 android:text="1"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n2"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:background="@color/preto"
                 android:text="2"
                 android:layout_weight="1"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
@@ -264,7 +266,7 @@
                 android:layout_height="match_parent"
                 android:text="3"
                 android:layout_weight="1"
-                android:background="@color/semcor"
+                android:background="@color/preto"
                 style="@style/botaocalculadora"/>
 
 
@@ -274,7 +276,7 @@
                 android:layout_height="match_parent"
                 android:text="+"
                 android:textColor="@color/cinza"
-                android:background="@color/semcor"
+                android:background="@color/preto"
                 style="@style/botaocalculadora"/>
 
 
@@ -289,28 +291,28 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/nfatorial"
                 android:layout_width="0dp"
+                android:background="@color/preto"
                 android:layout_height="match_parent"
                 android:text="!"
                 android:layout_weight="1"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/n0"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:background="@color/preto"
                 android:text="0"
                 android:layout_weight="1"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/virgula"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
+                android:background="@color/preto"
                 android:text=","
                 android:layout_weight="1"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
 
@@ -319,8 +321,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:text="="
+                android:background="@color/preto"
                 android:textColor="@color/verdeouazulsla"
-                android:background="@color/semcor"
                 style="@style/botaocalculadora"/>
 
 

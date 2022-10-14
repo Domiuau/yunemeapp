@@ -4,19 +4,23 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.widget.TextViewCompat;
 
 import android.content.pm.ActivityInfo;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class Numerosprimos extends AppCompatActivity implements View.OnClickListener {
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos;
     AppCompatImageButton nbackspace;
-    TextView diferencamenor, diferencamaior, menorque, maiorque, espaco1, resultado;
-    AppCompatImageView voltar;
+    TextView diferencamenor, diferencamaior, menorque, maiorque, resultado, botao, diferencamenor1, diferencamaior1;
+    AppCompatImageButton voltar;
+    RelativeLayout espaco1;
     int me, b;
 
 
@@ -45,12 +49,14 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
         nmenos = findViewById(R.id.nmenos);
         espaco1 = findViewById(R.id.espaco1);
         diferencamenor = findViewById(R.id.diferencamenor);
+        diferencamenor1 = findViewById(R.id.diferencamenor1);
         diferencamaior = findViewById(R.id.diferencamaior);
+        diferencamaior1 = findViewById(R.id.diferencamaior1);
         menorque = findViewById(R.id.menorque);
         maiorque = findViewById(R.id.maiorque);
         resultado = findViewById(R.id.resultado);
         voltar = findViewById(R.id.voltar);
-
+        botao = findViewById(R.id.botao);
 
 
         n1.setOnClickListener(this);
@@ -76,13 +82,7 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
         nc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                diferencamaior.setText("");
-                diferencamenor.setText("");
-                maiorque.setText("");
-                menorque.setText("");
-                espaco1.setText("");
-                resultado.setText("");
-                Data.fluxo = "";
+                limpar();
 
             }
         });
@@ -90,17 +90,17 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View v) {
 
-                try {
-                    if (!Data.fluxo.equals(espaco1.getText().toString()) && !espaco1.getText().toString().equals("")) {
+                if (!Data.fluxo.equals(botao.getText().toString()) && !botao.getText().toString().equals("")) {
 
+                    try {
 
-                        if (primo(Integer.parseInt(espaco1.getText().toString()))) {
-                            resultado.setText(espaco1.getText().toString() + " é primo!");
+                        if (primo(Integer.parseInt(botao.getText().toString()))) {
+                            resultado.setText(botao.getText().toString() + " é primo!");
                         } else {
-                            resultado.setText(espaco1.getText().toString() + " não é primo!");
+                            resultado.setText(botao.getText().toString() + " não é primo!");
                         }
 
-                        me = Integer.parseInt(espaco1.getText().toString());
+                        me = Integer.parseInt(botao.getText().toString());
 
                         System.out.println(me + "aaa");
 
@@ -108,36 +108,55 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
                             me--;
                         }
                         menorque.setText(me - 1 + "");
-                        diferencamenor.setText(" " + ((Integer.parseInt(espaco1.getText().toString()) - (me - 1)) * -1 + " "));
-                        me = Integer.parseInt(espaco1.getText().toString());
+                        diferencamenor.setText(" " + ((Integer.parseInt(botao.getText().toString()) - (me - 1)) * -1 + " "));
+                        me = Integer.parseInt(botao.getText().toString());
 
                         while (!primo(me + 1)) {
                             me++;
                         }
                         maiorque.setText(me + 1 + "");
-                        diferencamaior.setText(" " + ((me + 1) - Integer.parseInt(espaco1.getText().toString())) + " ");
+                        diferencamaior.setText(" " + ((me + 1) - Integer.parseInt(botao.getText().toString())) + " ");
+
+
 
                         SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
-                        DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Primos'," +
-                                " '" + "O número " + resultado.getText().toString() + "'," +
-                                "'" + "Mais proximos: " + menorque.getText().toString() + " < " + espaco1.getText().toString() + " > " + maiorque.getText().toString() + "'," +
-                                "'" + Data.dataatual() + "', " + R.drawable.hist_primos + " )");
-                        Data.atualizaradicionadas();
-                        Data.fluxo = espaco1.getText().toString();
+                        Teclado.adicionarhist(DB_hist,"Números primos", "O número " + resultado.getText().toString(),
+                                "Mais proximos: " + menorque.getText().toString() + " < " + botao.getText().toString() + " > " + maiorque.getText().toString(),
+                                R.drawable.hist_primos,botao.getText().toString()  );
 
+                        diferencamenor1.setText("Diferença para o menor");
+                        diferencamaior1.setText("Diferença para o maior");
 
-                    } else if (espaco1.getText().toString().equals("")) {
-                        Toast.makeText(Numerosprimos.this, "Insira um número", Toast.LENGTH_SHORT).show();
+                    } catch (Exception e) {
+                        Toast.makeText(Numerosprimos.this, "Erro ao calcular", Toast.LENGTH_SHORT).show();
+                        limpar();
 
                     }
-                } catch (Exception e) {
-                    Toast.makeText(Numerosprimos.this, "Erro", Toast.LENGTH_SHORT).show();
+                } else if (botao.getText().toString().equals("")) {
+                    Toast.makeText(Numerosprimos.this, "Insira um número", Toast.LENGTH_SHORT).show();
+                    limpar();
+
                 }
 
 
             }
         });
 
+    }
+
+    void limpar() {
+        diferencamaior.setText("");
+        diferencamenor.setText("");
+        maiorque.setText("");
+        menorque.setText("");
+        botao.setText("");
+        resultado.setText("");
+        diferencamenor1.setText("");
+        diferencamaior1.setText("");
+        Data.fluxo = "";
+        botao.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(botao,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
+        Data.fluxo = "";
     }
 
     boolean primo(int a) {
@@ -159,7 +178,7 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void onClick(View v) {
-        espaco1.setText(Teclado.teclado(v, espaco1.getText().toString()));
+        botao.setText(Teclado.teclado(v, botao.getText().toString()));
 
 
     }

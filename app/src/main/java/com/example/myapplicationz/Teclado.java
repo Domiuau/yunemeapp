@@ -1,12 +1,15 @@
 package com.example.myapplicationz;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
+import android.view.ViewGroup;
 import android.webkit.WebSettings;
 import android.widget.Switch;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.core.widget.TextViewCompat;
 
 public class Teclado extends AppCompatActivity {
     //teclado universal para todas as ferramentas
@@ -20,14 +23,17 @@ public class Teclado extends AppCompatActivity {
 
 
             case R.id.espaco1:
+            case R.id.relative1:
                 espaco = 1;
                 break;
 
             case R.id.espaco2:
+            case R.id.relative2:
                 espaco = 2;
                 break;
 
             case R.id.espaco3:
+            case R.id.relative3:
                 espaco = 3;
                 break;
 
@@ -129,6 +135,34 @@ public class Teclado extends AppCompatActivity {
         } else {
             return 18;
         }
+    }
+
+    static void adicionarnatela (AppCompatButton botao, View view){
+
+        botao.setText(Teclado.teclado(view, botao.getText().toString().replace("%","")));
+        botao.setTextSize(Teclado.tamanhofonte(botao.getText().toString().isEmpty()));
+
+        if(botao.getText().toString().isEmpty()){
+
+            botao.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+            TextViewCompat.setAutoSizeTextTypeWithDefaults(botao,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
+            botao.setTextSize(16);
+
+
+        }else{
+
+            botao.setWidth(ViewGroup.LayoutParams.MATCH_PARENT);
+            TextViewCompat.setAutoSizeTextTypeWithDefaults(botao,AppCompatButton.AUTO_SIZE_TEXT_TYPE_UNIFORM);
+            TextViewCompat.setAutoSizeTextTypeUniformWithConfiguration(botao,6,18,1,2);
+
+        }
+    }
+
+    static void adicionarhist (SQLiteDatabase banco,String ferramenta,String entrada, String saida, int icone,String comp){
+
+        banco.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('" + ferramenta + "', '" + entrada + "','" + saida + "', '" + Data.dataatual() + "' ," + icone + ")");
+        Data.atualizaradicionadas();
+        Data.fluxo = comp;
     }
 
 

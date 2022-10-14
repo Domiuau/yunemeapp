@@ -1,83 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="50dp"
-    android:orientation="vertical"
     android:background="@color/white"
-    android:gravity="center"
+    android:orientation="vertical"
     tools:context=".Perfil">
 
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="@color/preto"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
 
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/voltar"
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@color/semcor"
+            android:padding="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_voltar"
+            android:tint="@color/white" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_marginRight="100dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Meu perfil"
+            android:textColor="@color/branco"
+            android:textSize="22sp" />
+
+
+    </LinearLayout>
 
     <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:id="@+id/relative1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/relative2"
+        app:layout_constraintTop_toBottomOf="@+id/linear1">
 
         <ImageView
             android:id="@+id/imagem"
-            android:layout_width="300dp"
-            android:layout_height="300dp"
-            android:layout_marginBottom="50dp"
-            android:background="@drawable/bola" />
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:background="@drawable/bola"
+            android:backgroundTint="@color/cinzaescuro"
+            android:padding="30dp"
+            android:src="@drawable/ic_perfil" />
 
         <ImageView
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:layout_alignEnd="@id/imagem"
+            android:layout_alignRight="@id/imagem"
             android:layout_alignBottom="@id/imagem"
-            android:layout_marginBottom="50dp"
-            android:layout_marginRight="50dp"/>
+            android:background="@drawable/bola"
+            android:backgroundTint="@color/cinzaclaro2"
+            android:padding="10dp"
+            android:src="@drawable/ic_lapis" />
+
 
     </RelativeLayout>
 
-    <TextView
-        android:id="@+id/usuario"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
 
-    <TextView
-        android:id="@+id/email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/realizadas"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-    <TextView
-        android:id="@+id/dataregistro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <TextView
-        android:id="@+id/ultimaentrada"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-
-
-
-
-
-
-
-
-    <androidx.appcompat.widget.AppCompatButton
+    <RelativeLayout
+        android:id="@+id/relative2"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:id="@+id/desligar"
-        android:text="deslogar"
-        android:background="@drawable/botaoamarelo"
-        android:backgroundTint="@color/purple_200"/>
+        android:layout_height="wrap_content"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
+        app:layout_constraintTop_toBottomOf="@+id/relative1">
 
-    <androidx.appcompat.widget.AppCompatButton
+        <TextView
+            android:id="@+id/nome1"
+            style="@style/perfil"
+            android:layout_marginTop="20dp"
+            android:text="Nome" />
+
+        <TextView
+            android:id="@+id/email1"
+            style="@style/perfil"
+            android:layout_below="@id/nome1"
+            android:text="E-mail" />
+
+        <TextView
+            android:id="@+id/realizadas1"
+            style="@style/perfil"
+            android:layout_below="@id/email1"
+            android:text="Conversões realizadas" />
+
+        <TextView
+            android:id="@+id/dataregistro1"
+            style="@style/perfil"
+            android:layout_below="@id/realizadas1"
+            android:text="Data de Registro" />
+
+        <TextView
+            android:id="@+id/ultimoacesso1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="18sp"
+            android:textColor="@color/preto"
+            android:layout_below="@id/dataregistro1"
+            android:text="Último acesso" />
+
+        <TextView
+            android:id="@+id/nome"
+            style="@style/perfil1"
+            android:layout_width="142dp"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="carroamarelo" />
+
+        <TextView
+            android:id="@+id/email"
+            style="@style/perfil1"
+            android:layout_width="wrap_content"
+            android:layout_below="@id/nome"
+            android:layout_alignParentEnd="true"
+            android:text="AAAAA@gmail.com"
+            android:textAlignment="textEnd" />
+
+        <TextView
+            android:id="@+id/realizadas"
+            style="@style/perfil1"
+            android:layout_width="142dp"
+            android:layout_below="@id/email"
+            android:layout_alignParentEnd="true"
+            android:layout_toStartOf="@id/dataregistro"
+            android:gravity="center"
+            android:text="55" />
+
+        <TextView
+            android:id="@+id/dataregistro"
+            style="@style/perfil1"
+            android:layout_below="@id/realizadas"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:text="33/33/3333 33:33" />
+
+        <TextView
+            android:id="@+id/ultimoacesso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_below="@id/dataregistro"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:text="33/33/3333 33:33"
+            android:textSize="18sp" />
+
+
+    </RelativeLayout>
+
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:id="@+id/testes"
-        android:text="aaar"
-        android:background="@drawable/botaoamarelo"
-        android:backgroundTint="@color/purple_200"/>
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
+        android:layout_marginTop="5dp"
+        android:orientation="vertical"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/relative2">
 
-</LinearLayout>
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/alterarconta"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:background="@drawable/botaocurvado"
+            android:backgroundTint="@color/cinzaclaro2"
+            android:text="Alterar conta"
+            android:textColor="@color/white"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            app:layout_constraintBottom_toTopOf="@+id/deslogar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/deslogar"
+            android:layout_width="200dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:textAllCaps="false"
+            android:textSize="18sp"
+            android:fontFamily="sans-serif"
+            android:background="@drawable/semcentrocurvado"
+            android:text="Deslogar"
+            android:textColor="@color/vermelho"
+            app:layout_constraintTop_toBottomOf="@+id/alterarconta" />
+
+    </LinearLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

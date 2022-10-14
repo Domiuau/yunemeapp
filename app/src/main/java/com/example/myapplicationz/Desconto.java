@@ -4,10 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
+import androidx.core.widget.TextViewCompat;
 
+import android.content.pm.ActivityInfo;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,14 +22,16 @@ import java.util.Date;
 public class Desconto extends AppCompatActivity implements View.OnClickListener {
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2;
     AppCompatImageButton nbackspace;
-    TextView inicial, novo, diferenca;
-    AppCompatImageView voltar;
+    TextView novo, diferenca;
+    AppCompatImageButton voltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_MyApplicationz);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.desconto);
+        this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
 
         n1 = findViewById(R.id.n1);
         n2 = findViewById(R.id.n2);
@@ -45,7 +50,6 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
         nmenos = findViewById(R.id.nmenos);
         espaco1 = findViewById(R.id.espaco1);
         espaco2 = findViewById(R.id.espaco2);
-        inicial = findViewById(R.id.inicial);
         novo = findViewById(R.id.aplicado);
         diferenca = findViewById(R.id.diferenca);
         voltar = findViewById(R.id.voltar);
@@ -66,23 +70,25 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
         nmenos.setOnClickListener(this);
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
-        inicial.setOnClickListener(this);
-        novo.setOnClickListener(this);
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
             }
         });
-        diferenca.setOnClickListener(this);
         nc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 espaco1.setText("");
                 espaco2.setText("");
-                inicial.setText("");
                 novo.setText("");
                 diferenca.setText("");
+                espaco2.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+                espaco1.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+                TextViewCompat.setAutoSizeTextTypeWithDefaults(espaco1,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
+                TextViewCompat.setAutoSizeTextTypeWithDefaults(espaco2,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
+                espaco1.setTextSize(16);
+                espaco2.setTextSize(16);
                 Data.fluxo = "";
 
             }
@@ -96,84 +102,58 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
                         && !espaco2.getText().toString().isEmpty()) {
 
                     try {
-                        inicial.setText(espaco1.getText().toString());
-                        novo.setText(String.format("%.3f", Double.parseDouble(espaco1.getText().toString()) - (Double.parseDouble(espaco1.getText().toString()) / 100) * Double.parseDouble(espaco2.getText().toString().replace("%", ""))));
-                        if (Double.parseDouble(espaco2.getText().toString().replace("%", "")) < 101) {
-                            System.out.println(Double.parseDouble(espaco2.getText().toString().replace("%", "")));
-                            diferenca.setText(String.format("%.3f", (Double.parseDouble(espaco1.getText().toString()) / 100) * Double.parseDouble(espaco2.getText().toString().replace("%", ""))));
+
+
+                        if ((Double.parseDouble(espaco1.getText().toString()) - (Double.parseDouble(espaco1.getText().toString()) / 100) * Double.parseDouble(espaco2.getText().toString().replace("%", ""))) % 1 == 0) {
+
+                            novo.setText(String.format("%.0f", Double.parseDouble(espaco1.getText().toString()) - (Double.parseDouble(espaco1.getText().toString()) / 100) * Double.parseDouble(espaco2.getText().toString().replace("%", ""))));
+
                         } else {
-                            diferenca.setText(String.format("%.3f", ((Double.parseDouble(espaco1.getText().toString()) / 100) * Double.parseDouble(espaco2.getText().toString().replace("%", ""))) * -1));
+                            novo.setText(String.format("%.2f", Double.parseDouble(espaco1.getText().toString()) - (Double.parseDouble(espaco1.getText().toString()) / 100) * Double.parseDouble(espaco2.getText().toString().replace("%", ""))));
+                        }
+                            diferenca.setText(String.format("%.2f", (Double.parseDouble(espaco1.getText().toString()) / 100) * Double.parseDouble(espaco2.getText().toString().replace("%", ""))* -1));
+
+                        if (diferenca.getText().toString().contains(",00")) {
+                            diferenca.setText(String.format("%.0f", Double.parseDouble(diferenca.getText().toString().replace(",", "."))));
                         }
 
-                        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
-                        DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Desconto'," +
-                                " '" + "Valor = " + espaco1.getText().toString() + " / Desconto = " + espaco2.getText().toString() + "'," +
-                                "'" + "Novo valor = " + novo.getText().toString() + " / Difereça = " + diferenca.getText().toString() + "'," +
-                                "'" + Data.dataatual() + "', '" + R.drawable.hist_desconto + "' )");
-                        Data.fluxo = comp;
+                        if (Double.parseDouble(espaco2.getText().toString().replace("%", "")) > 100){
+                            diferenca.setText("+" + diferenca.getText().toString().replace("-",""));
+                        }
+
+                        Teclado.adicionarhist(DB_hist, "Desconto", "Valor = " + espaco1.getText().toString() + " / Desconto = " + espaco2.getText().toString(),
+                                "Novo valor = " + novo.getText().toString() + " / Difereça = " + diferenca.getText().toString(), R.drawable.hist_desconto, comp);
+
+
                     } catch (Exception e) {
                         Toast.makeText(Desconto.this, "Erro ao calcular", Toast.LENGTH_SHORT).show();
                     }
                 } else if (espaco1.getText().toString().isEmpty()
-                        || espaco2.getText().toString().isEmpty())  {
+                        || espaco2.getText().toString().isEmpty()) {
                     Toast.makeText(Desconto.this, "Preencha todos os campos", Toast.LENGTH_SHORT).show();
                 }
 
 
             }
         });
-
-
     }
+
 
     @Override
     public void onClick(View desconto) {
 
-
-
-        if (desconto.getId() == R.id.nc) {
-            espaco1.setText("");
-            espaco2.setText("");
-            inicial.setText("");
-            novo.setText("");
-            diferenca.setText("");
-        }
-
         if (Teclado.espaco(desconto) == 2) {
 
-            if (
-                    desconto.getId() != R.id.espaco1 && desconto.getId() != R.id.espaco2) {
-
-                if (!espaco2.getText().toString().contains("%")) {
-                    espaco2.setText(Teclado.teclado(desconto, espaco2.getText().toString()) + "%");
-                } else {
-                    String a = "";
-                    String[] z = espaco2.getText().toString().split("");
-                    for (int i = 0; i < z.length - 1; ++i) {
-                        a += z[i];
-
-
-                    }
-                    espaco2.setText(Teclado.teclado(desconto, a) + "%");
-
-
-                }
-
+            Teclado.adicionarnatela(espaco2, desconto);
+            espaco2.setText(espaco2.getText().toString().replace("%",""));
+            if (!espaco2.getText().toString().isEmpty()){
+                espaco2.append("%");
             }
-
-            if (espaco2.getText().toString().equals("%")) {
-                espaco2.setText("");
-            }
-
-            espaco2.setBackgroundResource(R.drawable.valorselecionado);
-            espaco1.setBackgroundResource(R.drawable.valoresnovo);
 
 
         } else {
 
-            espaco1.setText(Teclado.teclado(desconto, espaco1.getText().toString()));
-            espaco1.setBackgroundResource(R.drawable.valorselecionado);
-            espaco2.setBackgroundResource(R.drawable.valoresnovo);
+            Teclado.adicionarnatela(espaco1, desconto);
 
 
         }

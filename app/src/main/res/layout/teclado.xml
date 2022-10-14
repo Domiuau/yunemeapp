@@ -6,49 +6,7 @@
     android:background="@color/branco"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    tools:context=".MainActivity2">
+    android:gravity="center"
+    android:orientation="horizontal"
+    tools:context=".MainActivity2"/>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:background="@color/preto"
-        android:layout_weight="1.3">
-
-
-
-    </RelativeLayout>
-
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="9">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    </ScrollView>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-</LinearLayout>

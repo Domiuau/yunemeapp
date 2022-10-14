@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#373737"
+    android:background="@color/preto"
     android:orientation="vertical"
     tools:context=".MainActivity2">
 
@@ -43,15 +43,29 @@
                 android:textSize="22sp" />
 
             <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/curiosidade"
-                android:layout_width="100dp"
+                android:id="@+id/calculadora"
+                android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_alignParentRight="true"
                 android:background="@color/semcor"
+                android:padding="12dp"
                 android:scaleType="fitCenter"
-                android:padding="16dp"
+                android:src="@drawable/ic_calculadora"
+                android:tint="@color/branco" />
+
+            <androidx.appcompat.widget.AppCompatImageButton
+                android:id="@+id/curiosidade"
+                android:layout_width="50dp"
+                android:layout_height="60dp"
+                android:layout_alignParentRight="true"
+                android:background="@color/semcor"
+                android:padding="10dp"
+                android:scaleType="fitCenter"
+                android:layout_marginRight="10dp"
                 android:src="@drawable/ic_interrogacao"
-                android:tint="@color/cinzaclaro2" />
+                android:tint="@color/cinza" />
+
+
 
 
 
@@ -132,6 +146,7 @@
                     android:layout_marginTop="50dp"
                     android:background="@color/semcor"
                     android:gravity="center"
+                    android:maxLines="1"
                     android:hint="Insira aqui..."
                     android:textColor="@color/preto"
                     android:textSize="16sp" />
@@ -170,6 +185,7 @@
                     style="@style/numerosentrada"
                     android:layout_width="110dp"
                     android:layout_height="40dp"
+                    android:maxLines="1"
                     android:layout_marginTop="50dp"
                     android:background="@color/semcor"
                     android:gravity="center"
@@ -223,7 +239,8 @@
                     android:layout_width="30dp"
                     android:layout_height="30dp"
                     android:layout_marginRight="12dp"
-                    android:src="@drawable/ic_a" />
+                    android:src="@drawable/ic_a"
+                    app:tint="@color/preto"/>
 
                 <RelativeLayout
                     android:id="@+id/r1"
@@ -239,7 +256,7 @@
 
                     <TextView
                         android:id="@+id/espacodelta"
-                        android:layout_width="wrap_content"
+                        android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:layout_alignStart="@id/v1"
                         android:layout_marginTop="-5dp"
@@ -285,11 +302,11 @@
                         android:layout_width="190dp"
                         android:layout_height="1dp"
                         android:layout_marginTop="22dp"
-                        android:background="@color/preto" />
+                        android:background="@color/black" />
 
                     <TextView
                         android:id="@+id/espacox1"
-                        android:layout_width="wrap_content"
+                        android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:layout_alignStart="@id/v2"
                         android:layout_marginTop="-5dp"
@@ -336,7 +353,7 @@
 
                     <TextView
                         android:id="@+id/espacox2"
-                        android:layout_width="wrap_content"
+                        android:layout_width="190dp"
                         android:layout_height="wrap_content"
                         android:layout_alignStart="@id/v3"
                         android:layout_marginTop="-5dp"
@@ -363,8 +380,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="2.8"
-        android:background="@drawable/fundotecladopreto"
+        android:layout_weight="2.5"
         android:orientation="vertical"
         android:padding="10dp">
 
@@ -445,8 +461,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="20dp"
-                android:scaleType="centerCrop"
+                android:scaleType="centerInside"
                 android:src="@drawable/ic_backspace" />
 
 

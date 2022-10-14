@@ -2,208 +2,186 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:theme="@style/Theme.MyApplicationz"
+    android:background="@color/branco"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/preto"
-    android:gravity="center"
     android:orientation="vertical"
-    tools:context=".ferramentastela">
-
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:gravity="center"
-        android:text="YUNEME"
-        android:textColor="@color/cinzabranco"
-        android:textSize="25sp"
-        android:textStyle="bold" />
+    tools:context=".MainActivity2">
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="10">
+        android:layout_height="80dp"
+        android:background="@color/preto"
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
-            android:layout_width="60dp"
-            android:layout_height="60dp"
-            app:backgroundTint="@color/azul"
-            android:src="@drawable/ic_hist"
-            android:tintMode="@color/branco"
+        android:layout_weight="0">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/perfil"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15sp"
+            android:background="@drawable/bola"
+            android:backgroundTint="@color/cinzaescuro"
+            android:scaleType="center"
+            android:src="@drawable/ic_perfil" />
+
+        <TextView
+            android:id="@+id/perfil1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="15dp"
+            android:layout_toEndOf="@id/perfil"
+            android:text="Meu perfil"
+            android:textColor="@color/branco"
+            android:textSize="16sp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/interrogacao"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginBottom="10dp"
-            android:layout_marginRight="30dp"
-            android:id="@+id/teste"/>
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:background="@color/preto"
+            android:padding="5dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_interrogacao2" />
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="vertical">
-
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="900dp"
-                    android:orientation="horizontal">
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_marginTop="2dp"
-                        android:layout_weight="20"
-                        android:background="@drawable/fundobranco"
-                        android:orientation="vertical">
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/historico"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="15dp"
+            android:layout_toLeftOf="@id/interrogacao"
+            android:background="@color/preto"
+            android:padding="2dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_history" />
 
 
-
-                        <ImageView
-                            android:layout_width="150dp"
-                            android:layout_height="5dp"
-                            android:layout_gravity="center"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="15dp"
-                            android:background="@drawable/retacinza" />
-
-
-
-                        <LinearLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="50dp"
-                            android:gravity="center"
-                            android:orientation="horizontal">
-
-                            <TextView
-                                android:layout_width="230dp"
-                                android:layout_height="50dp"
-                                android:layout_marginLeft="35dp"
-                                android:text="Ferramentas"
-                                android:textColor="@color/preto"
-                                android:textSize="32sp" />
-
-
-
-                            <ImageView
-                                android:layout_width="25dp"
-                                android:layout_height="25dp"
-                                android:layout_marginRight="70dp"
-                                android:background="@drawable/lupa"
-                                android:scaleType="center" />
-
-
-
-                        </LinearLayout>
-
-                       <androidx.constraintlayout.widget.ConstraintLayout
-                           android:layout_width="match_parent"
-                           android:layout_height="match_parent">
-
-                           <ImageButton
-                               android:layout_marginTop="20dp"
-                               android:id="@+id/pacote"
-                               android:layout_width="100dp"
-                               android:layout_height="100dp"
-                               android:background="@drawable/botaopequenoazul"
-                               app:layout_constraintStart_toStartOf="parent"
-                               app:layout_constraintEnd_toStartOf="@id/desconto"
-                               app:layout_constraintTop_toTopOf="parent"
-                               android:scaleType="center" />
-
-
-                           <ImageButton
-                               android:id="@+id/desconto"
-                               android:layout_width="100dp"
-                               android:layout_height="100dp"
-                               android:background="@drawable/botaopequenoazul"
-                               android:textSize="60sp"
-                               android:layout_marginTop="20dp"
-                               app:layout_constraintStart_toEndOf="@id/pacote"
-                               app:layout_constraintTop_toTopOf="parent"
-                               app:layout_constraintEnd_toEndOf="parent"
-                               tools:layout_editor_absoluteX="195dp"
-                               tools:layout_editor_absoluteY="30dp" />
-
-                           <TextView
-                               android:id="@+id/bhaskara1"
-                               android:layout_width="150dp"
-                               android:layout_height="wrap_content"
-                               android:layout_marginStart="8dp"
-                               android:gravity="center"
-                               android:text="teste"
-                               android:textColor="@color/preto"
-                               android:textSize="22sp"
-                               android:layout_marginTop="4dp"
-                               app:layout_constraintStart_toStartOf="@id/pacote"
-                               app:layout_constraintEnd_toEndOf="@id/pacote"
-                               app:layout_constraintTop_toBottomOf="@id/pacote"/>
-
-                           <TextView
-                               android:id="@+id/desconto1"
-                               android:layout_width="wrap_content"
-                               android:layout_height="wrap_content"
-                               android:gravity="center"
-                               android:text="teste"
-                               android:textColor="@color/preto"
-                               android:textSize="22sp"
-                               android:layout_marginTop="4dp"
-                               app:layout_constraintStart_toStartOf="@id/desconto"
-                               app:layout_constraintEnd_toEndOf="@id/desconto"
-                               app:layout_constraintTop_toBottomOf="@id/desconto"/>
-
-                       </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="0dp"
-                        android:layout_height="match_parent"
-                        android:layout_weight="1" />
-
-
-                </LinearLayout>
-
-
-
-
-
-
-            </LinearLayout>
-
-
-
-        </ScrollView>
 
 
 
     </RelativeLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/ferramentas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pacotes"
+                android:layout_marginTop="20dp"
+                app:layout_goneMarginLeft="164dp"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/bhaskara"
+                app:layout_constraintStart_toStartOf="@id/bhaskara"
+                android:textColor="@color/preto"
+                android:textSize="30sp" />
 
 
 
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/busca"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="70dp"
+                app:layout_constraintTop_toTopOf="@id/ferramentas"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="@id/ferramentas"
+                app:layout_constraintRight_toRightOf="@id/desconto"
+                android:background="@drawable/lupa"
+                android:scaleType="center" />
+
+
+            <ImageButton
+                android:id="@+id/bhaskara"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/botaopequenoverdeazulsla"
+                android:paddingRight="5dp"
+                android:paddingBottom="5dp"
+                android:scaleType="center"
+                android:backgroundTint="@color/azul"
+                app:layout_constraintEnd_toStartOf="@+id/desconto"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ferramentas" />
+
+            <ImageButton
+                android:id="@+id/desconto"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/botaoamarelo"
+                android:alpha="1"
+                android:textSize="60sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:backgroundTint="@color/azul"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintTop_toBottomOf="@id/ferramentas"
+                app:layout_constraintStart_toEndOf="@+id/bhaskara" />
+
+
+            <TextView
+                android:id="@+id/bhaskara1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/bhaskara"
+                android:layout_alignParentLeft="true"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Em breve"
+                android:textColor="@color/preto"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toStartOf="@+id/desconto1"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/bhaskara" />
+
+            <TextView
+                android:id="@+id/desconto1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/desconto"
+                android:layout_alignParentEnd="true"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="Em breve"
+                android:textColor="@color/preto"
+                android:textSize="22sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/bhaskara1"
+                app:layout_constraintTop_toBottomOf="@+id/desconto" />
+
+
+
+
+
+
+
+
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+    </ScrollView>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -220,7 +198,8 @@
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="1"
-            android:background="@drawable/botaopequenoverdeazulsla"
+            android:background="@drawable/botaopequenoazul"
+            android:backgroundTint="@color/verdeouazulsla"
             android:scaleType="center"
             android:src="@drawable/casinha"
             android:textColor="@color/branco"
@@ -253,12 +232,18 @@
 
 
     </LinearLayout>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </LinearLayout>
-
-
-
-
-
-
-
-

@@ -5,6 +5,7 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.TextViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,7 +21,9 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
+import android.view.ViewGroup;
 import android.widget.DatePicker;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,7 +35,8 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2, espaco3;
     AppCompatImageButton nbackspace;
     TextView espacox1, espacox2, espacodelta;
-    AppCompatImageView voltar;
+    AppCompatImageButton voltar;
+    RelativeLayout c1,c2,c3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,6 +55,9 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         n8 = findViewById(R.id.n8);
         n9 = findViewById(R.id.n9);
         n0 = findViewById(R.id.n0);
+        c1 = findViewById(R.id.relative1);
+        c2 = findViewById(R.id.relative2);
+        c3 = findViewById(R.id.relative3);
         nvirgula = findViewById(R.id.nvirgula);
         nc = findViewById(R.id.nc);
         nbackspace = findViewById(R.id.nbackspace);
@@ -62,9 +69,12 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espacox1 = findViewById(R.id.espacox1);
         espacox2 = findViewById(R.id.espacox2);
         espacodelta = findViewById(R.id.espacodelta);
-        //voltar = findViewById(R.id.voltar);
+        voltar = findViewById(R.id.voltar);
         Data.fluxo = "";
 
+        c1.setOnClickListener(this);
+        c2.setOnClickListener(this);
+        c3.setOnClickListener(this);
         n1.setOnClickListener(this);
         n2.setOnClickListener(this);
         n3.setOnClickListener(this);
@@ -81,15 +91,22 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
         espaco3.setOnClickListener(this);
-
-
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
 
         nc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 limpar();
-                TextViewCompat.setAutoSizeTextTypeWithDefaults(espaco2,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
+
+
+
 
             }
         });
@@ -132,14 +149,15 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
 
                         }
 
-                        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
-                        DB_hist.execSQL("INSERT INTO TB_coisas (Ferramenta, Entrada, Saida, Data, Icone) VALUES ('Bhaskara','" + "A = " + a[0] + " B = " + a[1] + " C = " + a[2] + "','" +
+
+                        Teclado.adicionarhist(DB_hist, "Bhaskara","A = " + a[0] + " B = " + a[1] + " C = " + a[2],
                                 "Delta = " + String.format("%.2f", Double.parseDouble(espacodelta.getText().toString())) +
-                                " / X1 = " + String.format("%.5f", Double.parseDouble(espacox1.getText().toString()))
-                                + " / X2 = " + String.format("%.5f", Double.parseDouble(espacox2.getText().toString())) + "'," +
-                                "'" + Data.dataatual() + "'," + R.drawable.hist_bhaskara + ")");
-                        Data.atualizaradicionadas();
-                        Data.fluxo = comp;
+                                        " / X1 = " + String.format("%.5f", Double.parseDouble(espacox1.getText().toString())) +
+                                        " / X2 = " + String.format("%.5f", Double.parseDouble(espacox2.getText().toString())),
+                                        R.drawable.hist_bhaskara,comp
+                                );
+
+
 
 
                     } catch (Exception e) {
@@ -197,11 +215,16 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espacodelta.setText("");
         espacox1.setText("");
         espacox2.setText("");
+        espaco2.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        espaco1.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        espaco3.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(espaco1,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(espaco2,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
+        TextViewCompat.setAutoSizeTextTypeWithDefaults(espaco3,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
         espaco1.setTextSize(16);
         espaco2.setTextSize(16);
         espaco3.setTextSize(16);
         Data.fluxo = "";
-        espaco1.setHint("aaaa");
     }
 
 
@@ -215,24 +238,22 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
 
         if (Teclado.espaco(bhaskara) == 2) {
 
-            espaco2.setText(Teclado.teclado(bhaskara, espaco2.getText().toString()));
-            espaco2.setTextSize(Teclado.tamanhofonte(espaco2.getText().toString().isEmpty()));
+            Teclado.adicionarnatela(espaco2,bhaskara);
 
         } else if (Teclado.espaco(bhaskara) == 3) {
 
-            espaco3.setText(Teclado.teclado(bhaskara, espaco3.getText().toString()));
-            espaco3.setTextSize(Teclado.tamanhofonte(espaco3.getText().toString().isEmpty()));
+            Teclado.adicionarnatela(espaco3,bhaskara);
 
         } else {
 
-
-            espaco1.setText(Teclado.teclado(bhaskara, espaco1.getText().toString()));
-            espaco1.setTextSize(Teclado.tamanhofonte(espaco1.getText().toString().isEmpty()));
+            Teclado.adicionarnatela(espaco1,bhaskara);
 
         }
 
 
     }
+
+
 }
 
 

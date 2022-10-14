@@ -27,53 +27,70 @@
 
         <TextView
             android:id="@+id/hist_ferramenta"
-            android:layout_toStartOf="@id/hist_data"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_alignTop="@id/hist_ferramenta"
             android:layout_marginStart="16sp"
+            android:layout_toStartOf="@id/hist_data"
             android:layout_toEndOf="@id/hist_icone"
             android:text="Bhaskara"
+            android:textStyle="bold"
             android:textColor="@color/black"
             android:textSize="16sp" />
 
-        <TextView
-            android:id="@+id/hist_entrada"
+        <HorizontalScrollView
+            android:id="@+id/scroll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/hist_ferramenta"
             android:layout_alignStart="@id/hist_ferramenta"
-            android:layout_toEndOf="@id/hist_icone"
-            android:ellipsize="marquee"
-            android:singleLine="true"
-            android:text="a = 4 b = 4 b = 6"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
+            android:layout_toEndOf="@id/hist_icone">
 
-        <TextView
-            android:id="@+id/hist_saida"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_below="@id/hist_entrada"
-            android:layout_alignStart="@id/hist_ferramenta"
-            android:layout_toEndOf="@id/hist_icone"
-            android:singleLine="true"
-            android:text="delta = 554 x1 = 43455554545555555 x2 = 645456"
-            android:textColor="@color/black"
-            android:autoSizeTextType="uniform"
-            android:textSize="12sp"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/hist_entrada"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:ellipsize="marquee"
+                    android:singleLine="true"
+                    android:text="a = 4 b = 4 b = 6"
+                    android:textColor="@color/black"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/hist_saida"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:autoSizeTextType="uniform"
+                    android:singleLine="true"
+                    android:paddingBottom="5dp"
+                    android:text="delta = 554 x1 = 43455554545555555 x2 = 645456"
+                    android:textColor="@color/black"
+                    android:textSize="13sp" />
+            </LinearLayout>
+
+
+        </HorizontalScrollView>
+
 
         <TextView
             android:id="@+id/hist_data"
             android:layout_width="wrap_content"
-            android:textSize="13sp"
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
             android:ellipsize="marquee"
             android:singleLine="true"
             android:text="34/43/4343"
-            android:textColor="@color/black" />
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
 
 
 

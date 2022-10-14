@@ -77,24 +77,45 @@
     <style name="botoesnovos">
         <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
         <item name="fontFamily">sans-serif-light</item>
-        <item name="android:background">@color/semcor</item>
+        <item name="android:background">@color/preto</item>
         <item name="android:textSize">30sp</item>
         <item name="android:textColor">@color/branco</item>
      </style>
 
     <style name="botaocalculadora">
         <item name="android:textColor">@color/branco</item>
+        <item name="android:foreground">?attr/selectableItemBackgroundBorderless</item>
         <item name="android:textSize">25sp</item>
         <item name="android:layout_weight">1</item>
+        <item name="background">@color/preto</item>
 
 
     </style>
 
     <style name="numerosentrada">
-        <item name="autoSizeTextType">uniform</item>
+        <item name="autoSizeTextType">none</item>
         <item name="android:hint">Insira aqui...</item>
-        <item name="autoSizeMaxTextSize">18sp</item>
-        <item name="autoSizeMinTextSize">1sp</item>
+    </style>
+
+    <style name="perfil">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="singleLine">true</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/preto</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:layout_marginBottom">8dp</item>
+
+    </style>
+
+    <style name="perfil1" parent="perfil">
+        <item name="android:textColor">@color/cinzaclaro2</item>
+        <item name="singleLine">true</item>
+
+
+
+
+
+
 
     </style>
 
