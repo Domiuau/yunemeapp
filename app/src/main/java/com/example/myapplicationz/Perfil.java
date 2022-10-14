@@ -86,7 +86,7 @@ public class Perfil extends AppCompatActivity {
                     email.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
                     dataregistro.setText(value.getString("dataderegistro"));
                     realizadas.setText(value.getLong("realizadas").toString());
-                    ultimaentrada.setText(value.getString("ultimaentrada"));
+                    ultimaentrada.setText(Data.entrada);
 
 
 
