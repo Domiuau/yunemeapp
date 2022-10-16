@@ -48,6 +48,9 @@ public class login extends AppCompatActivity {
         login = findViewById(R.id.login);
 
         login.setOnClickListener(new View.OnClickListener() {
+
+            //procura pelo usuario no banco de dados e entra na conta caso ela for encontrada
+
             @Override
             public void onClick(View v) {
 

@@ -30,6 +30,7 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_numerosprimos);
         this.setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
         Data.fluxo = "";
 
         n1 = findViewById(R.id.n1);
@@ -86,6 +87,9 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
 
             }
         });
+
+        //exibi os resultados na tela, mecanismo para não poluir o historico e adicionar os valores no historico.
+
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -117,9 +121,6 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
                         maiorque.setText(me + 1 + "");
                         diferencamaior.setText(" " + ((me + 1) - Integer.parseInt(botao.getText().toString())) + " ");
 
-
-
-                        SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
                         Teclado.adicionarhist(DB_hist,"Números primos", "O número " + resultado.getText().toString(),
                                 "Mais proximos: " + menorque.getText().toString() + " < " + botao.getText().toString() + " > " + maiorque.getText().toString(),
                                 R.drawable.hist_primos,botao.getText().toString()  );
@@ -159,6 +160,8 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
         Data.fluxo = "";
     }
 
+    //retorna se o número é primo ou não
+
     boolean primo(int a) {
         b = 0;
         for (int i = a - 1; i > 1; --i) {
@@ -175,9 +178,11 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
         }
     }
 
+        //teclado
 
     @Override
     public void onClick(View v) {
+
         botao.setText(Teclado.teclado(v, botao.getText().toString()));
 
 

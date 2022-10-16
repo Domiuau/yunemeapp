@@ -28,6 +28,7 @@ public class pacotes extends AppCompatActivity implements View.OnClickListener {
 
     }
 
+    //futuros pacotes que serão adicionados, é a tela de ferramentas, mas para pacotes
 
     @Override
     public void onClick(View v) {

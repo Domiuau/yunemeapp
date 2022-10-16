@@ -41,6 +41,8 @@ public class inicial extends AppCompatActivity implements View.OnClickListener {
 
     }
 
+    //tela inicial, a primeira tela que o usuario tera contato, onde ele podera criar uma conta, entrar em uma conta ja existente ou entrar como visitante
+
     @Override
     public void onClick(View v) {
 

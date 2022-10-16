@@ -30,7 +30,6 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
     LinearLayout linear;
     AppCompatImageButton voltar,nbackspace,inverter;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_MyApplicationz);
@@ -83,6 +82,8 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
 
+        //exibi a formula na tela
+
         linear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +103,9 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
             @Override
             public void onClick(View v) { finish(); }
         });
+
+        //inverte as unidades de temperatura e calcula novamente e determina se a formula sera exibida ou não
+
         inverter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -132,6 +136,7 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
             }
         });
 
+        //calcula sem motrar a formula
 
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -159,6 +164,8 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         Data.fluxo = "";
     }
 
+    //calcula e exibi na tela o resultado, mecanismo para não poluir o historico e adicionar os valores ao historico
+
     void tentar (SQLiteDatabase banco){
 
         try {
@@ -183,7 +190,8 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         }
     }
 
-
+    //retorna a formula que será utilizada
+    //aqui é utilizada a api BigDecimal para formatar os numeros melhor e para evitar burrices do java como 1x1.2 =  1.19999999999999999999999999999999999999999999
 
     BigDecimal selecionarformula() {
         switch (spinner1.getSelectedItemPosition()) {
@@ -228,6 +236,8 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         return vezes;
 
     }
+
+    //teclado
 
     @Override
     public void onClick(View v) {

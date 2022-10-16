@@ -33,6 +33,7 @@ public class Carregamento extends AppCompatActivity {
         } catch (Exception e) {
         }
 
+        //caso o usuario esteja logado, ele vai para a tela de ferramentas normal, mas se não estiver, vai para a tela inicial, pode poderá logar, criar conta ou entrar como visitante
 
         if (FirebaseAuth.getInstance().getCurrentUser() != null) {
             Data.atualizardata();

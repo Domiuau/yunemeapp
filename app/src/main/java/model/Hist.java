@@ -2,6 +2,8 @@ package model;
 
 import android.graphics.drawable.Drawable;
 
+        //getters e setters do adaptador que gerencia o historico
+
 public class Hist {
 
     private String ferramenta;

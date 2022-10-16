@@ -24,6 +24,8 @@ public class Liquidos extends AppCompatActivity implements View.OnClickListener 
     LinearLayout linear;
     AppCompatImageButton voltar, nbackspace, inverter;
 
+    //é literalmente a mesma coisa da distancia
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         setTheme(R.style.Theme_MyApplicationz);

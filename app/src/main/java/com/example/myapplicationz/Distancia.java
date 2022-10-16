@@ -84,6 +84,9 @@ public class Distancia extends AppCompatActivity implements View.OnClickListener
                 limpar();
             }
         });
+
+        //mostra a formula utilizada
+
         linear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -95,6 +98,9 @@ public class Distancia extends AppCompatActivity implements View.OnClickListener
 
             }
         });
+
+        //inverte as unidades de medidas
+
         inverter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -115,6 +121,9 @@ public class Distancia extends AppCompatActivity implements View.OnClickListener
 
             }
         });
+
+        //calcula sem mostrar a formula
+
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,6 +137,8 @@ public class Distancia extends AppCompatActivity implements View.OnClickListener
 
 
     }
+
+    //retorna a formula que sera usada no calculo para as 49 possibilidades possiveis
 
     public BigDecimal selenarformular() {
         return new BigDecimal(Math.pow(10, spinner2.getSelectedItemPosition() - spinner1.getSelectedItemPosition()) + "");
@@ -143,6 +154,8 @@ public class Distancia extends AppCompatActivity implements View.OnClickListener
         espaco2.setTextSize(16);
         Data.fluxo = "";
     }
+
+    //mecanismo para não poluir o historico, conversão e adicionar os valores no historico
 
     void calcular(SQLiteDatabase banco) {
 

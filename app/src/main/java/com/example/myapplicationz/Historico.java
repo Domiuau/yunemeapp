@@ -40,6 +40,8 @@ public class Historico extends AppCompatActivity {
 
         SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
 
+        //quando a tela é iniciada os valores do bando de dados SQLite são recuperados e exibidos na tela
+
 
         try {
 

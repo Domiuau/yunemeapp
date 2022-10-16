@@ -86,6 +86,8 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
     }
 
+    //pega qual botão foi pressionado e manda para a tela certa
+
 
     @Override
     public void onClick(View v) {

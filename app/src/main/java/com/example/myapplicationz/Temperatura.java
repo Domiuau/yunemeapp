@@ -85,6 +85,8 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
 
+        //exibi a formula na tela
+
         linear.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -102,6 +104,9 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
                 finish();
             }
         });
+
+        //inverte as unidades de temperatura e calcula novamente e determina se a formula sera exibida ou não
+
         inverter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -123,6 +128,9 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
 
             }
         });
+
+        //limpa
+
         nc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -134,6 +142,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
             }
         });
 
+        //calcula sem motrar a formula
 
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -148,18 +157,19 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
 
     }
 
+    //exibi na tela o resultado, mecanismo para não poluir o historico e adicionar os valores ao historico
+
     void tentar (SQLiteDatabase banco){
 
         try {
             String comp = espaco1.getText().toString() + spinner1.getSelectedItem().toString() + spinner2.getSelectedItem().toString();
             if (!comp.equals(Data.fluxo) && !espaco1.getText().toString().equals("")) {
+
                 espaco2.setText(selecionarformula(espaco1.getText().toString()));
+
                 Teclado.adicionarhist(banco,"Temperatura", espaco1.getText().toString() + " " + spinner1.getSelectedItem().toString()
                         + " = " + espaco2.getText().toString() + " " + spinner2.getSelectedItem().toString(), formulausada, R.drawable.hist_temperatura,comp);
-                Data.atualizaradicionadas();
-                Data.fluxo = comp;
 
-                System.out.println(Data.fluxo + espaco1.getText().toString() + spinner1.getSelectedItem().toString().equals(Data.fluxo) + espaco1.getText().toString().equals("")+"fjnhnjdfhjnjdfghjnfjnfjnkjnkg");
             } else if (espaco1.getText().toString().equals("")) {
                 Toast.makeText(Temperatura.this, "Insira um número", Toast.LENGTH_SHORT).show();
             }
@@ -189,6 +199,8 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         Data.fluxo = "";
     }
 
+    //seleciona a formula que sera utilizada e retorna o valor ja convertido
+    //aqui é utilizada a api BigDecimal para formatar os numeros melhor e para evitar burrices do java como 1x1.2 =  1.19999999999999999999999999999999999999999999
 
     String selecionarformula(String valor) {
         switch (spinner1.getSelectedItemPosition()) {
@@ -249,6 +261,8 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         return vezes.toString();
 
     }
+
+    //teclado
 
     @Override
     public void onClick(View v) {

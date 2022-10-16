@@ -10,6 +10,7 @@ import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.math.BigDecimal;
 
@@ -84,18 +85,21 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
         });
     }
 
+    //adiciona na tela o valor do botao pressionado
+
     public void adicionar(String valor) {
         expressao.append(valor.replace("*", "x"));
         resultado.setText("");
     }
 
+    //separa tudo e adiciona em um vetor
+
     public void adicionarvetor() {
         z = expressao.getText().toString().split("");
-        //for (int i = 0;i< z.length;i++){
-        //System.out.println(z[i]);
-        //}
 
     }
+
+    //backspace
 
     public void backspace() {
         adicionarvetor();
@@ -106,6 +110,8 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
     }
 
+    //adiciona em um vetor separando por numeros
+
     public void separarporoperador() {
         q = expressao.getText().toString()
                 .replace("-", " ")
@@ -114,6 +120,8 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
                 .replace("x", " ")
                 .split(" ");
     }
+
+    //definir se um operador pode ser adicionado na expressão ou não, exemplo: não pode ser colocado "++" ou "*÷"
 
     public void compararoperador(String operador) {
 
@@ -131,6 +139,8 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
     }
 
+    //todo o tecaldo da calculadora
+
     @Override
     public void onClick(View teclado) {
 
@@ -139,6 +149,9 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
                 expressao.setText("");
                 resultado.setText("");
                 break;
+
+            //porcentagem, divide o ultimo número da expressão por 100
+
             case R.id.porcentagem:
                 separarporoperador();
                 try {
@@ -261,6 +274,8 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
             case R.id.iguala:
 
+                //calculo o resultado usando uma biblioteca ai
+
                 if (!expressao.getText().toString().contains("E")) {
 
                     try {
@@ -294,45 +309,54 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
                 break;
 
+                //fatorial, limitado a 5000 para evitar travamentos e números bizarros
+
             case R.id.nfatorial:
                 separarporoperador();
 
                 try {
                     BigDecimal ultimo;
-                    BigDecimal fatorialresultado = new BigDecimal((q[q.length - 1]));
+
+                    if (Double.parseDouble((q[q.length - 1])) <= 5000) {
+
+                        BigDecimal fatorialresultado = new BigDecimal((q[q.length - 1]));
 
 
-                    if (expressao.getText().toString().contains("+") ||
-                            expressao.getText().toString().contains("-") ||
-                            expressao.getText().toString().contains("÷") ||
-                            expressao.getText().toString().contains("x")) {
+                        if (expressao.getText().toString().contains("+") ||
+                                expressao.getText().toString().contains("-") ||
+                                expressao.getText().toString().contains("÷") ||
+                                expressao.getText().toString().contains("x")) {
 
-                        while (!expressao.getText().toString().endsWith("x") &&
-                                !expressao.getText().toString().endsWith("-") &&
-                                !expressao.getText().toString().endsWith("+") &&
-                                !expressao.getText().toString().endsWith("÷")) {
-                            backspace();
+                            while (!expressao.getText().toString().endsWith("x") &&
+                                    !expressao.getText().toString().endsWith("-") &&
+                                    !expressao.getText().toString().endsWith("+") &&
+                                    !expressao.getText().toString().endsWith("÷")) {
+                                backspace();
+                            }
+
+
+                        } else {
+                            expressao.setText("");
+
                         }
 
+                        for (int i = Integer.parseInt((q[q.length - 1])) - 1; i > 1; i--) {
+                            ultimo = new BigDecimal(i);
+                            fatorialresultado = fatorialresultado.multiply(ultimo);
 
-                    } else {
-                        expressao.setText("");
 
+                        }
+
+                        expressao.append(fatorialresultado.toString());
+
+                        q = fatorialresultado.toString().split("");
                     }
-
-                    for (int i = Integer.parseInt((q[q.length - 1])) - 1; i > 1; i--) {
-                        ultimo = new BigDecimal(i);
-                        fatorialresultado = fatorialresultado.multiply(ultimo);
-
-
-                    }
-
-                    expressao.append(fatorialresultado.toString());
-
-                    q = fatorialresultado.toString().split("");
 
 
                 } catch (Exception e) {
+
+                    Toast.makeText(calculadora.this,"Fatorial limitado a 5000",Toast.LENGTH_SHORT).show();
+
                 }
 
 

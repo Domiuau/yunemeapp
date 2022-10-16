@@ -16,6 +16,8 @@ public class Teclado extends AppCompatActivity {
 
     static byte espaco = 1;
 
+    //retorna em qual espaco o numero deverá ser exibido na tela
+
     static byte espaco(View q) {
 
 
@@ -42,6 +44,7 @@ public class Teclado extends AppCompatActivity {
         return espaco;
     }
 
+    //retorna o valor atribuido para o botão pressionado, backspace e se um operador pode ser adicionado ou não
 
     static String teclado(View tecladouniversal, String valores) {
         String valor;
@@ -129,6 +132,8 @@ public class Teclado extends AppCompatActivity {
 
     }
 
+    //retorna um tamanho de fonte
+
     static int tamanhofonte (boolean vazio){
         if (vazio == true){
             return 16;
@@ -136,6 +141,9 @@ public class Teclado extends AppCompatActivity {
             return 18;
         }
     }
+
+    //esse metodo foi criado para resolver o bug do hint, onde ele quebrava totalmente quando um texto mudava de tamanho
+
 
     static void adicionarnatela (AppCompatButton botao, View view){
 
@@ -157,6 +165,8 @@ public class Teclado extends AppCompatActivity {
 
         }
     }
+
+    //pega os valores passados ao fazer uma operação e adiciona ao banco de dados do SQLite, os dados serão usados para serem exibidos no historico
 
     static void adicionarhist (SQLiteDatabase banco,String ferramenta,String entrada, String saida, int icone,String comp){
 

@@ -27,7 +27,7 @@ public class Perfil extends AppCompatActivity {
 
     AppCompatButton deslogar, trocarconta;
     ImageView imagem;
-    TextView nome, email, realizadas,ultimaentrada,dataregistro;
+    TextView nome, email, realizadas, ultimaentrada, dataregistro;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,7 +49,7 @@ public class Perfil extends AppCompatActivity {
             public void onClick(View v) {
 
                 FirebaseAuth.getInstance().signOut();
-                startActivity(Data.a(Perfil.this,inicial.class));
+                startActivity(Data.a(Perfil.this, inicial.class));
 
             }
         });
@@ -58,14 +58,9 @@ public class Perfil extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                startActivity(Data.a(Perfil.this,login.class));
+                startActivity(Data.a(Perfil.this, login.class));
             }
         });
-
-
-
-
-
 
 
     }
@@ -74,13 +69,13 @@ public class Perfil extends AppCompatActivity {
     protected void onStart() {
         super.onStart();
 
-
+        //recupera os valores do banco de dados do usuario e exibi na tela
 
         DocumentReference referencia = FirebaseFirestore.getInstance().collection("Usuarios").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
         referencia.addSnapshotListener(new EventListener<DocumentSnapshot>() {
             @Override
             public void onEvent(@Nullable DocumentSnapshot value, @Nullable FirebaseFirestoreException error) {
-                if (value != null){
+                if (value != null) {
 
                     nome.setText(value.getString("nome"));
                     email.setText(FirebaseAuth.getInstance().getCurrentUser().getEmail());
@@ -89,16 +84,9 @@ public class Perfil extends AppCompatActivity {
                     ultimaentrada.setText(Data.entrada);
 
 
-
-
-
-
-
-
                 }
             }
         });
-
 
 
     }

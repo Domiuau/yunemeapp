@@ -18,6 +18,9 @@ import model.Hist;
 public class HistAdapter extends RecyclerView.Adapter<HistAdapter.HistViewHolder> {
     private final List<Hist> hists;
 
+    //aqui estão umas coisas que eu não entendi tudo, vi um cara fazendo e adaptei para o meu
+    //adaptador responsavel por gerenciar a recyclerview do historico
+
     public HistAdapter(List<Hist> hists)  {
         this.hists = hists;
     }

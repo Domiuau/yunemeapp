@@ -76,6 +76,9 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
                 finish();
             }
         });
+
+        //limpa tudo
+
         nc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -93,6 +96,9 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
 
             }
         });
+
+        //mecanismo para não poluir o historico, calculo de desconto e adicionar os valores no historico
+
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -138,6 +144,7 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
         });
     }
 
+    //teclado
 
     @Override
     public void onClick(View desconto) {

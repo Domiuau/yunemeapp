@@ -69,6 +69,8 @@ public class cadastrar extends AppCompatActivity {
 
                 } else {
 
+                    //registrando o usuario no firebase e criando um espaço para ele no banco de dados
+
 
                     FirebaseAuth.getInstance().createUserWithEmailAndPassword(email.getText().toString(), senha.getText().toString()).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                         @Override
@@ -109,6 +111,8 @@ public class cadastrar extends AppCompatActivity {
                             } else {
                                 try {
                                     throw task.getException();
+
+                                    //tratando exceções
 
                                 } catch (FirebaseAuthWeakPasswordException e) {
                                     toask("A senha deve conter pelo menos 6 caracteres");

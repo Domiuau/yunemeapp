@@ -48,13 +48,19 @@ public class Data {
     static boolean at;
     static String fluxo = "";
 
+    //classe que eu criei so para pegar a data atual, mas acabei usando ela para varias outros metodos
+
+
+    //retorna a data atual
 
     public static String dataatual() {
         return formatardata.format(data);
 
     }
 
-    public static Intent a(Context naoseiqueissokkk, Class tela) {
+    //retorna um intent para trocar de tela
+
+    public static Intent a (Context naoseiqueissokkk, Class tela) {
         Intent trocar;
         Teclado.espaco = 1;
         return trocar = new Intent(naoseiqueissokkk, tela);
@@ -62,12 +68,7 @@ public class Data {
 
     }
 
-    static int adicionar(int num) {
-        return num++;
-
-
-    }
-
+    //pega o usuario logado no momento e adiciona +1 nas conversões realizadas na conta
 
     static void atualizaradicionadas(){
         try {
@@ -90,6 +91,8 @@ public class Data {
         }
 
     }
+
+    //muda a cor da statusbar
 
     static void mudarcorstatusbar(Window window,Context context, int cor){
         window.setStatusBarColor(ContextCompat.getColor(context, cor));
