@@ -1,0 +1,4 @@
+package formasgeometricas
+
+class Formas {
+}

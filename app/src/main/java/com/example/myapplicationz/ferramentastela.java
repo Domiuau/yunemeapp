@@ -14,8 +14,9 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class ferramentastela extends AppCompatActivity implements View.OnClickListener {
 
-    ImageButton quadradoestranho, calculadora, botaobhaskara, botaodesconto, casinha, botaonumerosprimos, botaovelocidade, historico, perfil, temperatura,interrogacao,distancia,liquidos;
-    TextView bhaskara1, desconto1, numerosprimos1, velocidade1, temperatura1,perfil1,distancia1,liquidos1;
+    ImageButton botaobhaskara, botaodesconto, botaonumerosprimos, botaovelocidade, historico, perfil, temperatura, interrogacao, distancia, liquidos, regradetres;
+    TextView bhaskara1, desconto1, numerosprimos1, velocidade1, temperatura1, perfil1, distancia1, liquidos1, regradetres1;
+    View quadradoestranho,casinha,calculadora;
 
 
     @Override
@@ -49,6 +50,8 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         distancia1 = findViewById(R.id.tamanho1);
         liquidos = findViewById(R.id.liquidos);
         liquidos1 = findViewById(R.id.liquidos1);
+        regradetres = findViewById(R.id.regradetres);
+        regradetres1 = findViewById(R.id.regradetres1);
 
 
         botaobhaskara.setOnClickListener(this);
@@ -66,13 +69,15 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         distancia.setOnClickListener(this);
         distancia1.setOnClickListener(this);
         temperatura1.setOnClickListener(this);
+        regradetres.setOnClickListener(this);
+        regradetres1.setOnClickListener(this);
         temperatura.setOnClickListener(this);
         liquidos.setOnClickListener(this);
         liquidos1.setOnClickListener(this);
         historico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(Data.a(ferramentastela.this,Historico.class));
+                startActivity(Data.a(ferramentastela.this, Historico.class));
             }
         });
         perfil.setOnClickListener(this);
@@ -147,6 +152,11 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
                 startActivity(Data.a(this, Liquidos.class));
                 break;
 
+            case R.id.regradetres1:
+            case R.id.regradetres:
+                startActivity(Data.a(this, Regradetres.class));
+                break;
+
 
             case R.id.perfil:
             case R.id.perfil1:
@@ -154,7 +164,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
                 if (FirebaseAuth.getInstance().getCurrentUser() != null) {
                     startActivity(Data.a(ferramentastela.this, Perfil.class));
                 } else {
-                    Toast.makeText(ferramentastela.this,"Você precisa estar logado para entrar em seu perfil.",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(ferramentastela.this, "Você precisa estar logado para entrar em seu perfil.", Toast.LENGTH_SHORT).show();
                 }
                 break;
 

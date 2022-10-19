@@ -55,14 +55,14 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         n8 = findViewById(R.id.n8);
         n9 = findViewById(R.id.n9);
         n0 = findViewById(R.id.n0);
-        c1 = findViewById(R.id.relative1);
-        c2 = findViewById(R.id.relative2);
-        c3 = findViewById(R.id.relative3);
         nvirgula = findViewById(R.id.nvirgula);
         nc = findViewById(R.id.nc);
         nbackspace = findViewById(R.id.nbackspace);
         nok = findViewById(R.id.nok);
         nmenos = findViewById(R.id.nmenos);
+        c1 = findViewById(R.id.relative1);
+        c2 = findViewById(R.id.relative2);
+        c3 = findViewById(R.id.relative3);
         espaco1 = findViewById(R.id.espaco1);
         espaco2 = findViewById(R.id.espaco2);
         espaco3 = findViewById(R.id.espaco3);

@@ -310,8 +310,8 @@
                 app:tint="@color/white"
                 android:padding="10dp"
                 android:layout_marginTop="30dp"
-                app:layout_constraintStart_toStartOf="@id/temperatura"
-                app:layout_constraintEnd_toEndOf="@id/temperatura"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/regradetres"
                 app:layout_constraintTop_toBottomOf="@id/temperatura1"
                 />
 
@@ -335,6 +335,43 @@
 
                 />
 
+            <ImageButton
+                android:id="@+id/regradetres"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_below="@id/numerosprimos1"
+                android:background="@drawable/botaoamarelo"
+                android:backgroundTint="@color/verdeouazulsla"
+                android:scaleType="center"
+                android:src="@drawable/ic_regradetres"
+                app:tint="@color/white"
+                android:padding="10dp"
+                android:layout_marginTop="30dp"
+                app:layout_constraintStart_toEndOf="@id/liquidos"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tamanho1"
+                />
+
+            <TextView
+                android:id="@+id/regradetres1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/temperatura"
+                android:layout_alignParentLeft="true"
+                android:gravity="center"
+                android:text="Regra de três"
+                android:textColor="@color/preto"
+                android:textSize="22sp"
+                tools:layout_editor_absoluteX="0dp"
+                tools:layout_editor_absoluteY="444dp"
+                app:layout_constraintTop_toBottomOf="@id/regradetres"
+                android:layout_marginTop="4dp"
+                app:layout_constraintStart_toStartOf="@id/regradetres"
+                app:layout_constraintEnd_toEndOf="@id/regradetres"
+
+
+                />
+
 
 
 
@@ -348,55 +385,134 @@
 
     </ScrollView>
 
-    <LinearLayout
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
+        android:layout_height="75dp"
         android:background="@drawable/fundobarradebaixo"
         android:orientation="horizontal">
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <View
             android:id="@+id/casinha"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="25dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/botaopequenoazul"
+            android:layout_height="45dp"
+            android:layout_marginLeft="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/quadradoestranho"
+            android:background="@drawable/botaocurvado"
             android:backgroundTint="@color/verdeouazulsla"
-            android:scaleType="center"
-            android:src="@drawable/casinha"
-            android:textColor="@color/branco"
-            android:textSize="16sp" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:scaleType="fitStart"
+            app:layout_constraintHorizontal_weight="1"/>
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <View
             android:id="@+id/quadradoestranho"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="15dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/botaopequenoazul"
-            android:scaleType="center"
-            android:src="@drawable/ic_pacotes" />
+            app:layout_constraintStart_toEndOf="@id/casinha"
+            app:layout_constraintEnd_toStartOf="@id/calculadora"
+            android:layout_height="45dp"
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_pacotes"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/botaocurvado"
+            android:backgroundTint="@color/azul"
+            app:layout_constraintHorizontal_weight="1"/>
 
-        <androidx.appcompat.widget.AppCompatImageButton
+        <View
             android:id="@+id/calculadora"
             android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_marginTop="10dp"
-            android:layout_marginRight="25dp"
-            android:layout_marginBottom="10dp"
-            android:layout_weight="1"
-            android:background="@drawable/botaopequenoamarelo"
-            android:scaleType="center"
-            android:src="@drawable/ic_calculadora" />
+            android:layout_marginRight="20dp"
+            android:src="@drawable/ic_calculadora"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/quadradoestranho"
+            android:layout_height="45dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/botaocurvado"
+            android:backgroundTint="@color/amareloescuro"
+            app:layout_constraintHorizontal_weight="1"/>
+
+        <TextView
+            android:id="@+id/casinha1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Início"
+            android:textSize="14sp"
+            android:textColor="@color/branco"
+            app:layout_constraintRight_toRightOf="@id/casinha"
+            app:layout_constraintLeft_toRightOf="@id/casinha2"
+            app:layout_constraintTop_toTopOf="@id/casinha"
+            android:layout_marginRight="5dp"
+            app:layout_constraintBottom_toBottomOf="@id/casinha"/>
+
+        <ImageView
+            android:id="@+id/casinha2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/casinha"
+            app:layout_constraintTop_toTopOf="@id/casinha"
+            app:layout_constraintBottom_toBottomOf="@id/casinha"
+            app:layout_constraintLeft_toLeftOf="@id/casinha"
+            app:layout_constraintRight_toLeftOf="@id/casinha1"/>
 
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/quadradoestranho1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pacotes"
+            android:textSize="13sp"
+            android:layout_marginRight="5dp"
+            android:textColor="@color/branco"
+            app:layout_constraintRight_toRightOf="@id/quadradoestranho"
+            app:layout_constraintLeft_toRightOf="@id/quadradoestranho2"
+            app:layout_constraintTop_toTopOf="@id/quadradoestranho2"
+            app:layout_constraintBottom_toBottomOf="@id/quadradoestranho2"/>
+
+        <ImageView
+            android:id="@+id/quadradoestranho2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_pacotes"
+            app:layout_constraintTop_toTopOf="@id/quadradoestranho"
+            app:layout_constraintBottom_toBottomOf="@id/quadradoestranho"
+            app:layout_constraintLeft_toLeftOf="@id/quadradoestranho"
+            app:layout_constraintRight_toLeftOf="@id/quadradoestranho1"/>
+
+        <TextView
+            android:layout_marginRight="5dp"
+            android:id="@+id/calculadora1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Calculadora"
+            android:textSize="11sp"
+            android:textColor="@color/branco"
+            app:layout_constraintRight_toRightOf="@id/calculadora"
+            app:layout_constraintLeft_toRightOf="@id/calculadora2"
+            app:layout_constraintTop_toTopOf="@id/calculadora2"
+            app:layout_constraintBottom_toBottomOf="@id/calculadora2"/>
+
+        <ImageView
+            android:layout_marginLeft="5dp"
+            android:id="@+id/calculadora2"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_calculadora"
+            app:layout_constraintTop_toTopOf="@id/calculadora"
+            app:layout_constraintBottom_toBottomOf="@id/calculadora"
+            app:layout_constraintLeft_toLeftOf="@id/calculadora"
+            app:layout_constraintRight_toLeftOf="@id/calculadora1"/>
+
+
+
+
+
+
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
 
