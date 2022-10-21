@@ -1,6 +1,8 @@
 package com.example.myapplicationz;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.database.Cursor;
@@ -21,9 +23,10 @@ import model.Hist;
 public class Historico extends AppCompatActivity {
 
 
-    public static SQLiteDatabase DB_hist;
     HistAdapter histAdapter;
     RecyclerView rv;
+    AppCompatButton limpar;
+
 
 
     @Override
@@ -31,14 +34,33 @@ public class Historico extends AppCompatActivity {
         setTheme(R.style.Theme_MyApplicationz);
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historico);
+        HistAdapter.u = true;
+
+        limpar = findViewById(R.id.limpar);
 
         histAdapter = new HistAdapter(new ArrayList<>(Coisas_hist.coisashist()));
         rv = findViewById(R.id.recycler);
         rv.setAdapter(histAdapter);
         rv.scrollToPosition(0);
         histAdapter.notifyItemInserted(0);
+        //LinearLayoutManager teste = new LinearLayoutManager(Historico.this,LinearLayoutManager.HORIZONTAL,false);
+        //rv.setLayoutManager(teste);
 
         SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+
+        limpar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                DB_hist.execSQL("DELETE FROM TB_coisas");
+                finish();
+                startActivity(Data.a(Historico.this,Historico.class));
+
+
+                }
+
+
+        });
 
         //quando a tela é iniciada os valores do bando de dados SQLite são recuperados e exibidos na tela
 

@@ -34,9 +34,9 @@
             android:layout_toStartOf="@id/hist_data"
             android:layout_toEndOf="@id/hist_icone"
             android:text="Bhaskara"
-            android:textStyle="bold"
             android:textColor="@color/black"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:textStyle="bold" />
 
         <HorizontalScrollView
             android:id="@+id/scroll"

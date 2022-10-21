@@ -20,7 +20,16 @@
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
             app:title="Histórico"/>
 
+
    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/limpar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/botaoamarelo"
+        android:layout_below="@id/bar"
+        android:layout_alignParentEnd="true"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"

@@ -1,22 +1,64 @@
 package com.example.myapplicationz;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.recyclerview.widget.ItemTouchHelper;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.content.pm.ActivityInfo;
+import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
+import android.telecom.Call;
+import android.util.Log;
+import android.view.MotionEvent;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
+
+import java.util.ArrayList;
+
+import kotlin.jvm.internal.markers.KMutableList;
+import model.Coisas_hist;
+import model.Hist;
 
 public class ferramentastela extends AppCompatActivity implements View.OnClickListener {
 
+
+    SQLiteDatabase DB_hist;
     ImageButton botaobhaskara, botaodesconto, botaonumerosprimos, botaovelocidade, historico, perfil, temperatura, interrogacao, distancia, liquidos, regradetres;
     TextView bhaskara1, desconto1, numerosprimos1, velocidade1, temperatura1, perfil1, distancia1, liquidos1, regradetres1;
-    View quadradoestranho,casinha,calculadora;
+    View quadradoestranho, casinha, calculadora;
+    static HistAdapter histAdapter;
+    RecyclerView rv;
+    FloatingActionButton botaofavoritos;
+
+
+
+    public void setDeleteferramenta(String deleteferramenta) {
+        this.deleteferramenta = deleteferramenta;
+    }
+
+    public void setPosition(int position) {
+        this.position = position;
+    }
+
+    int position;
+    String deleteferramenta;
+    boolean fav;
 
 
     @Override
@@ -28,6 +70,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         //getWindow().setStatusBarColor(ContextCompat.getColor(ferramentastela.this, R.color.preto));
         SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
         DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_coisas (Ferramenta VARCHAR(20),Entrada VARCHAR,Saida VARCHAR,Data VARCHAR,Icone INT)");
+        DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_fav (Ferramenta VARCHAR UNIQUE, Icone INT UNIQUE) ");
 
         botaobhaskara = findViewById(R.id.bhaskara);
         botaodesconto = findViewById(R.id.desconto);
@@ -52,6 +95,18 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         liquidos1 = findViewById(R.id.liquidos1);
         regradetres = findViewById(R.id.regradetres);
         regradetres1 = findViewById(R.id.regradetres1);
+        botaofavoritos = findViewById(R.id.botaofavoritos);
+        rv = findViewById(R.id.teste);
+
+        histAdapter = new HistAdapter(new ArrayList<>(Coisas_hist.coisashist()));
+        rv.setAdapter(histAdapter);
+        rv.scrollToPosition(0);
+        histAdapter.notifyItemInserted(0);
+
+        LinearLayoutManager teste = new LinearLayoutManager(ferramentastela.this, LinearLayoutManager.HORIZONTAL, false);
+        rv.setLayoutManager(teste);
+
+
 
 
         botaobhaskara.setOnClickListener(this);
@@ -74,6 +129,28 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         temperatura.setOnClickListener(this);
         liquidos.setOnClickListener(this);
         liquidos1.setOnClickListener(this);
+        interrogacao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                DB_hist.execSQL("DELETE FROM TB_fav");
+            }
+        });
+        botaofavoritos.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (rv.getVisibility() == View.GONE) {
+                    fav = true;
+                    rv.setVisibility(View.VISIBLE);
+
+                } else {
+                    fav = false;
+                    rv.setVisibility(View.GONE);
+                }
+
+
+            }
+        });
         historico.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -84,10 +161,55 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         perfil1.setOnClickListener(this);
 
 
+
+        try {
+
+            String consulta = "SELECT Ferramenta, Icone FROM TB_fav";
+            Cursor cursor = DB_hist.rawQuery(consulta, null);
+            cursor.moveToFirst();
+
+            int[] icoisas = {cursor.getColumnIndex("Ferramenta"),
+                    cursor.getColumnIndex("Icone")
+            };
+
+            while (cursor != null) {
+
+                String[] aa = {
+                        cursor.getString(icoisas[0]),
+                        cursor.getString(icoisas[1])
+
+
+                };
+
+                histAdapter.getHists().add(0, Hist.histBuilder.builder()
+                        .setFerramenta(aa[0])
+                        .setIcone(Integer.parseInt(aa[1]))
+                        .build()
+
+                );
+                cursor.moveToNext();
+            }
+        } catch (Exception e) {
+        }
+
+
+    }
+
+    protected void onStart() {
+        super.onStart();
+
+        HistAdapter.u = false;
+
+
+
+
     }
 
     @Override
     public void onBackPressed() {
+
+        fav = false;
+        rv.setVisibility(View.GONE);
 
     }
 
@@ -100,12 +222,8 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
         switch (v.getId()) {
 
-            case R.id.casinha:
-                startActivity(Data.a(this, ferramentastela.class));
-                break;
-
             case R.id.calculadora:
-                startActivity(Data.a(this, calculadora.class));
+                startActivity(Data.a(this, pacotes.class));
                 break;
 
             case R.id.quadradoestranho:
@@ -114,27 +232,27 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
             case R.id.bhaskara:
             case R.id.bhaskara1:
-                startActivity(Data.a(this, Bhaskara.class));
+                favoritosoutrocar(Data.a(this, Bhaskara.class), R.drawable.hist_bhaskara, bhaskara1);
                 break;
 
             case R.id.desconto:
             case R.id.desconto1:
-                startActivity(Data.a(this, Desconto.class));
+                favoritosoutrocar(Data.a(this, Desconto.class), R.drawable.hist_desconto, desconto1);
                 break;
 
             case R.id.numerosprimos:
             case R.id.numerosprimos1:
-                startActivity(Data.a(this, Numerosprimos.class));
+                favoritosoutrocar(Data.a(this, Numerosprimos.class), R.drawable.hist_primos, numerosprimos1);
                 break;
 
             case R.id.velocidade:
             case R.id.velocidade1:
-                startActivity(Data.a(this, Velocidade.class));
+                favoritosoutrocar(Data.a(this, Velocidade.class), R.drawable.hist_velocidade, velocidade1);
                 break;
 
             case R.id.temperatura:
             case R.id.temperatura1:
-                startActivity(Data.a(this, Temperatura.class));
+                favoritosoutrocar(Data.a(this, Temperatura.class), R.drawable.hist_temperatura, temperatura1);
                 break;
 
 
@@ -144,17 +262,17 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
             case R.id.tamanho:
             case R.id.tamanho1:
-                startActivity(Data.a(this, Distancia.class));
+                favoritosoutrocar(Data.a(this, Distancia.class), R.drawable.ic_distancia, distancia1);
                 break;
 
             case R.id.liquidos:
             case R.id.liquidos1:
-                startActivity(Data.a(this, Liquidos.class));
+                favoritosoutrocar(Data.a(this, Liquidos.class), R.drawable.hist_liquidos, liquidos1);
                 break;
 
             case R.id.regradetres1:
             case R.id.regradetres:
-                startActivity(Data.a(this, Regradetres.class));
+                favoritosoutrocar(Data.a(this, Regradetres.class), R.drawable.hist_regradetres, regradetres1);
                 break;
 
 
@@ -174,6 +292,64 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
 
     }
+
+
+    void favoritosoutrocar(Intent intent, int icone, TextView texto) {
+
+        if (fav == true) {
+
+            SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+            DB_hist.execSQL("CREATE TABLE IF NOT EXISTS TB_fav (Ferramenta VARCHAR UNIQUE, Icone INT UNIQUE) ");
+
+
+
+            try {
+
+                DB_hist.execSQL("INSERT INTO TB_fav (Ferramenta,Icone) VALUES ('" + texto.getText().toString() + "'," + icone + ")");
+
+                histAdapter.getHists().add(0, Hist.histBuilder.builder()
+                        .setFerramenta(texto.getText().toString())
+                        .setIcone(icone)
+                        .build()
+
+                );
+
+                rv.scrollToPosition(0);
+                histAdapter.notifyItemInserted(0);
+
+            } catch (Exception e) {
+
+
+
+                //DB_hist.execSQL("DELETE FROM TB_fav WHERE Ferramenta = ('" + texto.getText().toString() + "')");
+
+            }
+
+
+        } else {
+
+            startActivity(intent);
+        }
+
+    }
+
+     void deletarbanco(){
+         System.out.println(position);
+        histAdapter.getHists().remove(position);
+        histAdapter.notifyItemRemoved(position);
+
+        //DB_hist.execSQL("DELETE FROM TB_fav WHERE Ferramenta = ('" + histAdapter.getHists().get(position).getFerramenta() + "')");
+
+
+    }
+
+
+
+
+
+
+
+
 
 
 }

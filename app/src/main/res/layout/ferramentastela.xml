@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
     xmlns:tools="http://schemas.android.com/tools"
     android:theme="@style/Theme.MyApplicationz"
     android:background="@color/branco"
@@ -68,322 +69,348 @@
 
     </RelativeLayout>
 
-    <ScrollView
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/botaofavoritos"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/ic_heart"
+            app:backgroundTint="@color/vermelho"
+            app:tint="@color/white" />
+
+        <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <TextView
-                android:id="@+id/ferramentas"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="40dp"
-                android:text="Ferramentas"
-                android:layout_marginTop="20dp"
-                app:layout_goneMarginLeft="164dp"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                android:textColor="@color/preto"
-                android:textSize="30sp" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+
+                <TextView
+                    android:id="@+id/ferramentas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="40dp"
+                    android:layout_marginTop="20dp"
+                    android:text="Ferramentas"
+                    android:textColor="@color/preto"
+                    android:textSize="30sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_goneMarginLeft="164dp" />
+
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/busca"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:layout_marginRight="70dp"
+                    android:background="@drawable/lupa"
+                    android:scaleType="center"
+                    app:layout_constraintBottom_toBottomOf="@id/ferramentas"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintRight_toRightOf="@id/desconto"
+                    app:layout_constraintTop_toTopOf="@id/ferramentas" />
+
+
+                <ImageButton
+                    android:id="@+id/bhaskara"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/botaopequenoverdeazulsla"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_bhaskara"
+                    app:layout_constraintEnd_toStartOf="@+id/desconto"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ferramentas" />
+
+                <ImageButton
+                    android:id="@+id/desconto"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="20dp"
+                    android:alpha="1"
+                    android:background="@drawable/botaoamarelo"
+                    android:src="@drawable/ic_desconto"
+                    android:textSize="60sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/bhaskara"
+                    app:layout_constraintTop_toBottomOf="@id/ferramentas" />
+
+
+                <TextView
+                    android:id="@+id/bhaskara1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/bhaskara"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Bhaskara"
+                    android:textColor="@color/preto"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toStartOf="@+id/desconto1"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/bhaskara" />
+
+                <TextView
+                    android:id="@+id/desconto1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/desconto"
+                    android:layout_alignParentEnd="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Desconto"
+                    android:textColor="@color/preto"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/bhaskara1"
+                    app:layout_constraintTop_toBottomOf="@+id/desconto" />
+
+                <ImageButton
+                    android:id="@+id/numerosprimos"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/bhaskara1"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/botaoamarelo"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_group_13"
+                    app:layout_constraintEnd_toStartOf="@+id/velocidade"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/bhaskara1"
+                    tools:layout_editor_absoluteY="179dp" />
+
+                <ImageButton
+                    android:id="@+id/velocidade"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/desconto1"
+                    android:layout_alignParentEnd="true"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/botaopequenoverdeazulsla"
+                    android:src="@drawable/ic_speedometer"
+                    android:textSize="60sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/numerosprimos"
+                    app:layout_constraintTop_toBottomOf="@id/desconto1"
+                    tools:layout_editor_absoluteY="178dp" />
+
+                <TextView
+                    android:id="@+id/numerosprimos1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Primos"
+                    android:textColor="@color/preto"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toStartOf="@id/numerosprimos"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@id/numerosprimos"
+                    app:layout_constraintTop_toBottomOf="@+id/numerosprimos" />
+
+                <TextView
+                    android:id="@+id/velocidade1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Velocidade"
+                    android:textColor="@color/preto"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toStartOf="@+id/velocidade"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toEndOf="@+id/velocidade"
+                    app:layout_constraintTop_toBottomOf="@+id/velocidade" />
+
+                <ImageButton
+                    android:id="@+id/temperatura"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/numerosprimos1"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/botaopequenoverdeazulsla"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_foguinho"
+                    app:layout_constraintEnd_toStartOf="@id/tamanho"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/numerosprimos1" />
+
+                <TextView
+                    android:id="@+id/temperatura1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/temperatura"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Temperatura"
+                    android:textColor="@color/preto"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toStartOf="@id/temperatura"
+                    app:layout_constraintStart_toEndOf="@id/temperatura"
+                    app:layout_constraintTop_toBottomOf="@id/temperatura"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="444dp"
+
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/tamanho"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/numerosprimos1"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/botaoamarelo"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_distancia"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/temperatura"
+                    app:layout_constraintTop_toBottomOf="@id/velocidade1"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/tamanho1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/temperatura"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Tamanho"
+                    android:textColor="@color/preto"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toStartOf="@id/tamanho"
+                    app:layout_constraintStart_toEndOf="@id/tamanho"
+                    app:layout_constraintTop_toBottomOf="@id/tamanho"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="444dp"
+
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/liquidos"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/numerosprimos1"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/botaoamarelo"
+                    android:padding="10dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_gota"
+                    app:layout_constraintEnd_toStartOf="@id/regradetres"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/temperatura1"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/liquidos1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/temperatura"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Líquidos"
+                    android:textColor="@color/preto"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="@id/liquidos"
+                    app:layout_constraintStart_toStartOf="@id/liquidos"
+                    app:layout_constraintTop_toBottomOf="@id/liquidos"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="444dp"
+
+
+                    />
+
+                <ImageButton
+                    android:id="@+id/regradetres"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:layout_below="@id/numerosprimos1"
+                    android:layout_marginTop="30dp"
+                    android:background="@drawable/botaoamarelo"
+                    android:backgroundTint="@color/verdeouazulsla"
+                    android:padding="10dp"
+                    android:scaleType="center"
+                    android:src="@drawable/ic_regradetres"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/liquidos"
+                    app:layout_constraintTop_toBottomOf="@id/tamanho1"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:id="@+id/regradetres1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/temperatura"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center"
+                    android:text="Regra de três"
+                    android:textColor="@color/preto"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="@id/regradetres"
+                    app:layout_constraintStart_toStartOf="@id/regradetres"
+                    app:layout_constraintTop_toBottomOf="@id/regradetres"
+                    tools:layout_editor_absoluteX="0dp"
+                    tools:layout_editor_absoluteY="444dp"
+
+
+                    />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+        </ScrollView>
+
+    </RelativeLayout>
 
 
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/busca"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
-                android:layout_marginRight="70dp"
-                app:layout_constraintTop_toTopOf="@id/ferramentas"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintBottom_toBottomOf="@id/ferramentas"
-                app:layout_constraintRight_toRightOf="@id/desconto"
-                android:background="@drawable/lupa"
-                android:scaleType="center" />
 
-
-            <ImageButton
-                android:id="@+id/bhaskara"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/botaopequenoverdeazulsla"
-                android:paddingRight="5dp"
-                android:paddingBottom="5dp"
-                android:scaleType="center"
-                android:src="@drawable/ic_bhaskara"
-                app:layout_constraintEnd_toStartOf="@+id/desconto"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/ferramentas" />
-
-            <ImageButton
-                android:id="@+id/desconto"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="20dp"
-                android:background="@drawable/botaoamarelo"
-                android:alpha="1"
-                android:src="@drawable/ic_desconto"
-                android:textSize="60sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintTop_toBottomOf="@id/ferramentas"
-                app:layout_constraintStart_toEndOf="@+id/bhaskara" />
-
-
-            <TextView
-                android:id="@+id/bhaskara1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/bhaskara"
-                android:layout_alignParentLeft="true"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:text="Bhaskara"
-                android:textColor="@color/preto"
-                android:textSize="22sp"
-                app:layout_constraintEnd_toStartOf="@+id/desconto1"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/bhaskara" />
-
-            <TextView
-                android:id="@+id/desconto1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/desconto"
-                android:layout_alignParentEnd="true"
-                android:layout_marginTop="4dp"
-                android:gravity="center"
-                android:text="Desconto"
-                android:textColor="@color/preto"
-                android:textSize="22sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/bhaskara1"
-                app:layout_constraintTop_toBottomOf="@+id/desconto" />
-
-            <ImageButton
-                android:id="@+id/numerosprimos"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_below="@id/bhaskara1"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/botaoamarelo"
-                android:scaleType="center"
-                android:src="@drawable/ic_group_13"
-                android:layout_marginTop="30dp"
-                app:layout_constraintEnd_toStartOf="@+id/velocidade"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/bhaskara1"
-                tools:layout_editor_absoluteY="179dp" />
-
-            <ImageButton
-                android:id="@+id/velocidade"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_below="@id/desconto1"
-                android:layout_marginTop="30dp"
-                android:layout_alignParentEnd="true"
-                android:layout_gravity="center_horizontal"
-                android:background="@drawable/botaopequenoverdeazulsla"
-                android:src="@drawable/ic_speedometer"
-                android:textSize="60sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/numerosprimos"
-                app:layout_constraintTop_toBottomOf="@id/desconto1"
-                tools:layout_editor_absoluteY="178dp" />
-
-            <TextView
-                android:id="@+id/numerosprimos1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Primos"
-                android:textColor="@color/preto"
-                android:textSize="22sp"
-                app:layout_constraintHorizontal_bias="0.5"
-                android:layout_marginTop="4dp"
-                app:layout_constraintStart_toEndOf="@id/numerosprimos"
-                app:layout_constraintEnd_toStartOf="@id/numerosprimos"
-                app:layout_constraintTop_toBottomOf="@+id/numerosprimos" />
-
-            <TextView
-                android:id="@+id/velocidade1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="Velocidade"
-                android:textColor="@color/preto"
-                android:textSize="22sp"
-                app:layout_constraintHorizontal_bias="0.5"
-                android:layout_marginTop="4dp"
-                app:layout_constraintStart_toEndOf="@+id/velocidade"
-                app:layout_constraintEnd_toStartOf="@+id/velocidade"
-                app:layout_constraintTop_toBottomOf="@+id/velocidade" />
-
-            <ImageButton
-                android:id="@+id/temperatura"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_below="@id/numerosprimos1"
-                android:background="@drawable/botaopequenoverdeazulsla"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_foguinho"
-                android:layout_marginTop="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/tamanho"
-                app:layout_constraintTop_toBottomOf="@id/numerosprimos1"
-                />
-
-            <TextView
-                android:id="@+id/temperatura1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/temperatura"
-                android:layout_alignParentLeft="true"
-                android:gravity="center"
-                android:text="Temperatura"
-                android:textColor="@color/preto"
-                android:textSize="22sp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="444dp"
-                app:layout_constraintTop_toBottomOf="@id/temperatura"
-                android:layout_marginTop="4dp"
-                app:layout_constraintStart_toEndOf="@id/temperatura"
-                app:layout_constraintEnd_toStartOf="@id/temperatura"
-
-
-                />
-
-            <ImageButton
-                android:id="@+id/tamanho"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_below="@id/numerosprimos1"
-                android:background="@drawable/botaoamarelo"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_distancia"
-                app:tint="@color/white"
-                android:padding="10dp"
-                android:layout_marginTop="30dp"
-                app:layout_constraintStart_toEndOf="@id/temperatura"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/velocidade1"
-                />
-
-            <TextView
-                android:id="@+id/tamanho1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/temperatura"
-                android:layout_alignParentLeft="true"
-                android:gravity="center"
-                android:text="Tamanho"
-                android:textColor="@color/preto"
-                android:textSize="22sp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="444dp"
-                app:layout_constraintTop_toBottomOf="@id/tamanho"
-                android:layout_marginTop="4dp"
-                app:layout_constraintStart_toEndOf="@id/tamanho"
-                app:layout_constraintEnd_toStartOf="@id/tamanho"
-
-
-                />
-
-            <ImageButton
-                android:id="@+id/liquidos"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_below="@id/numerosprimos1"
-                android:background="@drawable/botaoamarelo"
-                android:scaleType="centerCrop"
-                android:src="@drawable/ic_gota"
-                app:tint="@color/white"
-                android:padding="10dp"
-                android:layout_marginTop="30dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toStartOf="@id/regradetres"
-                app:layout_constraintTop_toBottomOf="@id/temperatura1"
-                />
-
-            <TextView
-                android:id="@+id/liquidos1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/temperatura"
-                android:layout_alignParentLeft="true"
-                android:gravity="center"
-                android:text="Líquidos"
-                android:textColor="@color/preto"
-                android:textSize="22sp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="444dp"
-                app:layout_constraintTop_toBottomOf="@id/liquidos"
-                android:layout_marginTop="4dp"
-                app:layout_constraintStart_toStartOf="@id/liquidos"
-                app:layout_constraintEnd_toEndOf="@id/liquidos"
-
-
-                />
-
-            <ImageButton
-                android:id="@+id/regradetres"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:layout_below="@id/numerosprimos1"
-                android:background="@drawable/botaoamarelo"
-                android:backgroundTint="@color/verdeouazulsla"
-                android:scaleType="center"
-                android:src="@drawable/ic_regradetres"
-                app:tint="@color/white"
-                android:padding="10dp"
-                android:layout_marginTop="30dp"
-                app:layout_constraintStart_toEndOf="@id/liquidos"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tamanho1"
-                />
-
-            <TextView
-                android:id="@+id/regradetres1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/temperatura"
-                android:layout_alignParentLeft="true"
-                android:gravity="center"
-                android:text="Regra de três"
-                android:textColor="@color/preto"
-                android:textSize="22sp"
-                tools:layout_editor_absoluteX="0dp"
-                tools:layout_editor_absoluteY="444dp"
-                app:layout_constraintTop_toBottomOf="@id/regradetres"
-                android:layout_marginTop="4dp"
-                app:layout_constraintStart_toStartOf="@id/regradetres"
-                app:layout_constraintEnd_toEndOf="@id/regradetres"
-
-
-                />
+    <androidx.recyclerview.widget.RecyclerView
+        android:orientation="vertical"
+        android:id="@+id/teste"
+        android:scrollbars="horizontal"
+        android:background="@color/cinzaa"
+        android:layout_width="match_parent"
+        android:visibility="gone"
+        tools:listitem="@layout/favoritositens"
+        android:layout_height="120dp">
 
 
 
 
 
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-    </ScrollView>
+    </androidx.recyclerview.widget.RecyclerView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -394,7 +421,7 @@
         <View
             android:id="@+id/casinha"
             android:layout_width="0dp"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:layout_marginLeft="20dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toStartOf="@id/quadradoestranho"
@@ -410,7 +437,7 @@
             android:layout_width="0dp"
             app:layout_constraintStart_toEndOf="@id/casinha"
             app:layout_constraintEnd_toStartOf="@id/calculadora"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             android:layout_marginRight="20dp"
             android:src="@drawable/ic_pacotes"
             app:layout_constraintTop_toTopOf="parent"
@@ -427,7 +454,7 @@
             android:src="@drawable/ic_calculadora"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/quadradoestranho"
-            android:layout_height="45dp"
+            android:layout_height="50dp"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             android:background="@drawable/botaocurvado"
@@ -440,7 +467,7 @@
             android:layout_height="wrap_content"
             android:text="Início"
             android:textSize="14sp"
-            android:textColor="@color/branco"
+            android:textColor="@color/white"
             app:layout_constraintRight_toRightOf="@id/casinha"
             app:layout_constraintLeft_toRightOf="@id/casinha2"
             app:layout_constraintTop_toTopOf="@id/casinha"
@@ -454,6 +481,7 @@
             android:src="@drawable/casinha"
             app:layout_constraintTop_toTopOf="@id/casinha"
             app:layout_constraintBottom_toBottomOf="@id/casinha"
+            app:tint="@color/white"
             app:layout_constraintLeft_toLeftOf="@id/casinha"
             app:layout_constraintRight_toLeftOf="@id/casinha1"/>
 
@@ -465,13 +493,14 @@
             android:text="Pacotes"
             android:textSize="13sp"
             android:layout_marginRight="5dp"
-            android:textColor="@color/branco"
+            android:textColor="@color/white"
             app:layout_constraintRight_toRightOf="@id/quadradoestranho"
             app:layout_constraintLeft_toRightOf="@id/quadradoestranho2"
             app:layout_constraintTop_toTopOf="@id/quadradoestranho2"
             app:layout_constraintBottom_toBottomOf="@id/quadradoestranho2"/>
 
         <ImageView
+            app:tint="@color/white"
             android:id="@+id/quadradoestranho2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -488,7 +517,7 @@
             android:layout_height="wrap_content"
             android:text="Calculadora"
             android:textSize="11sp"
-            android:textColor="@color/branco"
+            android:textColor="@color/white"
             app:layout_constraintRight_toRightOf="@id/calculadora"
             app:layout_constraintLeft_toRightOf="@id/calculadora2"
             app:layout_constraintTop_toTopOf="@id/calculadora2"
@@ -498,6 +527,7 @@
             android:layout_marginLeft="5dp"
             android:id="@+id/calculadora2"
             android:layout_width="wrap_content"
+            app:tint="@color/white"
             android:layout_height="20dp"
             android:src="@drawable/ic_calculadora"
             app:layout_constraintTop_toTopOf="@id/calculadora"

@@ -106,6 +106,8 @@ public class Data {
 
 
 
+
+
     static void atualizardata() {
         at = true;
         DocumentReference referencia = FirebaseFirestore.getInstance().collection("Usuarios").document(FirebaseAuth.getInstance().getCurrentUser().getUid());
