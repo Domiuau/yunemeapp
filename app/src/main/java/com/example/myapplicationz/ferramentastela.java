@@ -1,28 +1,23 @@
 package com.example.myapplicationz;
 
 import androidx.annotation.NonNull;
-import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.AppCompatButton;
-import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.appcompat.widget.ThemedSpinnerAdapter;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
+import android.content.ClipData;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.Build;
 import android.os.Bundle;
-import android.telecom.Call;
-import android.util.Log;
-import android.view.MotionEvent;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -30,8 +25,8 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
+import java.util.List;
 
-import kotlin.jvm.internal.markers.KMutableList;
 import model.Coisas_hist;
 import model.Hist;
 
@@ -45,6 +40,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
     static HistAdapter histAdapter;
     RecyclerView rv;
     FloatingActionButton botaofavoritos;
+
 
 
 
@@ -192,6 +188,13 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         } catch (Exception e) {
         }
 
+        ItemTouchHelper helper = new ItemTouchHelper(
+                new ItemTouchHandler(ItemTouchHelper.DOWN, ItemTouchHelper.UP)
+        );
+
+        helper.attachToRecyclerView(rv);
+
+
 
     }
 
@@ -320,9 +323,6 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
             } catch (Exception e) {
 
 
-
-                //DB_hist.execSQL("DELETE FROM TB_fav WHERE Ferramenta = ('" + texto.getText().toString() + "')");
-
             }
 
 
@@ -337,17 +337,54 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
          System.out.println(position);
         histAdapter.getHists().remove(position);
         histAdapter.notifyItemRemoved(position);
+        DB_hist.execSQL("DELETE FROM TB_fav WHERE Ferramenta = ('" + histAdapter.getHists().get(position).getFerramenta() + "')");
 
-        //DB_hist.execSQL("DELETE FROM TB_fav WHERE Ferramenta = ('" + histAdapter.getHists().get(position).getFerramenta() + "')");
+
 
 
     }
 
+    SQLiteDatabase pegarbanco(){
 
 
+        return DB_hist;
+
+    }
+
+    void mudatela(){
+        //Data.a(ferramentastela.this,Bhaskara.class);
+    }
 
 
+    private class ItemTouchHandler extends ItemTouchHelper.SimpleCallback {
 
+        public ItemTouchHandler(int dragDirs, int swipeDirs) {
+            super(dragDirs, swipeDirs);
+        }
+
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+
+            SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+            DB_hist.execSQL("DELETE FROM TB_fav WHERE Ferramenta = ('" + histAdapter.getHists().get(viewHolder.getAdapterPosition()).getFerramenta() + "')");
+            System.out.println(histAdapter.getHists().get(viewHolder.getAdapterPosition()).getFerramenta());
+            histAdapter.getHists().remove(viewHolder.getAdapterPosition());
+            histAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+
+            //System.out.println(histAdapter.getHists().get(viewHolder.getAdapterPosition()).getFerramenta());
+
+
+            System.out.println(viewHolder.getAdapterPosition());
+
+
+        }
+    }
 
 
 

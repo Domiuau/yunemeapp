@@ -4,6 +4,7 @@ import static android.database.sqlite.SQLiteDatabase.openDatabase;
 import static android.database.sqlite.SQLiteDatabase.openOrCreateDatabase;
 
 import android.annotation.SuppressLint;
+import android.app.Activity;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -23,6 +25,10 @@ public class HistAdapter extends RecyclerView.Adapter<HistAdapter.HistViewHolder
     private final List<Hist> hists;
     static boolean u;
     AdapterView.OnItemClickListener onItemClickListener;
+    public static final int MODE_PRIVATE = 0;
+
+
+
 
     public void setPosition(int position) {
         this.position = position;
@@ -35,8 +41,7 @@ public class HistAdapter extends RecyclerView.Adapter<HistAdapter.HistViewHolder
     //adaptador responsavel por gerenciar a recyclerview do historico
 
 
-
-    public HistAdapter(List<Hist> hists)  {
+    public HistAdapter(List<Hist> hists) {
         this.hists = hists;
 
     }
@@ -46,7 +51,7 @@ public class HistAdapter extends RecyclerView.Adapter<HistAdapter.HistViewHolder
     public HistViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
         View view;
-        if (u == true){
+        if (u == true) {
 
             view = LayoutInflater.from(parent.getContext()).inflate(
 
@@ -54,34 +59,64 @@ public class HistAdapter extends RecyclerView.Adapter<HistAdapter.HistViewHolder
 
             );
         } else {
-             view = LayoutInflater.from(parent.getContext()).inflate(
+            view = LayoutInflater.from(parent.getContext()).inflate(
 
                     R.layout.favoritositens, parent, false
-             );
+            );
         }
 
         return new HistViewHolder(view);
     }
 
 
-
     @Override
     public void onBindViewHolder(@NonNull HistViewHolder holder, @SuppressLint("RecyclerView") int position) {
         Hist hist = hists.get(position);
         holder.bind(hist);
+
+
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
 
 
-                System.out.println(holder.getAdapterPosition() + " fdsfdsdfg");
-                //ferramentastela.removeritem(position);
-                ferramentastela fer = new ferramentastela();
-                //fer.setPosition(position);
+                    //System.out.println(holder.getAdapterPosition() + getHists().get(holder.getAdapterPosition()).getFerramenta());
+                    //ferramentastela.removeritem(position);
+                    ferramentastela fer = new ferramentastela();
 
-                fer.setPosition(holder.getAdapterPosition());
-                fer.deletarbanco();
+                switch (getHists().get(holder.getAdapterPosition()).getFerramenta()) {
+
+                    case "Bhaskara":
+                        v.getContext().startActivity(Data.a(v.getContext(), Bhaskara.class));
+                        break;
+
+                    case "Desconto":
+                        v.getContext().startActivity(Data.a(v.getContext(), Desconto.class));
+                        break;
+
+                    case "Primos":
+                        v.getContext().startActivity(Data.a(v.getContext(), Numerosprimos.class));
+                        break;
+
+                    case "Velocidade":
+                        v.getContext().startActivity(Data.a(v.getContext(), Velocidade.class));
+                        break;
+
+                    default:
+                        break;
+
+                }
+
+
+
+
+                    fer.setPosition(holder.getAdapterPosition());
+
+
+
 
 
 
@@ -95,7 +130,7 @@ public class HistAdapter extends RecyclerView.Adapter<HistAdapter.HistViewHolder
         return hists.size();
     }
 
-    public List<Hist> getHists(){
+    public List<Hist> getHists() {
         return hists;
     }
 
@@ -112,7 +147,7 @@ public class HistAdapter extends RecyclerView.Adapter<HistAdapter.HistViewHolder
             hist_ferramenta = itemView.findViewById(R.id.hist_ferramenta);
             hist_icone = itemView.findViewById(R.id.hist_icone);
 
-            if (u == true){
+            if (u == true) {
 
                 hist_saida = itemView.findViewById(R.id.hist_saida);
                 hist_data = itemView.findViewById(R.id.hist_data);
@@ -132,7 +167,7 @@ public class HistAdapter extends RecyclerView.Adapter<HistAdapter.HistViewHolder
                 hist_entrada.setText(hist.getDadosentrada());
                 hist_data.setText(hist.getData());
 
-            } catch (Exception e){
+            } catch (Exception e) {
 
             }
 
