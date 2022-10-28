@@ -248,8 +248,15 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
 
     }
 
+    public void onStart() {
+        super.onStart();
 
+
+    }
 }
+
+
+
 
 
 

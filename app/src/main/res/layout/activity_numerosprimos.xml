@@ -17,6 +17,7 @@
         android:orientation="vertical">
 
         <LinearLayout
+            app:layout_constraintTop_toTopOf="parent"
             android:id="@+id/linear1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -117,6 +118,7 @@
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/menor"
+                android:textColor="@color/cinzaescuro"
                 android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:text="Menor"
@@ -132,6 +134,7 @@
                 android:layout_width="40dp"
                 android:layout_height="wrap_content"
                 android:layout_below="@id/menor"
+                android:textColor="@color/cinzaescuro"
                 app:layout_constraintStart_toEndOf="@id/espaco1"
                 app:layout_constraintTop_toBottomOf="@id/maior"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -180,7 +183,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text=""
+                android:textColor="@color/cinzaescuro2"
                 app:layout_constraintBottom_toTopOf="@id/view1"
                 app:layout_constraintEnd_toEndOf="@id/view1"
                 app:layout_constraintStart_toStartOf="@id/view1" />
@@ -190,6 +193,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:textColor="@color/cinzaescuro2"
                 android:text=""
                 app:layout_constraintBottom_toTopOf="@id/view2"
                 app:layout_constraintEnd_toEndOf="@id/view2"
@@ -244,7 +248,8 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:text=""
+                android:text="fsdfsdfsd"
+                android:textColor="@color/preto"
                 android:textSize="14sp" />
 
             <TextView
@@ -256,6 +261,8 @@
                 android:layout_marginBottom="2dp"
                 android:gravity="center"
                 android:hint="Diferença para o menor"
+                android:textColor="@color/cinzaclaro2"
+                android:textColorHint="@color/cinzaclaro2"
                 android:textSize="14sp" />
 
             <View
@@ -284,6 +291,7 @@
                 android:layout_below="@id/view3"
                 android:layout_centerHorizontal="true"
                 android:layout_marginTop="5dp"
+                android:textColor="@color/preto"
                 android:gravity="center"
                 android:text=""
                 android:textSize="14sp" />
@@ -296,7 +304,9 @@
                 android:layout_centerHorizontal="true"
                 android:layout_marginBottom="2dp"
                 android:gravity="center"
+                android:textColorHint="@color/cinzaclaro2"
                 android:hint="Diferença para o maior"
+                android:textColor="@color/cinzaescuro2"
                 android:textSize="14sp" />
 
             <View

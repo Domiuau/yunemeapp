@@ -9,6 +9,7 @@
     tools:context=".Perfil">
 
     <LinearLayout
+        app:layout_constraintTop_toTopOf="parent"
         android:id="@+id/linear1"
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -153,7 +154,7 @@
             android:id="@+id/ultimoacesso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
+            android:textColor="@color/cinzaclaro2"
             android:layout_below="@id/dataregistro"
             android:layout_alignParentEnd="true"
             android:gravity="center"

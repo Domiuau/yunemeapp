@@ -87,6 +87,7 @@
                 android:text="Valor"
                 android:gravity="end"
                 android:entries="@array/temperatura"
+                android:backgroundTint="@color/cinzaescuro"
                 android:textColor="@color/preto"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@id/espaco1"
@@ -107,6 +108,7 @@
                 android:layout_height="wrap_content"
                 android:text="Valor"
                 android:entries="@array/temperatura"
+                android:backgroundTint="@color/cinzaescuro"
                 android:textColor="@color/preto"
                 android:gravity="end"
                 android:textSize="16sp"
@@ -119,6 +121,7 @@
                 android:id="@+id/espaco1"
                 android:layout_width="110dp"
                 android:layout_height="30dp"
+                android:textColorHint="@color/cinza"
                 android:layout_marginTop="10dp"
                 android:background="@color/semcor"
                 android:gravity="center"
@@ -210,6 +213,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textSize="18sp"
+                        android:textColor="@color/cinzaclaro2"
                         android:text="Fórmula utilizada"/>
 
                     <ImageView

@@ -20,7 +20,7 @@
             android:name=".Liquidos"
             android:exported="false" />
         <activity
-            android:name=".Distancia"
+            android:name=".Tamanho"
             android:exported="false" />
         <activity
             android:name=".Perfil"
@@ -47,7 +47,7 @@
             android:name=".Velocidade"
             android:exported="false" />
         <activity
-            android:name=".Numerosprimos"
+            android:name=".Primos"
             android:exported="false" />
         <activity
             android:name=".pacotes"

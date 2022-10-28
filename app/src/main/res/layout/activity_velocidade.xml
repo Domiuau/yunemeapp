@@ -86,6 +86,7 @@
                 android:layout_height="wrap_content"
                 android:text="Valor"
                 android:gravity="end"
+                android:backgroundTint="@color/cinzaescuro"
                 android:entries="@array/velocidade"
                 android:textColor="@color/preto"
                 android:textSize="16sp"
@@ -106,6 +107,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Valor"
+                android:backgroundTint="@color/cinzaescuro"
                 android:entries="@array/velocidade"
                 android:textColor="@color/preto"
                 android:gravity="end"
@@ -120,6 +122,7 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="10dp"
+                android:textColorHint="@color/cinza"
                 android:background="@color/semcor"
                 android:gravity="center"
                 android:hint="Insira aqui..."
@@ -210,6 +213,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
+                    android:textColor="@color/cinzaclaro2"
                     android:text="Fórmula utilizada"/>
 
                 <ImageView

@@ -38,45 +38,37 @@
             android:textSize="16sp"
             android:textStyle="bold" />
 
-        <HorizontalScrollView
-            android:id="@+id/scroll"
+
+        <TextView
+            android:id="@+id/hist_entrada"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@id/hist_ferramenta"
-            android:layout_alignStart="@id/hist_ferramenta"
-            android:layout_toEndOf="@id/hist_icone">
+            android:layout_toEndOf="@id/hist_icone"
+            android:layout_weight="1"
+            android:ellipsize="marquee"
+            android:layout_marginStart="16sp"
+            android:singleLine="true"
+            android:text="a = 4 b = 4 b = 6"
+            android:textColor="@color/black"
+            android:textSize="14sp" />
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-
-                <TextView
-                    android:id="@+id/hist_entrada"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ellipsize="marquee"
-                    android:singleLine="true"
-                    android:text="a = 4 b = 4 b = 6"
-                    android:textColor="@color/black"
-                    android:textSize="14sp" />
-
-                <TextView
-                    android:id="@+id/hist_saida"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:autoSizeTextType="uniform"
-                    android:singleLine="true"
-                    android:paddingBottom="5dp"
-                    android:text="delta = 554 x1 = 43455554545555555 x2 = 645456"
-                    android:textColor="@color/black"
-                    android:textSize="13sp" />
-            </LinearLayout>
+        <TextView
+            android:id="@+id/hist_saida"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/hist_entrada"
+            android:layout_toEndOf="@id/hist_icone"
+            android:layout_weight="1"
+            android:autoSizeTextType="uniform"
+            android:paddingBottom="5dp"
+            android:singleLine="true"
+            android:layout_marginStart="16sp"
+            android:text="delta = 554 x1 = 43455554545555555 x2 = 645456"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
 
 
-        </HorizontalScrollView>
 
 
         <TextView

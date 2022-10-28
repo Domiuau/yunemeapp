@@ -87,28 +87,33 @@ public class HistAdapter extends RecyclerView.Adapter<HistAdapter.HistViewHolder
                     //ferramentastela.removeritem(position);
                     ferramentastela fer = new ferramentastela();
 
-                switch (getHists().get(holder.getAdapterPosition()).getFerramenta()) {
+                //Data.valorentrada = getHists().get(holder.getAdapterPosition()).getDadosentrada();
+                //Data.valorsaida = getHists().get(holder.getAdapterPosition()).getDadossaida();
+                //Data.hist = true;
+                    //String ferramenta =  "com.example.myapplicationz." + getHists().get(holder.getAdapterPosition()).getFerramenta()
+                            //.replace("í","i").replace(" ","").replace("ê","e");
 
-                    case "Bhaskara":
-                        v.getContext().startActivity(Data.a(v.getContext(), Bhaskara.class));
-                        break;
+                try {
+                    Class classe = Class.forName("com.example.myapplicationz." + getHists().get(holder.getAdapterPosition()).getFerramenta()
+                            .replace("í","i").replace(" ","").replace("ê","e"));
+                    v.getContext().startActivity(Data.a(v.getContext(), classe));
 
-                    case "Desconto":
-                        v.getContext().startActivity(Data.a(v.getContext(), Desconto.class));
-                        break;
 
-                    case "Primos":
-                        v.getContext().startActivity(Data.a(v.getContext(), Numerosprimos.class));
-                        break;
+                    Data data = new Data();
 
-                    case "Velocidade":
-                        v.getContext().startActivity(Data.a(v.getContext(), Velocidade.class));
-                        break;
 
-                    default:
-                        break;
 
+
+                        //System.out.println(getHists().get(holder.getAdapterPosition()).getDadossaida() + " saida " + getHists().get(holder.getAdapterPosition()).getDadosentrada().replaceAll("[^0-9?!\\\\.]" ," "));
+
+
+
+
+
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
                 }
+
 
 
 

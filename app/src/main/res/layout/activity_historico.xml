@@ -5,31 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Historico">
-    
-   <com.google.android.material.appbar.AppBarLayout
-       android:id="@+id/bar"
-       android:layout_width="match_parent"
-       android:layout_height="wrap_content"
-       android:theme="@android:style/ThemeOverlay.Material.ActionBar">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/branco"
-            app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-            app:title="Histórico"/>
-
-
-   </com.google.android.material.appbar.AppBarLayout>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/limpar"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/bar"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/botaoamarelo"
-        android:layout_below="@id/bar"
-        android:layout_alignParentEnd="true"/>
+        android:background="@color/preto"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/voltar"
+            android:layout_width="100dp"
+            android:layout_height="60dp"
+            android:background="@color/semcor"
+            android:padding="40dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_voltar"
+            android:tint="@color/branco" />
+
+        <TextView
+            android:id="@+id/text_bhaskara"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Histórico"
+            android:textColor="@color/branco"
+            android:textSize="22sp" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/limpar"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:background="@color/semcor"
+            android:src="@drawable/ic_trash"
+            android:paddingTop="8dp"
+            android:tint="@color/cinza" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/curiosidade"
+            android:layout_width="50dp"
+            android:layout_height="60dp"
+            android:layout_alignParentRight="true"
+            android:background="@color/semcor"
+            android:src="@drawable/ic_interrogacao"
+            android:tint="@color/cinza" />
+
+
+    </LinearLayout>
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler"

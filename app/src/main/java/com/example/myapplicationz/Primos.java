@@ -3,7 +3,6 @@ package com.example.myapplicationz;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.appcompat.widget.AppCompatImageView;
 import androidx.core.widget.TextViewCompat;
 
 import android.content.pm.ActivityInfo;
@@ -15,7 +14,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class Numerosprimos extends AppCompatActivity implements View.OnClickListener {
+public class Primos extends AppCompatActivity implements View.OnClickListener {
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos;
     AppCompatImageButton nbackspace;
     TextView diferencamenor, diferencamaior, menorque, maiorque, resultado, botao, diferencamenor1, diferencamaior1;
@@ -129,12 +128,12 @@ public class Numerosprimos extends AppCompatActivity implements View.OnClickList
                         diferencamaior1.setText("Diferença para o maior");
 
                     } catch (Exception e) {
-                        Toast.makeText(Numerosprimos.this, "Erro ao calcular", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(Primos.this, "Erro ao calcular", Toast.LENGTH_SHORT).show();
                         limpar();
 
                     }
                 } else if (botao.getText().toString().equals("")) {
-                    Toast.makeText(Numerosprimos.this, "Insira um número", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Primos.this, "Insira um número", Toast.LENGTH_SHORT).show();
                     limpar();
 
                 }

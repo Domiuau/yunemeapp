@@ -13,7 +13,9 @@ import android.graphics.ColorFilter;
 import android.graphics.drawable.Drawable;
 import android.media.Image;
 import android.view.Window;
+import android.widget.ArrayAdapter;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
@@ -45,8 +47,13 @@ public class Data {
     static int n = 0;
     static long i;
     static String entrada;
-    static boolean at;
+    static boolean at, hist;
+    static String[] vetor;
     static String fluxo = "";
+    static String valorentrada,valorsaida;
+
+
+
 
     //classe que eu criei so para pegar a data atual, mas acabei usando ela para varias outros metodos
 
@@ -124,6 +131,14 @@ public class Data {
         });
 
     }
+
+    static void spinner (Spinner spinner1,Spinner spinner2, int array, Context context){
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(context, array ,R.layout.spinner);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdown);
+        spinner1.setAdapter(adapter);
+        spinner2.setAdapter(adapter);
+    }
+
 
 
 

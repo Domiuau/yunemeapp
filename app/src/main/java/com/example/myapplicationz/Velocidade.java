@@ -64,6 +64,7 @@ public class Velocidade extends AppCompatActivity implements View.OnClickListene
         linear = findViewById(R.id.mostrarformula);
         spinner2.setSelection(1);
         Data.fluxo = "";
+        Data.spinner(spinner1,spinner2,R.array.velocidade,Velocidade.this);
 
 
         n1.setOnClickListener(this);

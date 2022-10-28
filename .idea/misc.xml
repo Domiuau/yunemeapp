@@ -6,6 +6,7 @@
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_backspace.xml" value="0.219" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_check.xml" value="0.2215" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_delta.xml" value="0.2365" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_distancia.xml" value="0.165" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_down.xml" value="0.2005" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_foguinho.xml" value="0.3585" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_inverter.xml" value="0.1" />
@@ -14,6 +15,7 @@
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_maiorue.xml" value="0.296" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_menorque.xml" value="0.121" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_perfil.xml" value="0.219" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_setabaixo.xml" value="0.2215" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_setinha1.xml" value="0.2005" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_setinha2.xml" value="0.2375" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable-anydpi/ic_setinhaverdeazulsla.xml" value="0.1405" />
@@ -49,6 +51,7 @@
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/fundoamarelo.xml" value="0.204" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/fundobarradebaixo.xml" value="0.1" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/fundobranco.xml" value="0.1" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/fundofavoritos.xml" value="0.2215" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/fundopreto1.xml" value="0.1445" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/fundoteclado.xml" value="0.2375" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/fundotecladopreto.xml" value="0.2375" />
@@ -75,6 +78,7 @@
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/ic_menorque.xml" value="0.3585" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/ic_pacotes.xml" value="0.121" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/ic_primos.xml" value="0.182" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/ic_setabaixo.xml" value="0.2215" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/ic_speedometer.xml" value="0.1505" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/ic_vaievem.xml" value="0.3585" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/drawable/inverter.xml" value="0.137" />
@@ -95,6 +99,7 @@
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/activity_carregamento.xml" value="0.24259259259259258" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/activity_distancia.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/activity_formas.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/activity_formasgeometricas.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/activity_historico.xml" value="0.33" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/activity_inicial.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/activity_liquidos.xml" value="0.36666666666666664" />
@@ -114,9 +119,11 @@
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/desconto.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/este.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/favoritositens.xml" value="0.365625" />
-        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/ferramentastela.xml" value="0.25" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/ferramentastela.xml" value="0.33" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/itens.xml" value="0.365625" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/manuferramentas.xml" value="0.3351851851851852" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/spinner.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/spinnerdropdown.xml" value="0.365625" />
         <entry key="..\:/Users/DomiU/AndroidStudioProjects/MyApplicationz/app/src/main/res/layout/teclado.xml" value="0.33" />
         <entry key="..\:/Users/guilherme.mssantos6/AndroidStudioProjects/clone/app/src/main/res/drawable/botaoamarelo.xml" value="0.1825" />
         <entry key="..\:/Users/guilherme.mssantos6/AndroidStudioProjects/clone/app/src/main/res/drawable/botaopequenoamarelo.xml" value="0.1825" />

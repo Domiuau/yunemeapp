@@ -104,6 +104,7 @@
                     android:background="@color/semcor"
                     android:gravity="center"
                     android:hint="Insira aqui..."
+                    android:textColorHint="@color/cinza"
                     android:maxLines="1"
                     android:textColor="@color/preto"
                     android:textSize="16sp" />
@@ -146,9 +147,10 @@
                     android:layout_marginTop="50dp"
                     android:background="@color/semcor"
                     android:gravity="center"
-                    android:maxLines="1"
                     android:hint="Insira aqui..."
+                    android:maxLines="1"
                     android:textColor="@color/preto"
+                    android:textColorHint="@color/cinza"
                     android:textSize="16sp" />
 
                 <TextView
@@ -185,6 +187,7 @@
                     style="@style/numerosentrada"
                     android:layout_width="110dp"
                     android:layout_height="40dp"
+                    android:textColorHint="@color/cinza"
                     android:maxLines="1"
                     android:layout_marginTop="50dp"
                     android:background="@color/semcor"

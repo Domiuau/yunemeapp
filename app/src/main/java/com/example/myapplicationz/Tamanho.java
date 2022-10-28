@@ -17,7 +17,7 @@ import android.widget.Toast;
 
 import java.math.BigDecimal;
 
-public class Distancia extends AppCompatActivity implements View.OnClickListener {
+public class Tamanho extends AppCompatActivity implements View.OnClickListener {
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, espaco1, espaco2;
     TextView formula;
     Spinner spinner1, spinner2;
@@ -56,6 +56,7 @@ public class Distancia extends AppCompatActivity implements View.OnClickListener
         linear = findViewById(R.id.mostrarformula);
         spinner2.setSelection(1);
         Data.fluxo = "";
+        Data.spinner(spinner1,spinner2,R.array.tamanho,Tamanho.this);
 
 
         n1.setOnClickListener(this);
@@ -176,13 +177,13 @@ public class Distancia extends AppCompatActivity implements View.OnClickListener
                         espaco1.getText().toString() + " ÷ " + selenarformular().toString() + " = " + espaco2.getText().toString(), R.drawable.hist_tamanho, comp);
             } catch (Exception e) {
 
-                Toast.makeText(Distancia.this,"Erro ao caluclar",Toast.LENGTH_SHORT).show();
+                Toast.makeText(Tamanho.this,"Erro ao caluclar",Toast.LENGTH_SHORT).show();
 
             }
 
 
         } else if (espaco1.getText().toString().isEmpty()){
-            Toast.makeText(Distancia.this,"Insira um número",Toast.LENGTH_SHORT).show();
+            Toast.makeText(Tamanho.this,"Insira um número",Toast.LENGTH_SHORT).show();
 
         }
 

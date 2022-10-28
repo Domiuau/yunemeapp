@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:layoutManager="android.support.v7.widget.LinearLayoutManager"
     xmlns:tools="http://schemas.android.com/tools"
-    android:theme="@style/Theme.MyApplicationz"
-    android:background="@color/branco"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/branco"
     android:orientation="vertical"
-    tools:context=".MainActivity2">
+    android:theme="@style/Theme.MyApplicationz"
+    tools:context=".MainActivity2"
+    tools:layoutManager="android.support.v7.widget.LinearLayoutManager">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="80dp"
-        android:background="@color/preto"
+        android:layout_weight="0"
 
-        android:layout_weight="0">
+        android:background="@color/preto">
 
         <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/perfil"
@@ -64,15 +64,13 @@
             android:src="@drawable/ic_history" />
 
 
-
-
-
     </RelativeLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="9">
+
 
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/botaofavoritos"
@@ -286,8 +284,8 @@
                     android:layout_below="@id/numerosprimos1"
                     android:layout_marginTop="30dp"
                     android:background="@drawable/botaoamarelo"
-                    android:padding="10dp"
-                    android:scaleType="centerCrop"
+                    android:paddingBottom="12dp"
+                    android:scaleType="center"
                     android:src="@drawable/ic_distancia"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toEndOf="@id/temperatura"
@@ -391,26 +389,69 @@
 
         </ScrollView>
 
+
+
+
+
+
+
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:visibility="gone"
+        android:id="@+id/relative4"
+        android:layout_width="match_parent"
+        android:layout_height="210dp"
+        android:layout_below="@id/botaofavoritos"
+        android:backgroundTint="@color/white"
+        android:background="@drawable/botaoamarelo">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/fecharfav"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp"
+            android:background="@color/white"
+            android:padding="10dp"
+            android:src="@drawable/ic_setabaixo"
+            android:tint="@color/preto" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="17dp"
+            android:layout_toEndOf="@id/fecharfav"
+            android:text="Favoritos"
+            android:textColor="@color/cinzaclaro2"
+            android:textSize="22sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_marginTop="25dp"
+            android:layout_marginRight="25dp"
+            android:src="@drawable/ic_interrogacao" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/teste"
+            android:layout_width="match_parent"
+            android:layout_height="120dp"
+            android:layout_below="@id/text1"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="15dp"
+            android:orientation="vertical"
+            android:scrollbars="horizontal"
+            tools:listitem="@layout/favoritositens" />
+
     </RelativeLayout>
 
 
-
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:orientation="vertical"
-        android:id="@+id/teste"
-        android:scrollbars="horizontal"
-        android:background="@color/cinzaa"
-        android:layout_width="match_parent"
-        android:visibility="gone"
-        tools:listitem="@layout/favoritositens"
-        android:layout_height="120dp">
-
-
-
-
-
-    </androidx.recyclerview.widget.RecyclerView>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -423,138 +464,120 @@
             android:layout_width="0dp"
             android:layout_height="50dp"
             android:layout_marginLeft="20dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toStartOf="@id/quadradoestranho"
             android:background="@drawable/botaocurvado"
             android:backgroundTint="@color/verdeouazulsla"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:scaleType="fitStart"
-            app:layout_constraintHorizontal_weight="1"/>
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/quadradoestranho"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/quadradoestranho"
             android:layout_width="0dp"
-            app:layout_constraintStart_toEndOf="@id/casinha"
-            app:layout_constraintEnd_toStartOf="@id/calculadora"
             android:layout_height="50dp"
-            android:layout_marginRight="20dp"
-            android:src="@drawable/ic_pacotes"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
             android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:background="@drawable/botaocurvado"
             android:backgroundTint="@color/azul"
-            app:layout_constraintHorizontal_weight="1"/>
+            android:src="@drawable/ic_pacotes"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/calculadora"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/casinha"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <View
             android:id="@+id/calculadora"
             android:layout_width="0dp"
-            android:layout_marginRight="20dp"
-            android:src="@drawable/ic_calculadora"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@id/quadradoestranho"
             android:layout_height="50dp"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:layout_marginRight="20dp"
             android:background="@drawable/botaocurvado"
             android:backgroundTint="@color/amareloescuro"
-            app:layout_constraintHorizontal_weight="1"/>
+            android:src="@drawable/ic_calculadora"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toEndOf="@id/quadradoestranho"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/casinha1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Início"
-            android:textSize="14sp"
-            android:textColor="@color/white"
-            app:layout_constraintRight_toRightOf="@id/casinha"
-            app:layout_constraintLeft_toRightOf="@id/casinha2"
-            app:layout_constraintTop_toTopOf="@id/casinha"
             android:layout_marginRight="5dp"
-            app:layout_constraintBottom_toBottomOf="@id/casinha"/>
+            android:text="Início"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@id/casinha"
+            app:layout_constraintLeft_toRightOf="@id/casinha2"
+            app:layout_constraintRight_toRightOf="@id/casinha"
+            app:layout_constraintTop_toTopOf="@id/casinha" />
 
         <ImageView
             android:id="@+id/casinha2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/casinha"
-            app:layout_constraintTop_toTopOf="@id/casinha"
             app:layout_constraintBottom_toBottomOf="@id/casinha"
-            app:tint="@color/white"
             app:layout_constraintLeft_toLeftOf="@id/casinha"
-            app:layout_constraintRight_toLeftOf="@id/casinha1"/>
+            app:layout_constraintRight_toLeftOf="@id/casinha1"
+            app:layout_constraintTop_toTopOf="@id/casinha"
+            app:tint="@color/white" />
 
 
         <TextView
             android:id="@+id/quadradoestranho1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Pacotes"
-            android:textSize="13sp"
             android:layout_marginRight="5dp"
+            android:text="Pacotes"
             android:textColor="@color/white"
-            app:layout_constraintRight_toRightOf="@id/quadradoestranho"
+            android:textSize="13sp"
+            app:layout_constraintBottom_toBottomOf="@id/quadradoestranho2"
             app:layout_constraintLeft_toRightOf="@id/quadradoestranho2"
-            app:layout_constraintTop_toTopOf="@id/quadradoestranho2"
-            app:layout_constraintBottom_toBottomOf="@id/quadradoestranho2"/>
+            app:layout_constraintRight_toRightOf="@id/quadradoestranho"
+            app:layout_constraintTop_toTopOf="@id/quadradoestranho2" />
 
         <ImageView
-            app:tint="@color/white"
             android:id="@+id/quadradoestranho2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_pacotes"
-            app:layout_constraintTop_toTopOf="@id/quadradoestranho"
             app:layout_constraintBottom_toBottomOf="@id/quadradoestranho"
             app:layout_constraintLeft_toLeftOf="@id/quadradoestranho"
-            app:layout_constraintRight_toLeftOf="@id/quadradoestranho1"/>
+            app:layout_constraintRight_toLeftOf="@id/quadradoestranho1"
+            app:layout_constraintTop_toTopOf="@id/quadradoestranho"
+            app:tint="@color/white" />
 
         <TextView
-            android:layout_marginRight="5dp"
             android:id="@+id/calculadora1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
             android:text="Calculadora"
-            android:textSize="11sp"
             android:textColor="@color/white"
-            app:layout_constraintRight_toRightOf="@id/calculadora"
+            android:textSize="11sp"
+            app:layout_constraintBottom_toBottomOf="@id/calculadora2"
             app:layout_constraintLeft_toRightOf="@id/calculadora2"
-            app:layout_constraintTop_toTopOf="@id/calculadora2"
-            app:layout_constraintBottom_toBottomOf="@id/calculadora2"/>
+            app:layout_constraintRight_toRightOf="@id/calculadora"
+            app:layout_constraintTop_toTopOf="@id/calculadora2" />
 
         <ImageView
-            android:layout_marginLeft="5dp"
             android:id="@+id/calculadora2"
             android:layout_width="wrap_content"
-            app:tint="@color/white"
             android:layout_height="20dp"
+            android:layout_marginLeft="5dp"
             android:src="@drawable/ic_calculadora"
-            app:layout_constraintTop_toTopOf="@id/calculadora"
             app:layout_constraintBottom_toBottomOf="@id/calculadora"
             app:layout_constraintLeft_toLeftOf="@id/calculadora"
-            app:layout_constraintRight_toLeftOf="@id/calculadora1"/>
-
-
-
-
-
-
+            app:layout_constraintRight_toLeftOf="@id/calculadora1"
+            app:layout_constraintTop_toTopOf="@id/calculadora"
+            app:tint="@color/white" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </LinearLayout>

@@ -116,6 +116,7 @@
                 android:gravity="center"
                 android:hint="Insira aqui..."
                 android:maxLines="1"
+                android:textColorHint="@color/cinza"
                 android:textColor="@color/preto"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toStartOf="@id/imagem"
@@ -141,6 +142,7 @@
                 android:layout_height="30dp"
                 android:layout_marginTop="10dp"
                 android:background="@color/semcor"
+                android:textColorHint="@color/cinza"
                 android:gravity="center"
                 android:hint="Insira aqui..."
                 android:maxLines="1"
@@ -184,6 +186,8 @@
                 android:layout_height="23dp"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
+                android:textColorHint="@color/cinzaclaro2"
+                android:textColor="@color/cinzaescuro2"
                 android:hint="Desconto aplicado"
                 android:textSize="16sp" />
 
@@ -206,6 +210,7 @@
                 android:layout_height="23dp"
                 android:layout_marginTop="4dp"
                 android:gravity="center"
+                android:textColor="@color/cinzaescuro2"
                 android:textSize="16sp" />
 
             <View

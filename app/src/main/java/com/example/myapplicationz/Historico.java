@@ -1,7 +1,10 @@
 package com.example.myapplicationz;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -20,12 +23,12 @@ import java.util.List;
 import model.Coisas_hist;
 import model.Hist;
 
-public class Historico extends AppCompatActivity {
+public class Historico extends AppCompatActivity implements View.OnClickListener {
 
 
     HistAdapter histAdapter;
     RecyclerView rv;
-    AppCompatButton limpar;
+    AppCompatImageButton limpar;
 
 
 
@@ -35,7 +38,6 @@ public class Historico extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_historico);
         HistAdapter.u = true;
-
         limpar = findViewById(R.id.limpar);
 
         histAdapter = new HistAdapter(new ArrayList<>(Coisas_hist.coisashist()));
@@ -105,7 +107,48 @@ public class Historico extends AppCompatActivity {
         }
 
 
+
+       ItemTouchHelper helper = new ItemTouchHelper(
+               new ItemTouchHandler(ItemTouchHelper.DOWN,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT)
+       );
+
+        helper.attachToRecyclerView(rv);
     }
+
+    @Override
+    public void onClick(View v) {
+
+    }
+
+    private class ItemTouchHandler extends ItemTouchHelper.SimpleCallback{
+
+        public ItemTouchHandler(int dragDirs, int swipeDirs) {
+            super(dragDirs, swipeDirs);
+        }
+
+        @Override
+        public boolean onMove(@NonNull RecyclerView recyclerView, @NonNull RecyclerView.ViewHolder viewHolder, @NonNull RecyclerView.ViewHolder target) {
+            return false;
+        }
+
+        @Override
+        public void onSwiped(@NonNull RecyclerView.ViewHolder viewHolder, int direction) {
+
+            SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
+            DB_hist.execSQL("DELETE FROM TB_coisas WHERE Data = ('" + histAdapter.getHists().get(viewHolder.getAdapterPosition()).getData() + "') AND Saida = ('" + histAdapter.getHists().get(viewHolder.getAdapterPosition()).getDadossaida() + "') ");
+            System.out.println(histAdapter.getHists().get(viewHolder.getAdapterPosition()).getFerramenta());
+            histAdapter.getHists().remove(viewHolder.getAdapterPosition());
+            histAdapter.notifyItemRemoved(viewHolder.getAdapterPosition());
+
+            //System.out.println(histAdapter.getHists().get(viewHolder.getAdapterPosition()).getFerramenta());
+
+
+            System.out.println(viewHolder.getAdapterPosition());
+
+
+        }
+    }
+
 
 }
 

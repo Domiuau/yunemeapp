@@ -6,15 +6,15 @@
             <item>
                 <shape android:shape="oval">
                     <size android:width="48dp" android:height="48dp" />
-                    <solid android:color="@color/amarelo"/>
+                    <solid android:color="@color/amarelo" />
                     <corners android:radius="20dp" />
-                    <padding android:top="10dp" android:bottom="10dp" android:left="10dp" android:right="10dp"/>
+                    <padding android:bottom="23dp" android:left="10dp" android:right="10dp" android:top="10dp" />
                 </shape>
+
             </item>
             <item>
                 <selector>
-                    <item android:drawable="@drawable/ic_distancia" />
-
+                    <item android:drawable="@drawable/ic_distancia"/>
 
 
                 </selector>

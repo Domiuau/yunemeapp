@@ -5,11 +5,14 @@ import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.widget.TextViewCompat;
 
+import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -58,6 +61,10 @@ public class Liquidos extends AppCompatActivity implements View.OnClickListener 
         linear = findViewById(R.id.mostrarformula);
         spinner2.setSelection(1);
         Data.fluxo = "";
+        //ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.liquidos, R.layout.spinner);
+       //adapter.setDropDownViewResource(R.layout.spinnerdropdown);
+        //spinner2.setAdapter(adapter);
+        Data.spinner(spinner1,spinner2,R.array.liquidos,Liquidos.this);
 
 
         n1.setOnClickListener(this);

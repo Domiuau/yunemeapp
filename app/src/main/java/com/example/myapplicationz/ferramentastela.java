@@ -2,22 +2,20 @@ package com.example.myapplicationz;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.ThemedSpinnerAdapter;
+import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
-import android.content.ClipData;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +23,6 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.firebase.auth.FirebaseAuth;
 
 import java.util.ArrayList;
-import java.util.List;
 
 import model.Coisas_hist;
 import model.Hist;
@@ -39,6 +36,8 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
     View quadradoestranho, casinha, calculadora;
     static HistAdapter histAdapter;
     RecyclerView rv;
+    AppCompatImageButton fecharfav;
+    RelativeLayout relative4;
     FloatingActionButton botaofavoritos;
 
 
@@ -71,6 +70,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         botaobhaskara = findViewById(R.id.bhaskara);
         botaodesconto = findViewById(R.id.desconto);
         casinha = findViewById(R.id.casinha);
+        relative4 = findViewById(R.id.relative4);
         quadradoestranho = findViewById(R.id.quadradoestranho);
         calculadora = findViewById(R.id.calculadora);
         botaonumerosprimos = findViewById(R.id.numerosprimos);
@@ -93,6 +93,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         regradetres1 = findViewById(R.id.regradetres1);
         botaofavoritos = findViewById(R.id.botaofavoritos);
         rv = findViewById(R.id.teste);
+        fecharfav = findViewById(R.id.fecharfav);
 
         histAdapter = new HistAdapter(new ArrayList<>(Coisas_hist.coisashist()));
         rv.setAdapter(histAdapter);
@@ -125,6 +126,15 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         temperatura.setOnClickListener(this);
         liquidos.setOnClickListener(this);
         liquidos1.setOnClickListener(this);
+        fecharfav.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                relative4.setVisibility(View.GONE);
+                botaofavoritos.setVisibility(View.VISIBLE);
+                fav = false;
+            }
+        });
         interrogacao.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -135,15 +145,9 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
             @Override
             public void onClick(View v) {
 
-                if (rv.getVisibility() == View.GONE) {
                     fav = true;
-                    rv.setVisibility(View.VISIBLE);
-
-                } else {
-                    fav = false;
-                    rv.setVisibility(View.GONE);
-                }
-
+                    relative4.setVisibility(View.VISIBLE);
+                    botaofavoritos.setVisibility(View.GONE);
 
             }
         });
@@ -189,7 +193,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         }
 
         ItemTouchHelper helper = new ItemTouchHelper(
-                new ItemTouchHandler(ItemTouchHelper.DOWN, ItemTouchHelper.UP)
+                new ItemTouchHandler(ItemTouchHelper.DOWN, ItemTouchHelper.UP | ItemTouchHelper.DOWN)
         );
 
         helper.attachToRecyclerView(rv);
@@ -211,22 +215,23 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
     @Override
     public void onBackPressed() {
 
+        relative4.setVisibility(View.GONE);
+        botaofavoritos.setVisibility(View.VISIBLE);
         fav = false;
-        rv.setVisibility(View.GONE);
 
     }
 
     //pega qual botão foi pressionado e manda para a tela certa
 
-
     @Override
     public void onClick(View v) {
-        inicial trocar = new inicial();
+
+
 
         switch (v.getId()) {
 
             case R.id.calculadora:
-                startActivity(Data.a(this, pacotes.class));
+                startActivity(Data.a(this, calculadora.class));
                 break;
 
             case R.id.quadradoestranho:
@@ -245,7 +250,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
             case R.id.numerosprimos:
             case R.id.numerosprimos1:
-                favoritosoutrocar(Data.a(this, Numerosprimos.class), R.drawable.hist_primos, numerosprimos1);
+                favoritosoutrocar(Data.a(this, Primos.class), R.drawable.hist_primos, numerosprimos1);
                 break;
 
             case R.id.velocidade:
@@ -265,7 +270,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
             case R.id.tamanho:
             case R.id.tamanho1:
-                favoritosoutrocar(Data.a(this, Distancia.class), R.drawable.ic_distancia, distancia1);
+                favoritosoutrocar(Data.a(this, Tamanho.class), R.drawable.hist_tamanho, distancia1);
                 break;
 
             case R.id.liquidos:
@@ -322,6 +327,8 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
 
             } catch (Exception e) {
 
+                Toast.makeText(ferramentastela.this,texto.getText() + " já se encontra em favoritos", Toast.LENGTH_SHORT).show();
+
 
             }
 
@@ -356,7 +363,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
     }
 
 
-    private class ItemTouchHandler extends ItemTouchHelper.SimpleCallback {
+    class ItemTouchHandler extends ItemTouchHelper.SimpleCallback {
 
         public ItemTouchHandler(int dragDirs, int swipeDirs) {
             super(dragDirs, swipeDirs);

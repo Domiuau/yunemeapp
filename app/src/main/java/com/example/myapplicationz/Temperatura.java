@@ -67,6 +67,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         linear = findViewById(R.id.mostrarformula);
         spinner2.setSelection(1);
         Data.fluxo = "";
+        Data.spinner(spinner1,spinner2,R.array.temperatura,Temperatura.this);
 
 
         n1.setOnClickListener(this);

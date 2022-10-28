@@ -55,6 +55,9 @@ public class Regradetres extends AppCompatActivity implements View.OnClickListen
         voltar = findViewById(R.id.voltar);
         spinner1 = findViewById(R.id.spinner1);
         resultado = findViewById(R.id.resultado);
+        ArrayAdapter adapter = ArrayAdapter.createFromResource(Regradetres.this, R.array.regradetres ,R.layout.spinner);
+        adapter.setDropDownViewResource(R.layout.spinnerdropdown);
+        spinner1.setAdapter(adapter);
 
         n1.setOnClickListener(this);
         n2.setOnClickListener(this);

@@ -85,10 +85,9 @@
                 android:id="@+id/spinner1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Valor"
                 android:gravity="end"
                 android:entries="@array/liquidos"
-                android:textColor="@color/preto"
+                android:backgroundTint="@color/cinzaescuro"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@id/espaco1"
                 app:layout_constraintStart_toStartOf="@id/espaco1"
@@ -109,6 +108,7 @@
                 android:text="Valor"
                 android:entries="@array/liquidos"
                 android:textColor="@color/preto"
+                android:backgroundTint="@color/cinzaescuro"
                 android:gravity="end"
                 android:textSize="16sp"
                 app:layout_constraintEnd_toEndOf="@id/espaco2"
@@ -121,6 +121,7 @@
                 android:layout_width="110dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="10dp"
+                android:textColorHint="@color/cinza"
                 android:background="@color/semcor"
                 android:gravity="center"
                 android:hint="Insira aqui..."
@@ -211,6 +212,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
+                    android:textColor="@color/cinzaescuro2"
                     android:text="Fórmula utilizada"/>
 
                 <ImageView

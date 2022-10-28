@@ -75,6 +75,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginLeft="10dp"
                 android:textStyle="bold"
+                android:textColor="@color/cinzaclaro2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/branco" />
@@ -92,6 +93,7 @@
             android:autoSizeMinTextSize="10sp"
             android:autoSizeMaxTextSize="30sp"
             android:gravity="end"
+            android:textColor="@color/cinzaclaro2"
             android:layout_marginRight="10dp"
             android:layout_marginLeft="10dp"
             android:textStyle="bold"
