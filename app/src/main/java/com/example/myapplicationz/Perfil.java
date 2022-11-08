@@ -3,6 +3,7 @@ package com.example.myapplicationz;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
+import androidx.appcompat.widget.AppCompatImageButton;
 
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
@@ -28,6 +29,7 @@ public class Perfil extends AppCompatActivity {
     AppCompatButton deslogar, trocarconta;
     ImageView imagem;
     TextView nome, email, realizadas, ultimaentrada, dataregistro;
+    AppCompatImageButton voltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,6 +45,14 @@ public class Perfil extends AppCompatActivity {
         realizadas = findViewById(R.id.realizadas);
         ultimaentrada = findViewById(R.id.ultimoacesso);
         dataregistro = findViewById(R.id.dataregistro);
+        voltar = findViewById(R.id.voltar);
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         deslogar.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -59,7 +59,7 @@
             android:name=".pacotes"
             android:exported="false" />
         <activity
-            android:name=".calculadora"
+            android:name=".Calculadora"
             android:exported="false" />
         <activity
             android:name=".Desconto"

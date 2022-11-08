@@ -9,7 +9,6 @@ import androidx.appcompat.widget.AppCompatTextView;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import java.math.BigDecimal;
@@ -17,7 +16,7 @@ import java.math.BigDecimal;
 import net.objecthunter.exp4j.Expression;
 import net.objecthunter.exp4j.ExpressionBuilder;
 
-public class calculadora extends AppCompatActivity implements View.OnClickListener {
+public class Calculadora extends AppCompatActivity implements View.OnClickListener {
 
     AppCompatButton c, divisao, porcentagem, n1, n2, n3, n4, n5, n6, n7, n8, n9, vezes, menos, mais, iguala, virgula, n0, nfatorial;
     AppCompatImageButton backspace;
@@ -85,6 +84,15 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
         });
     }
 
+
+    public void onBackPressed() {
+
+        finish();
+
+    }
+
+
+
     //adiciona na tela o valor do botao pressionado
 
     public void adicionar(String valor) {
@@ -139,7 +147,7 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
     }
 
-    //todo o tecaldo da calculadora
+    //todo o tecaldo da Calculadora
 
     @Override
     public void onClick(View teclado) {
@@ -355,7 +363,7 @@ public class calculadora extends AppCompatActivity implements View.OnClickListen
 
                 } catch (Exception e) {
 
-                    Toast.makeText(calculadora.this,"Fatorial limitado a 5000",Toast.LENGTH_SHORT).show();
+                    Toast.makeText(Calculadora.this,"Fatorial limitado a 5000",Toast.LENGTH_SHORT).show();
 
                 }
 

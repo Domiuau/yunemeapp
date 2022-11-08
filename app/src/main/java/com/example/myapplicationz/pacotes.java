@@ -2,7 +2,6 @@ package com.example.myapplicationz;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.os.Bundle;
 import android.view.View;
@@ -40,7 +39,7 @@ public class pacotes extends AppCompatActivity implements View.OnClickListener {
                 break;
 
             case R.id.calculadora:
-                startActivity(Data.a(this,calculadora.class));
+                startActivity(Data.a(this, Calculadora.class));
                 break;
 
             case R.id.quadradoestranho:

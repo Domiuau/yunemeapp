@@ -88,6 +88,7 @@
         <item name="android:textSize">25sp</item>
         <item name="android:layout_weight">1</item>
         <item name="background">@color/preto</item>
+        <item name="fontFamily">sans-serif-light</item>
 
 
     </style>

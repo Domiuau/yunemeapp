@@ -25,7 +25,7 @@ public class Liquidos extends AppCompatActivity implements View.OnClickListener 
     TextView formula;
     Spinner spinner1, spinner2;
     LinearLayout linear;
-    AppCompatImageButton voltar, nbackspace, inverter;
+    AppCompatImageButton voltar, nbackspace, inverter,calculadora;
 
     //é literalmente a mesma coisa da distancia
 
@@ -59,6 +59,7 @@ public class Liquidos extends AppCompatActivity implements View.OnClickListener 
         inverter = findViewById(R.id.inverter);
         voltar = findViewById(R.id.voltar);
         linear = findViewById(R.id.mostrarformula);
+        calculadora = findViewById(R.id.calculadora);
         spinner2.setSelection(1);
         Data.fluxo = "";
         //ArrayAdapter adapter = ArrayAdapter.createFromResource(this, R.array.liquidos, R.layout.spinner);
@@ -81,6 +82,12 @@ public class Liquidos extends AppCompatActivity implements View.OnClickListener 
         nbackspace.setOnClickListener(this);
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
+        calculadora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Data.a(Liquidos.this, Calculadora.class));
+            }
+        });
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

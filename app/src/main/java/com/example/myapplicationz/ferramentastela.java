@@ -7,7 +7,6 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
@@ -231,7 +230,7 @@ public class ferramentastela extends AppCompatActivity implements View.OnClickLi
         switch (v.getId()) {
 
             case R.id.calculadora:
-                startActivity(Data.a(this, calculadora.class));
+                startActivity(Data.a(this, Calculadora.class));
                 break;
 
             case R.id.quadradoestranho:

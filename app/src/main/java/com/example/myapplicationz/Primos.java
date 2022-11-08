@@ -18,7 +18,7 @@ public class Primos extends AppCompatActivity implements View.OnClickListener {
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos;
     AppCompatImageButton nbackspace;
     TextView diferencamenor, diferencamaior, menorque, maiorque, resultado, botao, diferencamenor1, diferencamaior1;
-    AppCompatImageButton voltar;
+    AppCompatImageButton voltar,calculadora;
     RelativeLayout espaco1;
     int me, b;
 
@@ -57,6 +57,7 @@ public class Primos extends AppCompatActivity implements View.OnClickListener {
         resultado = findViewById(R.id.resultado);
         voltar = findViewById(R.id.voltar);
         botao = findViewById(R.id.botao);
+        calculadora = findViewById(R.id.calculadora);
 
 
         n1.setOnClickListener(this);
@@ -73,6 +74,12 @@ public class Primos extends AppCompatActivity implements View.OnClickListener {
         nbackspace.setOnClickListener(this);
         nmenos.setOnClickListener(this);
         espaco1.setOnClickListener(this);
+        calculadora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Data.a(Primos.this, Calculadora.class));
+            }
+        });
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -52,6 +52,13 @@ public class cadastrar extends AppCompatActivity {
         confirmarsenha = findViewById(R.id.confirmarsenha);
         cadastrar = findViewById(R.id.cadastrar);
 
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
+
         cadastrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

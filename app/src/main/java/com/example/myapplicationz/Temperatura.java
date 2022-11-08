@@ -29,7 +29,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
     BigDecimal vezes;
     LinearLayout linear;
     String formulausada;
-    AppCompatImageButton voltar,nbackspace,inverter;
+    AppCompatImageButton voltar,nbackspace,inverter,calculadora;
 
 
 
@@ -65,6 +65,7 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         inverter = findViewById(R.id.inverter);
         voltar = findViewById(R.id.voltar);
         linear = findViewById(R.id.mostrarformula);
+        calculadora = findViewById(R.id.calculadora);
         spinner2.setSelection(1);
         Data.fluxo = "";
         Data.spinner(spinner1,spinner2,R.array.temperatura,Temperatura.this);
@@ -85,6 +86,13 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
         nmenos.setOnClickListener(this);
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
+
+        calculadora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Data.a(Temperatura.this, Calculadora.class));
+            }
+        });
 
         //exibi a formula na tela
 

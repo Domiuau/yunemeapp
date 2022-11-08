@@ -25,8 +25,7 @@ public class Regradetres extends AppCompatActivity implements View.OnClickListen
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2, espaco3;
     TextView resultado;
     Spinner spinner1;
-    AppCompatImageButton nbackspace;
-    AppCompatImageButton voltar;
+    AppCompatImageButton nbackspace,calculadora,voltar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -56,6 +55,7 @@ public class Regradetres extends AppCompatActivity implements View.OnClickListen
         voltar = findViewById(R.id.voltar);
         spinner1 = findViewById(R.id.spinner1);
         resultado = findViewById(R.id.resultado);
+        calculadora = findViewById(R.id.calculadora);
         ArrayAdapter adapter = ArrayAdapter.createFromResource(Regradetres.this, R.array.regradetres ,R.layout.spinner);
         adapter.setDropDownViewResource(R.layout.spinnerdropdown);
         spinner1.setAdapter(adapter);
@@ -76,6 +76,12 @@ public class Regradetres extends AppCompatActivity implements View.OnClickListen
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
         espaco3.setOnClickListener(this);
+        calculadora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Data.a(Regradetres.this, Calculadora.class));
+            }
+        });
         nok.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

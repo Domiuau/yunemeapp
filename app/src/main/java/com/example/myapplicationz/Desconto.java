@@ -24,7 +24,7 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2;
     AppCompatImageButton nbackspace;
     TextView novo, diferenca;
-    AppCompatImageButton voltar;
+    AppCompatImageButton voltar,calculadora;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,6 +54,7 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
         novo = findViewById(R.id.aplicado);
         diferenca = findViewById(R.id.diferenca);
         voltar = findViewById(R.id.voltar);
+        calculadora = findViewById(R.id.calculadora);
         Data.fluxo = "";
 
         n1.setOnClickListener(this);
@@ -71,6 +72,13 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
         nmenos.setOnClickListener(this);
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
+        calculadora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                startActivity(Data.a(Desconto.this, Calculadora.class));
+            }
+        });
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

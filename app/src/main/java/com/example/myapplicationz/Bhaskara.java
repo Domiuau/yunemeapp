@@ -3,41 +3,26 @@ package com.example.myapplicationz;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.AppCompatButton;
 import androidx.appcompat.widget.AppCompatImageButton;
-import androidx.appcompat.widget.AppCompatImageView;
-import androidx.appcompat.widget.AppCompatTextView;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.TextViewCompat;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
-import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.Date;
-
 import android.view.ViewGroup;
-import android.widget.DatePicker;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
-
-import model.Coisas_hist;
-import model.Hist;
 
 public class Bhaskara extends AppCompatActivity implements View.OnClickListener {
 
     AppCompatButton n1, n2, n3, n4, n5, n6, n7, n8, n9, n0, nvirgula, nc, nok, nmenos, espaco1, espaco2, espaco3;
     AppCompatImageButton nbackspace;
     TextView espacox1, espacox2, espacodelta;
-    AppCompatImageButton voltar;
+    AppCompatImageButton voltar, calculadora;
     RelativeLayout c1, c2, c3;
 
     @Override
@@ -72,6 +57,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espacox2 = findViewById(R.id.espacox2);
         espacodelta = findViewById(R.id.espacodelta);
         voltar = findViewById(R.id.voltar);
+        calculadora = findViewById(R.id.calculadora);
         Data.fluxo = "";
 
 
@@ -94,6 +80,12 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espaco1.setOnClickListener(this);
         espaco2.setOnClickListener(this);
         espaco3.setOnClickListener(this);
+        calculadora.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(Data.a(Bhaskara.this, Calculadora.class));
+            }
+        });
         voltar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
