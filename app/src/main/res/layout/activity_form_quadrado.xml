@@ -13,24 +13,22 @@
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
-        android:background="@drawable/fundoteclado"
-        android:orientation="vertical">
+        android:background="@drawable/fundoteclado">
 
         <LinearLayout
             android:id="@+id/linear1"
-            app:layout_constraintTop_toTopOf="parent"
+            android:background="@color/preto"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/preto"
             android:orientation="horizontal">
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:id="@+id/voltar"
                 android:layout_width="100dp"
                 android:layout_height="60dp"
-                android:background="@color/semcor"
                 android:padding="40dp"
                 android:scaleType="centerCrop"
+                android:background="@color/semcor"
                 android:src="@drawable/ic_voltar"
                 android:tint="@color/branco" />
 
@@ -40,7 +38,7 @@
                 android:layout_height="60dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="Temperatura"
+                android:text="Quadrado"
                 android:textColor="@color/branco"
                 android:textSize="22sp" />
 
@@ -60,188 +58,215 @@
                 android:layout_width="50dp"
                 android:layout_height="60dp"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="10dp"
                 android:background="@color/semcor"
                 android:padding="10dp"
                 android:scaleType="fitCenter"
+                android:layout_marginRight="10dp"
                 android:src="@drawable/ic_interrogacao"
                 android:tint="@color/cinza" />
+
+
+
+
 
 
         </LinearLayout>
 
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/c1"
+        <TextView
+            android:id="@+id/text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toTopOf="@id/mostrarformula"
+            android:text="Deixe em branco o que deseja"
+            app:layout_constraintTop_toBottomOf="@id/linear1"
+            android:paddingTop="30dp"
+            android:paddingBottom="20dp"
+            android:textColor="@color/cinzaclaro2"
+            android:gravity="center"
+            android:textSize="16sp"/>
 
-            app:layout_constraintTop_toBottomOf="@id/linear1">
-
-
-            <Spinner
-                android:id="@+id/spinner1"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Valor"
-                android:gravity="end"
-                android:entries="@array/temperatura"
-                android:backgroundTint="@color/cinzaescuro"
-                android:textColor="@color/preto"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@id/espaco1"
-                app:layout_constraintStart_toStartOf="@id/espaco1"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <View
-                android:layout_width="110dp"
-                android:layout_height="1dp"
-                android:background="@color/black"
-                app:layout_constraintEnd_toEndOf="@id/espaco1"
-                app:layout_constraintStart_toStartOf="@id/espaco1"
-                app:layout_constraintTop_toBottomOf="@id/espaco1" />
-
-            <Spinner
-                android:id="@+id/spinner2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Valor"
-                android:entries="@array/temperatura"
-                android:backgroundTint="@color/cinzaescuro"
-                android:textColor="@color/preto"
-                android:gravity="end"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toEndOf="@id/espaco2"
-                app:layout_constraintStart_toStartOf="@id/espaco2"
-                app:layout_constraintTop_toTopOf="parent" />
-
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/espaco1"
-                android:fontFamily="sans-serif-light"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
-                android:textColorHint="@color/amarelo"
-                android:layout_marginTop="10dp"
-                android:background="@color/semcor"
-                android:gravity="center"
-                android:hint="Insira aqui..."
-                android:maxLines="1"
-                android:textColor="@color/preto"
-                android:textSize="16sp"
-                app:layout_constraintEnd_toStartOf="@id/imagem"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/spinner1" />
-
-            <ImageView
-                android:id="@+id/imagem"
-                android:layout_width="30dp"
-                android:layout_height="22dp"
-                android:src="@drawable/ic_setadireita"
-                app:tint="@color/cinzaescuro"
-                app:layout_constraintBottom_toBottomOf="@id/espaco1"
-                app:layout_constraintEnd_toStartOf="@+id/espaco2"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@id/espaco1"
-                 />
-
-            <androidx.appcompat.widget.AppCompatImageButton
-                android:id="@+id/inverter"
-                android:layout_width="45dp"
-                android:layout_height="30dp"
-                app:layout_constraintStart_toEndOf="@id/spinner1"
-                app:layout_constraintEnd_toStartOf="@id/spinner2"
-                app:layout_constraintTop_toTopOf="parent"
-                android:src="@drawable/ic_vaievem"
-                android:scaleType="centerInside"
-                android:padding="5dp"
-                android:background="@drawable/botaocurvado"
-                android:backgroundTint="@color/preto"
-                android:tint="@color/branco"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/espaco2"
-                android:layout_width="110dp"
-                android:layout_height="30dp"
-                android:layout_marginTop="10dp"
-                android:background="@color/semcor"
-                android:gravity="center"
-                android:maxLines="1"
-                android:textColor="@color/preto"
-                android:autoSizeTextType="uniform"
-                android:autoSizeMinTextSize="2sp"
-                android:autoSizeMaxTextSize="16sp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/imagem"
-                app:layout_constraintTop_toBottomOf="@id/spinner2" />
-
-            <View
-                android:layout_width="110dp"
-                android:layout_height="1dp"
-                android:background="@color/black"
-                app:layout_constraintEnd_toEndOf="@id/espaco2"
-                app:layout_constraintStart_toStartOf="@id/espaco2"
-                app:layout_constraintTop_toBottomOf="@id/espaco2" />
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <LinearLayout
-                android:id="@+id/mostrarformula"
-                android:layout_width="match_parent"
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/c1"
+            app:layout_constraintTop_toBottomOf="@id/text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/linear1">
+
+            <RelativeLayout
+                android:id="@+id/relative1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/relative2"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/espaco1"
+                    style="@style/numerosentrada"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="50dp"
+
+                    android:background="@color/semcor"
+                    android:gravity="center"
+                    android:hint="Insira aqui..."
+                    android:maxLines="1"
+                    android:textColor="@color/preto"
+                    android:fontFamily="sans-serif-light"
+                    android:textColorHint="@color/cinzaclaro2"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/espaco1"
+                    android:layout_alignTop="@id/espaco1"
+                    android:layout_marginTop="-30dp"
+                    android:entries="@array/formas"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/preto"
+                    android:textSize="34dp" />
+
+                <View
+                    android:layout_width="110dp"
+                    android:layout_height="1dp"
+                    android:layout_alignBottom="@id/espaco1"
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/preto" />
+
+            </RelativeLayout>
+
+
+            <RelativeLayout
+                android:id="@+id/relative2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toStartOf="@+id/relative3"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/relative1">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/espaco2"
+                    style="@style/numerosentrada"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/semcor"
+                    android:gravity="center"
+                    android:hint="Insira aqui..."
+                    android:maxLines="1"
+                    android:textColor="@color/preto"
+                    android:fontFamily="sans-serif-light"
+                    android:textColorHint="@color/cinzaclaro2"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/espaco2"
+                    android:layout_alignTop="@id/espaco2"
+                    android:layout_marginTop="-30dp"
+                    android:entries="@array/formas"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/preto"
+                    android:textSize="34dp" />
+
+                <View
+                    android:layout_width="110dp"
+                    android:layout_height="1dp"
+                    android:layout_alignBottom="@id/espaco2"
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/preto" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/relative3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/relative2">
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/espaco3"
+                    style="@style/numerosentrada"
+                    android:layout_width="110dp"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="50dp"
+                    android:background="@color/semcor"
+                    android:gravity="center"
+                    android:maxLines="1"
+                    android:textColor="@color/preto"
+                    android:fontFamily="sans-serif-light"
+                    android:textColorHint="@color/cinzaclaro2"
+                    android:textSize="16sp" />
+
+                <Spinner
+                    android:layout_width="110dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignStart="@id/espaco3"
+                    android:layout_alignTop="@id/espaco3"
+                    android:layout_marginTop="-30dp"
+                    android:entries="@array/formas"
+                    android:textAlignment="textEnd"
+                    android:textColor="@color/preto"
+                    android:textSize="34dp" />
+
+                <View
+                    android:layout_width="110dp"
+                    android:layout_height="1dp"
+                    android:layout_alignBottom="@id/espaco3"
+                    android:layout_marginBottom="6dp"
+                    android:background="@color/preto" />
+
+
+            </RelativeLayout>
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/linear2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/c1"
                 app:layout_constraintBottom_toBottomOf="parent"
-                android:orientation="vertical"
-                android:gravity="center">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="18dp"
-                        android:layout_height="18dp"
-                        android:layout_marginRight="8dp"
-                        android:src="@drawable/ic_formula"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textSize="18sp"
-                        android:textColor="@color/cinzaclaro2"
-                        android:text="Fórmula utilizada"/>
-
-                    <ImageView
-                        android:layout_width="20dp"
-                        android:layout_height="22dp"
-                        android:layout_marginLeft="4dp"
-                        android:scaleType="centerCrop"
-                        android:src="@drawable/ic_setapequenadown"
-                        app:tint="@color/preto"/>
-
-                </LinearLayout>
+                <ImageView
+                    android:layout_width="18dp"
+                    android:layout_height="18dp"
+                    android:layout_marginRight="8dp"
+                    android:src="@drawable/ic_formula"/>
 
                 <TextView
-                    android:id="@+id/formula"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textSize="18sp"
-                    android:layout_marginTop="10dp"
-                    android:fontFamily="sans-serif-light"
-                    android:textColor="@color/cinzaclaro2"/>
+                    android:textColor="@color/cinzaclaro2"
+                    android:text="Fórmula utilizada"/>
 
-
-
-
-
-
-
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="4dp"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/ic_setapequenadown"
+                    app:tint="@color/preto"/>
 
             </LinearLayout>
 
@@ -250,8 +275,10 @@
 
 
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
 
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 
     <LinearLayout
@@ -338,8 +365,7 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:padding="20dp"
-                android:scaleType="center"
+                android:scaleType="centerInside"
                 android:src="@drawable/ic_backspace" />
 
 
@@ -421,6 +447,7 @@
 
 
         </LinearLayout>
+
 
     </LinearLayout>
 

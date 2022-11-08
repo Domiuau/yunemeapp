@@ -8,6 +8,7 @@ import androidx.core.widget.TextViewCompat;
 
 import android.content.pm.ActivityInfo;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -148,6 +149,9 @@ public class Desconto extends AppCompatActivity implements View.OnClickListener 
 
     @Override
     public void onClick(View desconto) {
+
+        espaco1.setHintTextColor(Color.parseColor("#66737B"));
+        espaco2.setHintTextColor(Color.parseColor("#66737B"));
 
         if (Teclado.espaco(desconto) == 2) {
 

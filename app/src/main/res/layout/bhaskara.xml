@@ -102,11 +102,12 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="50dp"
                     android:background="@color/semcor"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:hint="Insira aqui..."
-                    android:textColorHint="@color/cinza"
                     android:maxLines="1"
                     android:textColor="@color/preto"
+                    android:textColorHint="@color/amarelo"
                     android:textSize="16sp" />
 
                 <TextView
@@ -146,11 +147,12 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="50dp"
                     android:background="@color/semcor"
+                    android:fontFamily="sans-serif-light"
                     android:gravity="center"
                     android:hint="Insira aqui..."
                     android:maxLines="1"
                     android:textColor="@color/preto"
-                    android:textColorHint="@color/cinza"
+                    android:textColorHint="@color/cinzaclaro2"
                     android:textSize="16sp" />
 
                 <TextView
@@ -185,13 +187,14 @@
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/espaco3"
                     style="@style/numerosentrada"
+                    android:fontFamily="sans-serif-light"
                     android:layout_width="110dp"
                     android:layout_height="40dp"
-                    android:textColorHint="@color/cinza"
-                    android:maxLines="1"
                     android:layout_marginTop="50dp"
                     android:background="@color/semcor"
+                    android:textColorHint="@color/cinzaclaro2"
                     android:gravity="center"
+                    android:maxLines="1"
                     android:textColor="@color/preto"
                     android:textSize="16sp" />
 

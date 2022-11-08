@@ -6,6 +6,7 @@ import androidx.appcompat.widget.AppCompatImageButton;
 import androidx.core.widget.TextViewCompat;
 
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.view.ViewGroup;
@@ -168,6 +169,10 @@ public class Regradetres extends AppCompatActivity implements View.OnClickListen
 
     @Override
     public void onClick(View v) {
+
+        espaco1.setHintTextColor(Color.parseColor("#66737B"));
+        espaco2.setHintTextColor(Color.parseColor("#66737B"));
+        espaco3.setHintTextColor(Color.parseColor("#66737B"));
 
         if (Teclado.espaco(v) == 2){
 

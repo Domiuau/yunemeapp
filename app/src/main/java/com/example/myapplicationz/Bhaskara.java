@@ -9,9 +9,11 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.widget.TextViewCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.annotation.SuppressLint;
 import android.content.pm.ActivityInfo;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -71,6 +73,7 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
         espacodelta = findViewById(R.id.espacodelta);
         voltar = findViewById(R.id.voltar);
         Data.fluxo = "";
+
 
         c1.setOnClickListener(this);
         c2.setOnClickListener(this);
@@ -224,14 +227,20 @@ public class Bhaskara extends AppCompatActivity implements View.OnClickListener 
     }
 
 
+    @SuppressLint("ResourceAsColor")
     @Override
     public void onClick(View bhaskara) {
 
+        espaco1.setHintTextColor(Color.parseColor("#66737B"));
+        espaco2.setHintTextColor(Color.parseColor("#66737B"));
+        espaco3.setHintTextColor(Color.parseColor("#66737B"));
 
         //chamando os metodos responsaveis pelo teclado
 
 
         if (Teclado.espaco(bhaskara) == 2) {
+
+
 
             Teclado.adicionarnatela(espaco2, bhaskara);
 

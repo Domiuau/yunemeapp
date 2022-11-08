@@ -248,7 +248,6 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:gravity="center"
-                android:text="fsdfsdfsd"
                 android:textColor="@color/preto"
                 android:textSize="14sp" />
 

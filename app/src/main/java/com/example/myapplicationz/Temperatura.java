@@ -138,8 +138,13 @@ public class Temperatura extends AppCompatActivity implements View.OnClickListen
                 espaco1.setText("");
                 espaco2.setText("");
                 formula.setText("");
+                espaco2.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+                espaco1.setWidth(ViewGroup.LayoutParams.WRAP_CONTENT);
+                TextViewCompat.setAutoSizeTextTypeWithDefaults(espaco1,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
+                TextViewCompat.setAutoSizeTextTypeWithDefaults(espaco2,AppCompatButton.AUTO_SIZE_TEXT_TYPE_NONE);
+                espaco1.setTextSize(16);
+                espaco2.setTextSize(16);
                 Data.fluxo = "";
-                formulausada = "";
             }
         });
 

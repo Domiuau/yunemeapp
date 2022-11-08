@@ -44,8 +44,12 @@
     <string-array name="regradetres">
         <item>Diretamente proporcional</item>
         <item>Inversamente proporcional</item>
+    </string-array>
 
-
+    <string-array name="formas">
+        <item>Metro</item>
+        <item>kilômetro</item>
+        <item>Centímetro</item>
     </string-array>
 
 

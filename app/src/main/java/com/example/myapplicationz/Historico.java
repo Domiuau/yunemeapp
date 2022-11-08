@@ -28,7 +28,7 @@ public class Historico extends AppCompatActivity implements View.OnClickListener
 
     HistAdapter histAdapter;
     RecyclerView rv;
-    AppCompatImageButton limpar;
+    AppCompatImageButton limpar, voltar;
 
 
 
@@ -39,14 +39,22 @@ public class Historico extends AppCompatActivity implements View.OnClickListener
         setContentView(R.layout.activity_historico);
         HistAdapter.u = true;
         limpar = findViewById(R.id.limpar);
+        voltar = findViewById(R.id.voltar);
 
         histAdapter = new HistAdapter(new ArrayList<>(Coisas_hist.coisashist()));
         rv = findViewById(R.id.recycler);
         rv.setAdapter(histAdapter);
         rv.scrollToPosition(0);
         histAdapter.notifyItemInserted(0);
-        //LinearLayoutManager teste = new LinearLayoutManager(Historico.this,LinearLayoutManager.HORIZONTAL,false);
-        //rv.setLayoutManager(teste);
+
+
+
+        voltar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         SQLiteDatabase DB_hist = openOrCreateDatabase("DB_historico", MODE_PRIVATE, null);
 

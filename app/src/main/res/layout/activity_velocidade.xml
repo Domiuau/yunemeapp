@@ -120,9 +120,10 @@
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/espaco1"
                 android:layout_width="110dp"
+                android:fontFamily="sans-serif-light"
                 android:layout_height="30dp"
+                android:textColorHint="@color/amarelo"
                 android:layout_marginTop="10dp"
-                android:textColorHint="@color/cinza"
                 android:background="@color/semcor"
                 android:gravity="center"
                 android:hint="Insira aqui..."

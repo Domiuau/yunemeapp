@@ -77,11 +77,15 @@
                     android:id="@+id/email"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:backgroundTint="@color/cinzaclaro2"
+                    android:textColor="@color/cinza"
                     android:hint="Email"
                     android:layout_marginBottom="20dp"/>
 
                 <EditText
                     android:id="@+id/senha"
+                    android:backgroundTint="@color/cinzaclaro2"
+                    android:textColor="@color/cinza"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:hint="Senha"

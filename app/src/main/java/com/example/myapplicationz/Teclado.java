@@ -1,6 +1,8 @@
 package com.example.myapplicationz;
 
+import android.annotation.SuppressLint;
 import android.database.sqlite.SQLiteDatabase;
+import android.graphics.Color;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebSettings;
@@ -149,6 +151,7 @@ public class Teclado extends AppCompatActivity {
 
         botao.setText(Teclado.teclado(view, botao.getText().toString().replace("%","")));
         botao.setTextSize(Teclado.tamanhofonte(botao.getText().toString().isEmpty()));
+        botao.setHintTextColor(Color.parseColor("#C09B33"));
 
         if(botao.getText().toString().isEmpty()){
 

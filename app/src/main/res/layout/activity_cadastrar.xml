@@ -83,11 +83,15 @@
                             android:id="@+id/usuario"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:backgroundTint="@color/cinzaclaro2"
+                            android:textColor="@color/cinza"
                             android:hint="usuario"
                             android:layout_marginBottom="20dp"/>
 
                         <EditText
                             android:id="@+id/email"
+                            android:backgroundTint="@color/cinzaclaro2"
+                            android:textColor="@color/cinza"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Email"
@@ -96,12 +100,16 @@
                         <EditText
                             android:id="@+id/senha"
                             android:layout_width="match_parent"
+                            android:backgroundTint="@color/cinzaclaro2"
+                            android:textColor="@color/cinza"
                             android:layout_height="wrap_content"
                             android:layout_marginBottom="20dp"
                             android:hint="Senha"/>
 
                         <EditText
                             android:id="@+id/confirmarsenha"
+                            android:backgroundTint="@color/cinzaclaro2"
+                            android:textColor="@color/cinza"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Confirmar Senha"
