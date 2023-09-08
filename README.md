@@ -36,6 +36,7 @@
 
 - O aplicativo está disponível gratuitamente para download em:
 https://play.google.com/store/apps/details?id=com.yuneme.myapplicationz
+
 ![QRcode playstore](https://github.com/Domiuau/yunemeapp/blob/master/Assets/yuneme7.png)
 
 - O aplicativo aparecerá desta forma:
